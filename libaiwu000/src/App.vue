@@ -2,9 +2,9 @@
   <div id="app">
 
 <!--<x01></x01>-->
-    <x02></x02>
+    <!--<x02></x02>-->
 
-    <head01></head01>
+    <!--<head01></head01>-->
 
     <router-view/>
   </div>

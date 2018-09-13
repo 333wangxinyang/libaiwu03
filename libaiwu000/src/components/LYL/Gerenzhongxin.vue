@@ -62,6 +62,7 @@
   .content{
     margin-top: 40px;
     width: 1280px;
+    margin: auto;
   }
   /*导航栏*/
   .nav{

@@ -18,7 +18,7 @@ export default new Router({
       component: HelloWorld
     },
     {
-      path: '/',
+      path: '/gerenzhongxin',
       name: 'Gerenzhongxin',
       component: Gerenzhongxin,
       children:[

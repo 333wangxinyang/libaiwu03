@@ -6,7 +6,7 @@ import Gerenziliao from '@/components/LYL/Gerenziliao'
 import Wodezhanghu from '@/components/LYL/Wodezhanghu'
 import Dizhiguanli from '@/components/LYL/Dizhiguanli'
 import Wodedingdan from '@/components/LYL/Wodedingdan'
-
+import X01 from '@/components/wxy/X01'
 
 Vue.use(Router)
 

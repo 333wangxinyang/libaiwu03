@@ -7,42 +7,74 @@ import Wodezhanghu from '@/components/LYL/Wodezhanghu'
 import Dizhiguanli from '@/components/LYL/Dizhiguanli'
 import Wodedingdan from '@/components/LYL/Wodedingdan'
 import X01 from '@/components/wxy/X01'
+import shouye from '@/components/wangxinyang/shouye'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
-    {
-      path: '/aa',
-      name: 'HelloWorld',
-      component: HelloWorld
-    },
+
     {
       path: '/',
-      name: 'Gerenzhongxin',
-      component: Gerenzhongxin,
-      children:[
+      name: 'shouye',
+      component: shouye,
+      redirect:'/shouye01',
+      children: [
         {
-          path: '/gerenziliao',
-          name: 'Gerenziliao',
-          component: Gerenziliao,
+          path: '/shouye01',
+          name: 'HelloWorld',
+          component: HelloWorld
         },
         {
-          path: '/wodezhanghu',
-          name: 'Wodezhanghu',
-          component: Wodezhanghu,
+          path: '/tongcheng',
+          name: 'HelloWorld',
+          component: HelloWorld
         },
         {
-          path: '/dizhiguanli',
-          name: 'Dizhiguanli',
-          component: Dizhiguanli,
+          path: '/libaiwu',
+          name: 'HelloWorld',
+          component: HelloWorld
         },
         {
-          path: '/wodedingdan',
-          name: 'Wodedingdan',
-          component: Wodedingdan,
+          path: '/jifen',
+          name: 'HelloWorld',
+          component: HelloWorld
+        },
+        {
+          path: '/daohang',
+          name: 'HelloWorld',
+          component: HelloWorld
+        },
+        {
+          path: '/grzx',
+          name: 'Gerenzhongxin',
+          component: Gerenzhongxin,
+          children:[
+            {
+              path: '/gerenziliao',
+              name: 'Gerenziliao',
+              component: Gerenziliao,
+            },
+            {
+              path: '/wodezhanghu',
+              name: 'Wodezhanghu',
+              component: Wodezhanghu,
+            },
+            {
+              path: '/dizhiguanli',
+              name: 'Dizhiguanli',
+              component: Dizhiguanli,
+            },
+            {
+              path: '/wodedingdan',
+              name: 'Wodedingdan',
+              component: Wodedingdan,
+            }
+          ]
+
         }
-      ]
+        ]
+
     }
   ]
 })

@@ -139,6 +139,7 @@
   #h_div2>a:nth-of-type(1){
     background: url("../../../static/wangxinyang/shouye02.png") 10px -20px no-repeat;
     padding-left:30px ;
+    padding-right:0px ;
   }
   #h_div2>a:nth-of-type(5){
     border-left: 0px solid #6f6f6f;

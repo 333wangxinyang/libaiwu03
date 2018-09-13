@@ -1,23 +1,24 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+<!--<x01></x01>-->
+    <x02></x02>
     <router-view/>
   </div>
 </template>
 
 <script>
+  import X01 from '@/components/wxy/X01'
+  import X02 from '@/components/wxy/X02'
 export default {
-  name: 'App'
+  name: 'App',
+  components:{
+    x01:X01,
+    x02:X02
+  }
+
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>

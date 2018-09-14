@@ -144,11 +144,11 @@
     color: #666;
   }
   .aa img{
-    width: 200px;
+    width: 128px;
     height: 184px;
     position: absolute;
     top: 40px;
-    left: 40px;
+    left: 85px;
 
   }
   .aa>span:nth-of-type(1){

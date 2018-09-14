@@ -75,7 +75,6 @@ export default new Router({
               path: '/tianjiadizhi',
               name: 'Tianjiadizhi',
               component: Tianjiadizhi,
-
             }
           ]
 

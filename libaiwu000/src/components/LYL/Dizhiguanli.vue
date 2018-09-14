@@ -5,10 +5,22 @@
         <button><router-link to="/tianjiadizhi">添加新地址</router-link></button>
       </div>
       <div class="content">
-        <div>
-          <img src="../../../static/LYLimg/pen.png" height="31" width="31"/>
+        <div class="content1">
+          <img src="static/LYLimg/pen.png"/>
           <span>暂无收货地址，请点击</span>
           <button><router-link to="/tianjiadizhi">添加新地址</router-link></button>
+        </div>
+        <div class="content2">
+          <table class="table">
+            <tr>
+              <th>收货人</th>
+              <th>所在区域</th>
+              <th>街道地址</th>
+              <th>联系电话</th>
+              <th>备注</th>
+              <th>操作</th>
+            </tr>
+          </table>
         </div>
       </div>
     </div>
@@ -16,7 +28,56 @@
 
 <script>
     export default {
-        name: "Dizhiguanli"
+        name: "Dizhiguanli",
+        data(){
+          return {
+
+          }
+        },
+        mounted(){
+
+          var dizhi = this.$route.query.obj;
+
+          if (typeof(dizhi) == "object"){
+
+            var zuoji = dizhi[4] + dizhi[5];
+            var dizhi3 = [];
+            dizhi3.push(dizhi[0],dizhi[1],dizhi[2],dizhi[3],zuoji)
+            console.log(dizhi3)
+
+            var content1 = document.getElementsByClassName('content1')
+            var content2 = document.getElementsByClassName('content2')
+            content2[0].style.display = 'block';
+            console.log(content1[0])
+            content1[0].style.display = 'none';
+            var tr = document.createElement('tr');
+            tr.style.height = '45px';
+            tr.style.lineHeight = '45px';
+            console.log(tr)
+            for (var i = 0;i < dizhi3.length+1;i++){
+              if (i == 5){
+                var th = document.createElement('th');
+                var span = document.createElement('span');
+                var span1 = document.createElement('span');
+                span.style.color = '#3d8e43';
+                span.innerHTML = '修改';
+                span.style.borderRight = 'solid 2px #999999';
+                span1.style.color = '#3d8e43';
+                span1.innerHTML = '删除';
+                th.appendChild(span);
+                th.appendChild(span1);
+                tr.appendChild(th)
+              }else {
+                var th = document.createElement('th');
+                th.innerHTML = dizhi3[i]
+                tr.appendChild(th)
+              }
+            }
+            var table = document.getElementsByClassName('table')
+            table[0].appendChild(tr)
+            console.log(table[0])
+          }
+        }
     }
 </script>
 
@@ -25,6 +86,7 @@
     height: 57px;
     border-bottom: 1px solid #ececec;
     position: relative;
+
   }
   .grzl1>p{
     display: inline;
@@ -50,10 +112,10 @@
     margin: auto;
   }
   .content{
-    height: 567px;
+    height: 568px;
     position: relative;
   }
-  .content>div{
+  .content1{
     width: 334px;
     height: 50px;
     position: absolute;
@@ -83,5 +145,20 @@
     color: #999999;
     line-height: 50px;
     margin: 0 10px;
+  }
+  .content2>table{
+    margin-top: 20px;
+    width: 95%;
+    margin-left: 2.5%;
+  }
+  .content2>table>tr{
+    height: 45px;
+    background-color: #f2f2f2;
+  }
+  .content2>table>tr>th{
+    border: 0;
+  }
+  .content2{
+    display: none;
   }
 </style>

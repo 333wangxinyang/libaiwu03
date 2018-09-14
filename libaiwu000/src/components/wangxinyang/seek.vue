@@ -5,7 +5,7 @@
         <div>
           <input type="text">
           <a href="###"></a>
-          <router-link to="/grzx">个人中心</router-link>
+          <router-link id="grzx" to="/grzx">个人中心</router-link>
           <router-link to="/gwc">购物车</router-link>
           <!--<router-link to="/grzx">购物车</router-link>-->
           <!--<a href="###"></a>-->
@@ -23,8 +23,16 @@
 </template>
 
 <script>
+  import Bus from '../../assets/bus'
     export default {
-        name: "seek"
+        name: "seek",
+      mounted(){
+        $('#grzx').click(function () {
+          Bus.$emit('change',8)
+        })
+
+
+      }
     }
 </script>
 

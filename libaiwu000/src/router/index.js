@@ -7,6 +7,8 @@ import Wodezhanghu from '@/components/LYL/Wodezhanghu'
 import Dizhiguanli from '@/components/LYL/Dizhiguanli'
 import Wodedingdan from '@/components/LYL/Wodedingdan'
 import X01 from '@/components/wxy/X01'
+import X02 from '@/components/wxy/X02'
+import X04 from '@/components/wxy/X04'
 import shouye from '@/components/wangxinyang/shouye'
 import H01gylbw from '@/components/HZH/H01gylbw'
 
@@ -16,10 +18,7 @@ export default new Router({
   routes: [
 
     {
-
-      // path: '/x04',
-
-      path: '/aaa1',
+      path: '/',
       name: 'shouye',
       component: shouye,
       redirect:'/shouye01',
@@ -40,9 +39,15 @@ export default new Router({
           component: HelloWorld
         },
         {
-          path: '/jifen',
-          name: 'HelloWorld',
-          component: HelloWorld
+          path: '/X02',
+          name: 'X02',
+          component: X02,
+
+        },
+        {
+          path: '/X04',
+          name: 'X04',
+          component: X04
         },
         {
           path: '/daohang',

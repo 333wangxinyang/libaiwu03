@@ -5,7 +5,7 @@
         <router-link @click.native="aa($event)"  to="/shouye01" :class="mm==1&&'pitchOn'" aa="1"  >首页</router-link>
         <router-link @click.native="aa($event)"  to="/tongcheng"  :class="mm==2&&'pitchOn'" aa="2">同城</router-link>
         <router-link @click.native="aa($event)" to="/libaiwu" :class="mm==3&&'pitchOn'" aa="3">礼拜五</router-link>
-        <router-link @click.native="aa($event)" to="/jifen" :class="mm==4&&'pitchOn'" aa="4">积分商城</router-link>
+        <router-link @click.native="aa($event)" to="/X02" :class="mm==4&&'pitchOn'" aa="4">积分商城</router-link>
         <router-link @click.native="aa($event)" to="/daohang" :class="mm==5&&'pitchOn'" aa="5">导航+</router-link>
 
         <span ></span>

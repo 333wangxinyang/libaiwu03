@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <!--<x05></x05>-->
     <!--<h01gylbw></h01gylbw>-->
     <!--<x01></x01>-->
     <!--<x02></x02>-->
@@ -7,7 +8,7 @@
 <!--<x01></x01>-->
     <!--<x02></x02>-->
       <!--<x03></x03>-->
-    <x04></x04>
+    <!--<x04></x04>-->
     <!--<head01></head01>-->
     <!--<head01></head01>-->
     <!--<seek></seek>-->
@@ -25,6 +26,7 @@
   import X02 from '@/components/wxy/X02'
   import X03 from '@/components/wxy/X03'
   import X04 from '@/components/wxy/X04'
+  import X05 from '@/components/wxy/X05'
   import head01 from '@/components/wangxinyang/head01'
 
 
@@ -42,6 +44,7 @@ export default {
     x02:X02,
     x03:X03,
     x04:X04,
+    x05:X05,
     seek:seek,
     navigation:navigation,
   },

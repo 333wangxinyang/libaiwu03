@@ -8,7 +8,7 @@
     <span>{{item.title1}}</span>
     <span>  积分：{{item.title2}}</span>
     <span>价值：{{item.title3}}</span>
-    <router-link to="">
+    <router-link to="/X04">
     <span class="dh">{{item.title4}}</span>
     </router-link>
   </div>
@@ -144,11 +144,11 @@
     color: #666;
   }
   .aa img{
-    width: 200px;
+    width: 128px;
     height: 184px;
     position: absolute;
     top: 40px;
-    left: 40px;
+    left: 85px;
 
   }
   .aa>span:nth-of-type(1){

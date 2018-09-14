@@ -7,8 +7,16 @@ import Wodezhanghu from '@/components/LYL/Wodezhanghu'
 import Dizhiguanli from '@/components/LYL/Dizhiguanli'
 import Wodedingdan from '@/components/LYL/Wodedingdan'
 import X01 from '@/components/wxy/X01'
+import X02 from '@/components/wxy/X02'
+import X04 from '@/components/wxy/X04'
 import shouye from '@/components/wangxinyang/shouye'
+
 import Tianjiadizhi from '@/components/LYL/Tianjiadizhi'
+
+import shouye01 from '@/components/wangxinyang/shouye01'
+import H01gylbw from '@/components/HZH/H01gylbw'
+
+
 
 Vue.use(Router)
 
@@ -16,6 +24,12 @@ export default new Router({
   routes: [
 
     {
+
+
+
+      // path: '/x04',
+
+
       path: '/',
       name: 'shouye',
       component: shouye,
@@ -23,8 +37,8 @@ export default new Router({
       children: [
         {
           path: '/shouye01',
-          name: 'HelloWorld',
-          component: HelloWorld
+          name: 'shouye01',
+          component: shouye01
         },
         {
           path: '/tongcheng',
@@ -37,9 +51,15 @@ export default new Router({
           component: HelloWorld
         },
         {
-          path: '/jifen',
-          name: 'HelloWorld',
-          component: HelloWorld
+          path: '/X02',
+          name: 'X02',
+          component: X02,
+
+        },
+        {
+          path: '/X04',
+          name: 'X04',
+          component: X04
         },
         {
           path: '/daohang',

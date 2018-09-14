@@ -1,7 +1,20 @@
 <template>
   <div id="app">
+
     <!--<x05></x05>-->
+
+
+
+
     <!--<h01gylbw></h01gylbw>-->
+
+
+    <!--<h01gylbw></h01gylbw>-->
+
+
+
+    <!--<h01gylbw></h01gylbw>-->
+
     <!--<x01></x01>-->
     <!--<x02></x02>-->
     <!--<head01></head01>-->

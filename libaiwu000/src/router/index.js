@@ -10,7 +10,9 @@ import X01 from '@/components/wxy/X01'
 import X02 from '@/components/wxy/X02'
 import X04 from '@/components/wxy/X04'
 import shouye from '@/components/wangxinyang/shouye'
+import shouye01 from '@/components/wangxinyang/shouye01'
 import H01gylbw from '@/components/HZH/H01gylbw'
+
 
 Vue.use(Router)
 
@@ -18,6 +20,12 @@ export default new Router({
   routes: [
 
     {
+
+
+
+      // path: '/x04',
+
+
       path: '/',
       name: 'shouye',
       component: shouye,
@@ -25,8 +33,8 @@ export default new Router({
       children: [
         {
           path: '/shouye01',
-          name: 'HelloWorld',
-          component: HelloWorld
+          name: 'shouye01',
+          component: shouye01
         },
         {
           path: '/tongcheng',

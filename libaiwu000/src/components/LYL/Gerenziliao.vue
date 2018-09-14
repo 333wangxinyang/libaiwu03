@@ -123,13 +123,15 @@
         },
         methods:{
           panduan(){
-            var input = document.getElementsByTagName('input')
+            var input = document.querySelectorAll('.grzl2_1 div input')
+            console.log(input)
             var str = '';
             for (var i = 0;i < this.obj.length;i++){
               str+= this.obj[i];
             }
             console.log(str)
             var val = input[3].value.split('');
+            console.log(val+'11111')
             for (var i = 0;i < val.length;i++){
               if (val[i] == 'a'){
                 val[i] = 'A'
@@ -216,8 +218,6 @@
               alert('请补全信息');
             }else if (guolv != str) {
               alert('验证码错误')
-            }else if (input[1].value != input[2].value){
-              alert('密码不相同');
             }else {
               $('.chenggong').animate({
                 opacity:'1',
@@ -244,8 +244,8 @@
       color: #666666;
     }
     .grzl2{
-      height: 568px;
-      margin: 40px;
+      height: 528px;
+      margin: 40px 0 0 40px;
       position: relative;
     }
     .grzl2_1>div>input{
@@ -293,7 +293,7 @@
     .chenggong{
       position: absolute;
       top: 50px;
-      right: 50px;
+      right: 100px;
       opacity: 0;
     }
 </style>

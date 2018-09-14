@@ -50,8 +50,77 @@
       <router-link to="">
       <span class="xx">立即兑换</span>
       </router-link>
+      <div class="last">
+        <img src="../../../static/wxy1/x-strat2.png" alt="" class="change">
+        <span>收藏此商品</span>
+        <span>分享到：</span>
+        <img src="../../../static/wxy1/x-fx1.png" alt="" class="pic">
+        <img src="../../../static/wxy1/x-fx2.png" alt="" class="pic ww1">
+        <img src="../../../static/wxy1/x-fx3.png" alt="" class="pic ww2">
+        <img src="../../../static/wxy1/x-fx4.png" alt="" class="pic ww3">
+        <img src="../../../static/wxy1/x-fx5.png" alt="" class="pic ww4">
+      </div>
     </div>
 
+  </div>
+  <div class="sp">
+  <div class="xq">
+      <span class="r1">商品详情</span>
+      <span class="r2">商品评价</span>
+  </div>
+  <div class="yy" v-for="item in arr1">
+    <span>{{item.name}}</span>
+    <p>{{item.title}}</p>
+    <p>{{item.title1}}</p>
+    <p>{{item.title3}}</p>
+    <img :src="item.pic" alt="">
+  </div>
+    <div class="ty">
+    <div class="yy1">
+      <img src="../../../static/wxy1/touxiang.png" alt="">
+      <span>158****0245</span>
+      <img src="../../../static/wxy1/x-xx1.png" alt="">
+     <p>帮同事买的，很不错，性价比高</p>
+      <img src="../../../static/wxy1/x-ren.png" alt="" class="v1 vv">
+      <img src="../../../static/wxy1/x-ren.png" alt="" class="v1 vv1">
+      <img src="../../../static/wxy1/x-ren.png" alt="" class="v1 vv2">
+      <img src="../../../static/wxy1/x-ren.png" alt="" class="v1 vv3">
+<span>2016-08-22</span>
+      <span>20:45:01</span>
+    </div>
+      <div class="yy1">
+        <img src="../../../static/wxy1/touxiang.png" alt="">
+        <span>158****0245</span>
+        <img src="../../../static/wxy1/x-xx.png" alt="">
+        <p>帮同事买的，很不错，性价比高</p>
+        <img src="../../../static/wxy1/x-ren.png" alt="" class="v1 vv">
+        <img src="../../../static/wxy1/x-ren.png" alt="" class="v1 vv1">
+        <span>2016-08-22</span>
+        <span>20:45:01</span>
+      </div>
+      <div class="yy1">
+        <img src="../../../static/wxy1/touxiang.png" alt="">
+        <span>158****0245</span>
+        <img src="../../../static/wxy1/x-xx1.png" alt="">
+        <p>帮同事买的，很不错，性价比高</p>
+        <img src="../../../static/wxy1/x-ren.png" alt="" class="v1 vv">
+        <img src="../../../static/wxy1/x-ren.png" alt="" class="v1 vv1">
+        <img src="../../../static/wxy1/x-ren.png" alt="" class="v1 vv2">
+        <img src="../../../static/wxy1/x-ren.png" alt="" class="v1 vv3">
+        <span>2016-08-22</span>
+        <span>20:45:01</span>
+      </div>
+      <div class="yy1">
+        <img src="../../../static/wxy1/touxiang.png" alt="">
+        <span>158****0245</span>
+        <img src="../../../static/wxy1/x-xx.png" alt="">
+        <p>帮同事买的，很不错，性价比高</p>
+        <img src="../../../static/wxy1/x-ren.png" alt="" class="v1 vv">
+        <img src="../../../static/wxy1/x-ren.png" alt="" class="v1 vv1">
+        <span>2016-08-22</span>
+        <span>20:45:01</span>
+      </div>
+    </div>
   </div>
 </div>
 </template>
@@ -60,12 +129,46 @@
     export default {
         name: "X04",
       data(){
-          return{
-            str:1
-          }
-
+        return {
+          arr1:[
+            {
+              name:'男士端衬衫',
+              title:'明水礼盒十分优秀，是送朋友，送情人的不二选择。',
+              title1:' 什么，您还不知道明水礼盒，今年过年不收礼，收礼只收明水礼盒，OUT了吧，赶紧买起礼盒送亲朋，送好友吧。',
+              title3:'完成交易，如有剩余库存，从新上架产品',
+              pic:'../../../static/wxy1/x-cs.png'
+            },
+            {
+              name:'男士端衬衫',
+              title:'明水礼盒十分优秀，是送朋友，送情人的不二选择。',
+              title1:' 什么，您还不知道明水礼盒，今年过年不收礼，收礼只收明水礼盒，OUT了吧，赶紧买起礼盒送亲朋，送好友吧。',
+              title3:'完成交易，如有剩余库存，从新上架产品',
+              pic:'../../../static/wxy1/x-cs.png'
+            }
+          ],
+          str:1
+        }
       },
       mounted(){
+
+         $('.r2').click(function () {
+           $('.yy').css({display:'none'});
+           $('.ty').css({display:'block'});
+         });
+         $('.r1').click(function () {
+           $('.yy').css({display:'block'});
+           $('.ty').css({display:'none'});
+         });
+var a=true;
+        $('.change').click(function () {
+          if (a==true){
+            $('.change').attr({src:'../../../static/wxy1/x-start1.png'});
+            a=false;
+          }else {
+            $('.change').attr({src:'../../../static/wxy1/x-strat2.png'});
+            a=true;
+          }
+        })
 
         $(document).ready(function(){
 
@@ -362,7 +465,9 @@
 }
   .title{
     width: 100%;
+    position: relative;
     height: 30px;
+    top: 0;
     background-color: #f4f4f4;
   }
   .title span{
@@ -397,7 +502,7 @@ a:active{color:#1d7400;}
 /* clearfix */
 .clearfix:after{ visibility:hidden; display:block; font-size:0; content:" "; clear:both; height:0;}
 *html .clearfix{ zoom:1;}
-.preview{width:500px; height:500px;position: absolute;
+.preview{width:500px; height:500px;position: relative;
   top: 30px;
 }
 /* smallImg */
@@ -424,17 +529,19 @@ a:active{color:#1d7400;}
 #bigView img{position:absolute; }
   .fdj{
     width: 1280px;
-    position: absolute;
-    top: 10px;
+    position: relative;
+    top: 0;
+    /*border: 1px solid #f00;*/
     margin: 0 auto;
+    height: 430px;
   }
   .right{
     width: 860px;
-height: 370px;
+height: 380px;
     position: absolute;
     top: 30px;
     right: 90px;
-    border: 2px solid black;
+    /*border: 2px solid black;*/
   }
   .right>span:nth-of-type(1){
     position: absolute;
@@ -443,11 +550,11 @@ height: 370px;
   }
   .tt{
 width: 750px;
-    height: 150px;
+    height: 140px;
     border-top: 1px solid #666;
     border-bottom: 1px solid #666;
     position: relative;
-    top: 50px;
+    top: 40px;
     left: 10px;
   }
   .tt img{
@@ -476,26 +583,26 @@ width: 750px;
   }
 .right>span:nth-of-type(2){
   position: absolute;
-  bottom: 130px;
+  bottom: 160px;
   left: 20px;
   color: #f00;
   font-size: 20px;
 }
 .right>span:nth-of-type(3){
   position: absolute;
-  bottom: 130px;
+  bottom: 160px;
   left:140px;
 }
 .right>span:nth-of-type(4){
   position: absolute;
-  bottom: 100px;
+  bottom: 130px;
   left: 20px;
   display: block;
 }
   .aa{
     display: block;
     position: absolute;
-    bottom: 100px;
+    bottom: 130px;
     left: 120px;
     width: 50px;
     height: 20px;
@@ -504,7 +611,7 @@ width: 750px;
   .bb{
     display: block;
     position: absolute;
-    bottom: 60px;
+    bottom: 90px;
     left: 120px;
     width: 50px;
     height: 20px;
@@ -521,22 +628,22 @@ width: 750px;
 }
   .right>span:nth-of-type(8){
     position: absolute;
-    bottom: 60px;
+    bottom: 90px;
     left: 20px;
   }
   .right>span:nth-of-type(11){
     position: absolute;
-    bottom: 35px;
+    bottom: 55px;
     left: 20px;
   }
 .right>span:nth-of-type(12){
   position: absolute;
-  bottom: 30px;
+  bottom: 55px;
   left: 60px;
   display: block;
   width: 150px;
   height: 25px;
-  border:1px solid #0ff;
+  border:1px solid #666;
   text-align: center;
 }
   .cc>button{
@@ -556,13 +663,166 @@ width: 750px;
   }
 .xx{
   position: absolute;
-  bottom: 30px;
+  bottom: 55px;
   left:240px;
   display: block;
   width: 100px;
   height: 25px;
   background-color: #f08200;
   text-align: center;
-
+line-height: 25px;
+  color: #fff;
+}
+  .last{
+    position: absolute;
+    position: absolute;
+    bottom: 5px;
+    right: 200px;
+    width: 400px;
+    height: 40px;
+    /*border: 1px solid #666;*/
+  }
+.change{
+  position: absolute;
+  top: 10px;
+  left: 0;
+}
+  .last>span:nth-of-type(1){
+    position: absolute;
+    top: 10px;
+    left: 30px;
+  }
+.last>span:nth-of-type(2){
+  position: absolute;
+  top: 10px;
+  left: 120px;
+}
+  .pic{
+    width: 20px;
+    height: 20px;
+position: absolute;
+    top: 10px;
+    right: 200px;
+  }
+  .ww1{
+     right: 170px;
+   }
+.ww2{
+  right: 140px;
+}
+.ww3{
+  right: 110px;
+}
+.ww4{
+  right: 80px;
+}
+.xq{
+  position: relative;
+  top: 0;
+  width: 1280px;
+height: 30px;
+  background-color: #666;
+}
+.r1{
+  position: absolute;
+  top: 5px;
+  left: 10px;
+}
+.r2{
+  position: absolute;
+  top: 5px;
+  left: 80px;
+}
+.yy{
+  width: 1280px;
+  height:400px;
+  position: relative;
+  top: 0;
+  border-left: 1px solid #666;
+  border-right: 1px solid #666;
+}
+.yy span{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color:#f08200 ;
+}
+.yy>p:nth-of-type(1){
+  position: absolute;
+  top: 35px;
+  left: 10px;
+}
+.yy>p:nth-of-type(2){
+  position: absolute;
+  top: 55px;
+  left: 10px;
+}
+.yy>p:nth-of-type(3){
+  position: absolute;
+  top: 75px;
+  left: 10px;
+}
+.yy img{
+  position: absolute;
+  top: 110px;
+  left: 10px;
+}
+  .yy1{
+    width: 100%;
+    height: 150px;
+    position: relative;
+    top: 0;
+    border: 1px solid #666;
+    border-top: transparent;
+  }
+  .yy1>img:nth-of-type(1){
+    position: absolute;
+    top: 20px;
+    left: 10px;
+  }
+  .yy1>span:nth-of-type(1){
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+  }
+.yy1>span:nth-of-type(2){
+  position: absolute;
+  top: 10px;
+  right: 170px;
+}
+.yy1>span:nth-of-type(3){
+  position: absolute;
+  top: 10px;
+  right: 100px;
+}
+.yy1>img:nth-of-type(2){
+  position: absolute;
+  top: 30px;
+  left: 130px;
+}
+.yy1 p{
+  position: absolute;
+  top: 50px;
+  left: 130px;
+}
+.ty{
+width: 1280px;
+  position: relative;
+  top: 0;
+  display: none;
+  }
+.v1{
+  position: absolute;
+  top: 80px;
+  left: 130px;
+}
+  .vv1{
+    left: 200px;
+  }
+.vv2{
+  left: 270px;
+}
+.vv3{
+  left: 340px;
 }
 </style>

@@ -8,6 +8,7 @@ import Dizhiguanli from '@/components/LYL/Dizhiguanli'
 import Wodedingdan from '@/components/LYL/Wodedingdan'
 import X01 from '@/components/wxy/X01'
 import shouye from '@/components/wangxinyang/shouye'
+import Tianjiadizhi from '@/components/LYL/Tianjiadizhi'
 
 Vue.use(Router)
 
@@ -69,6 +70,12 @@ export default new Router({
               path: '/wodedingdan',
               name: 'Wodedingdan',
               component: Wodedingdan,
+            },
+            {
+              path: '/tianjiadizhi',
+              name: 'Tianjiadizhi',
+              component: Tianjiadizhi,
+
             }
           ]
 

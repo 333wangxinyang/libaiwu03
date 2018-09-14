@@ -4,7 +4,7 @@
       <remai></remai>
       <shouye01libaiwu></shouye01libaiwu>
       <shouyeshangpin></shouyeshangpin>
-      <foot></foot>
+
     </div>
 </template>
 

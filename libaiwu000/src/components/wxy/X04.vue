@@ -151,6 +151,14 @@
       },
       mounted(){
 
+          $('.aa').click(function () {
+           $('.aa').css({backgroundColor:'#fff'});
+           $(this).css({backgroundColor:'#f4fff2'})
+          });
+        $('.bb').click(function () {
+          $('.bb').css({backgroundColor:'#fff'});
+          $(this).css({backgroundColor:'#f4fff2'})
+        });
          $('.r2').click(function () {
            $('.yy').css({display:'none'});
            $('.ty').css({display:'block'});
@@ -531,7 +539,6 @@ a:active{color:#1d7400;}
     width: 1280px;
     position: relative;
     top: 0;
-    /*border: 1px solid #f00;*/
     margin: 0 auto;
     height: 430px;
   }
@@ -541,7 +548,6 @@ height: 380px;
     position: absolute;
     top: 30px;
     right: 90px;
-    /*border: 2px solid black;*/
   }
   .right>span:nth-of-type(1){
     position: absolute;
@@ -551,8 +557,8 @@ height: 380px;
   .tt{
 width: 750px;
     height: 140px;
-    border-top: 1px solid #666;
-    border-bottom: 1px solid #666;
+    border-top: 1px solid #ededed;
+    border-bottom: 1px solid #ededed;
     position: relative;
     top: 40px;
     left: 10px;
@@ -579,13 +585,13 @@ width: 750px;
     position: absolute;
     left: 140px;
     top: 30px;
-    color: #666;
+    color: #666666;
   }
 .right>span:nth-of-type(2){
   position: absolute;
   bottom: 160px;
   left: 20px;
-  color: #f00;
+  color: #ff5757;
   font-size: 20px;
 }
 .right>span:nth-of-type(3){
@@ -606,7 +612,9 @@ width: 750px;
     left: 120px;
     width: 50px;
     height: 20px;
-    border: 1px solid #666;
+    border: 1px solid #d4d4d4;
+    text-align: center;
+    line-height: 20px;
   }
   .bb{
     display: block;
@@ -615,7 +623,9 @@ width: 750px;
     left: 120px;
     width: 50px;
     height: 20px;
-    border: 1px solid #666;
+    border: 1px solid #d4d4d4;
+    text-align: center;
+    line-height: 20px;
   }
   .aa1{
     left: 180px;
@@ -643,7 +653,7 @@ width: 750px;
   display: block;
   width: 150px;
   height: 25px;
-  border:1px solid #666;
+  border:1px solid #d4d4d4;
   text-align: center;
 }
   .cc>button{
@@ -653,10 +663,12 @@ width: 750px;
 .cc>button:nth-of-type(1){
   position: absolute;
   left: 0;
+  font-size: 20px;
 }
   .cc>button:nth-of-type(2){
     position: absolute;
     right: 0;
+    font-size: 20px;
   }
   .right a{
     color: #666;
@@ -721,7 +733,7 @@ position: absolute;
   top: 0;
   width: 1280px;
 height: 30px;
-  background-color: #666;
+  background-color: #f4f4f4;
 }
 .r1{
   position: absolute;
@@ -738,8 +750,8 @@ height: 30px;
   height:400px;
   position: relative;
   top: 0;
-  border-left: 1px solid #666;
-  border-right: 1px solid #666;
+  border-left: 1px solid #d4d4d4;
+  border-right: 1px solid #d4d4d4;
 }
 .yy span{
   position: absolute;
@@ -772,7 +784,7 @@ height: 30px;
     height: 150px;
     position: relative;
     top: 0;
-    border: 1px solid #666;
+    border: 1px solid #d4d4d4;
     border-top: transparent;
   }
   .yy1>img:nth-of-type(1){

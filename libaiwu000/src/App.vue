@@ -29,7 +29,12 @@
   import X02 from '@/components/wxy/X02'
   import head01 from '@/components/wangxinyang/head01'
 
+
   import H01gylbw from '@/components/HZH/H01gylbw'
+
+  import seek from '@/components/wangxinyang/seek'
+  import navigation from '@/components/wangxinyang/navigation'
+
 
   import seek from '@/components/wangxinyang/seek'
   import navigation from '@/components/wangxinyang/navigation'
@@ -38,12 +43,13 @@ export default {
   name: 'App',
   components:{
     head01:head01,
-    h01gylbw:H01gylbw,
     x01:X01,
     x02:X02,
     seek:seek,
     navigation:navigation,
   },
+
+
 
 
 

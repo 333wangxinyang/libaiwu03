@@ -97,6 +97,8 @@
   position: absolute;
   left: 0;
   top: 50px;
+  z-index: 10;
+  background: #fff;
 }
 #n_div2 li{
   display: block;
@@ -107,7 +109,7 @@
   color: #737373;
   font-size:18px ;
   border-bottom: 1px solid #efeeec;
-  padding: 12px 0;
+  padding: 14px 0;
   padding-left: 30px;
 
 }
@@ -119,7 +121,7 @@
   font-size: 16px;
 }
 #n_div2 li:nth-of-type(1){
-  border-top: 1px solid #efeeec;
+  border-top: 4px solid #efeeec;
   background: url("../../../static/wangxinyang/shouye02.png") 0px -160px content-box no-repeat content-box;
 }
 #n_div2 li:nth-of-type(2){
@@ -144,6 +146,8 @@
   background: url("../../../static/wangxinyang/shouye02.png") 0px -340px content-box no-repeat content-box;
 }
 #n_div2 li:nth-of-type(9){
+  /*padding-bottom:  3px solid #efeeec !important;*/
+  border-bottom: 2px solid #efeeec;
   background: url("../../../static/wangxinyang/shouye02.png") 0px -370px content-box no-repeat content-box;
 }
 </style>

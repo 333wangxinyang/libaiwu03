@@ -8,7 +8,7 @@ import Dizhiguanli from '@/components/LYL/Dizhiguanli'
 import Wodedingdan from '@/components/LYL/Wodedingdan'
 import X01 from '@/components/wxy/X01'
 import shouye from '@/components/wangxinyang/shouye'
-
+import shouye01 from '@/components/wangxinyang/shouye01'
 Vue.use(Router)
 
 export default new Router({
@@ -23,8 +23,8 @@ export default new Router({
       children: [
         {
           path: '/shouye01',
-          name: 'HelloWorld',
-          component: HelloWorld
+          name: 'shouye01',
+          component: shouye01
         },
         {
           path: '/tongcheng',

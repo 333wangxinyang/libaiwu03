@@ -26,8 +26,14 @@
   import X03 from '@/components/wxy/X03'
   import X04 from '@/components/wxy/X04'
   import head01 from '@/components/wangxinyang/head01'
+
+
+  import H01gylbw from '@/components/HZH/H01gylbw'
+
   import seek from '@/components/wangxinyang/seek'
   import navigation from '@/components/wangxinyang/navigation'
+
+
 export default {
   name: 'App',
   components:{
@@ -40,8 +46,18 @@ export default {
     navigation:navigation,
   },
 
+
+
+
+
+
+
 }
 </script>
 
 <style>
+
+
+
+
 </style>

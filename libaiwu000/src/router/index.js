@@ -15,7 +15,7 @@ export default new Router({
   routes: [
 
     {
-      path: '/',
+      path: '/x04',
       name: 'shouye',
       component: shouye,
       redirect:'/shouye01',

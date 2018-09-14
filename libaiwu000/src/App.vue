@@ -1,22 +1,14 @@
 <template>
   <div id="app">
-    <h01gylbw></h01gylbw>
-
+    <!--<h01gylbw></h01gylbw>-->
     <!--<x01></x01>-->
     <!--<x02></x02>-->
     <!--<head01></head01>-->
-
-
-
-
-
 <!--<x01></x01>-->
     <!--<x02></x02>-->
       <!--<x03></x03>-->
     <x04></x04>
     <!--<head01></head01>-->
-
-
     <!--<head01></head01>-->
     <!--<seek></seek>-->
     <!--<navigation></navigation>-->

@@ -18,15 +18,23 @@
       <div id="sylbw_div2">
         <div class="swiper-container" id="sss">
           <div class="swiper-wrapper">
-            <div class="swiper-slide">
+            <div class="swiper-slide" v-for="(aa,index) in arrLb">
+              <ul>
+                <li v-for="(bb,index) in aa.arr0">
+                  <img :src="bb.src" alt="">
+                  <p>{{bb.name}}</p>
+                  <p>{{bb.guige}}</p>
+                  <span>礼拜五价：</span>
+                  <span>￥{{bb.jg}}</span>
+                </li>
 
+              </ul>
 
             </div>
-            <div class="swiper-slide"></div>
-            <div class="swiper-slide"></div>
+
           </div>
           <!-- 如果需要分页器 -->
-          <div class="swiper-pagination"></div>
+          <div class="swiper-pagination" id="fyq"></div>
 
         </div>
       </div>
@@ -42,6 +50,31 @@
             h:0,
             m:0,
             s:0,
+            arrLb:[{ arr0:[
+                {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/s01.png',jg:'28.80',guige:'6个装'},
+                {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/s02.png',jg:'28.80',guige:'6个装'},
+                {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/s03.png',jg:'28.80',guige:'6个装'},
+                {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/s04.png',jg:'28.80',guige:'6个装'},
+              ]},
+              { arr0:[
+                  {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/s01.png',jg:'28.80',guige:'6个装'},
+                  {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/s02.png',jg:'28.80',guige:'6个装'},
+                  {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/s03.png',jg:'28.80',guige:'6个装'},
+                  {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/s04.png',jg:'28.80',guige:'6个装'},
+                ]},
+              { arr0:[
+                  {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/s01.png',jg:'28.80',guige:'6个装'},
+                  {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/s02.png',jg:'28.80',guige:'6个装'},
+                  {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/s03.png',jg:'28.80',guige:'6个装'},
+                  {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/s04.png',jg:'28.80',guige:'6个装'},
+                ]},
+              { arr0:[
+                  {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/s01.png',jg:'28.80',guige:'6个装'},
+                  {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/s02.png',jg:'28.80',guige:'6个装'},
+                  {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/s03.png',jg:'28.80',guige:'6个装'},
+                  {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/s04.png',jg:'28.80',guige:'6个装'},
+                ]}],
+
           }
       },
       methods:{
@@ -88,6 +121,61 @@
 </script>
 
 <style scoped>
+  #fyq{
+    bottom: 40px;
+  }
+  #sylbw_div2 ul{
+    margin-top:25px ;
+    margin-bottom: 90px;
+    width: 1280px;
+    display: flex;
+    justify-content: space-between;
+    height: 430px;
+  }
+  #sylbw_div2 ul>li{
+    width: 305px;
+    height: 430px;
+    background: #f8f6f7;
+    position: relative;
+  }
+  #sylbw_div2 ul>li>img{
+    /*width: 305px;*/
+    /*height: 430px;*/
+    /*background: #f8f6f7;*/
+    position: absolute;
+  }
+  #sylbw_div2 ul>li>p:nth-of-type(1){
+   font-size: 18px;
+    position: absolute;
+    text-align: center;
+    top: 315px;
+    width: 100%;
+    color: #333333;
+  }
+  #sylbw_div2 ul>li>p:nth-of-type(2){
+    font-size: 18px;
+    position: absolute;
+    text-align: center;
+    top: 345px;
+    width: 100%;
+    color: #838383;
+  }
+  #sylbw_div2 ul>li>span:nth-of-type(1){
+    font-size: 18px;
+    position: absolute;
+    /*text-align: center;*/
+    bottom: 30px;
+    left: 60px;
+    color: #f08200;
+  }
+  #sylbw_div2 ul>li>span:nth-of-type(2){
+    font-size: 20px;
+    position: absolute;
+    bottom: 30px;
+    left: 150px;
+    color: #ff5757;
+  }
+
 #sylbw{
   width: 1280px;
   margin: 0 auto;

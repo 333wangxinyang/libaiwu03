@@ -46,13 +46,13 @@
 
 }
 .swiper-slide:nth-of-type(1){
-  background: url("../../../static/wangxinyang/lb01.png") 0px 0px no-repeat;
+  background: url("../../../static/wangxinyang/lb01.png") 0px 0px/cover no-repeat;
 }
   .swiper-slide:nth-of-type(2){
-    background: url("../../../static/wangxinyang/lb01.png") 0px 0px no-repeat;
+    background: url("../../../static/wangxinyang/lb01.png") 0px 0px/cover no-repeat;
   }
 .swiper-slide:nth-of-type(3){
-  background: url("../../../static/wangxinyang/lb01.png") 0px 0px no-repeat;
+  background: url("../../../static/wangxinyang/lb01.png") 0px 0px/cover no-repeat;
 }
 .swiper-slide:nth-of-type(4){
   background: url("../../../static/wangxinyang/lb01.png") 0px 0px no-repeat;

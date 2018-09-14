@@ -1,240 +1,115 @@
 <template>
-  <div class="content">
-    <!--导航栏-->
-    <div class="nav">
-      <div class="nav1">
-        <p>个人中心</p>
-      </div>
-      <div class="nav2">
-        <ul>
-          <li class="max"><a href="###">交易管理<span>></span></a></li>
-          <li><router-link to="/wodezhanghu">我的账户</router-link></li>
-          <li><router-link to="/wodedingdan">我的订单</router-link></li>
-          <li><a href="###">我的积分</a></li>
-          <li><a href="###">积分订单</a></li>
-          <li><a href="###">我的钱包</a></li>
-          <li class="max"><a href="###">会员资料<span>></span></a></li>
-          <li><router-link to="/gerenziliao">个人资料</router-link></li>
-          <li><router-link to="/dizhiguanli">地址管理</router-link></li>
-          <li><a href="###">我的收藏</a></li>
-          <li><a href="###">最近浏览</a></li>
-          <li><a href="###">修改密码</a></li>
-          <li class="max"><a href="###">站内信<span>></span></a></li>
-          <li><a href="###">我的消息</a></li>
-          <li><a href="###">意见反馈</a></li>
-        </ul>
-      </div>
+
+  <div id="h01box">
+    <div id="h01div1">
+      <span>您当前的位置 : </span> <a href="">首页</a> > <a href="">礼拜五商城</a> > <a href="">新用户注册</a>
     </div>
-    <div class="body">
-      <router-view></router-view>
+
+    <div id="h01div2">
+      <div><p>礼拜五商城</p></div>
+      <ul id="h01ul1">
+        <li><a href="" class="h01class1">关于礼拜五  <span>></span></a></li>
+        <li><a href="">新用户注册</a></li>
+        <li><a href="">在线下单</a></li>
+        <li><a href="">支付方式</a></li>
+        <li><a href="" class="h01class1">配送说明  <span>></span></a></li>
+        <li><a href="">运费说明</a></li>
+        <li><a href="">配送方式</a></li>
+        <li><a href="">发票说明</a></li>
+        <li><a href="" class="h01class1">售后服务 <span>></span></a></li>
+        <li><a href="">退换货原则</a></li>
+        <li><a href="">服务保障承诺</a></li>
+        <li><a href="">验货与签收</a></li>
+        <li><a href="">发票说明</a></li>
+        <li><a href="" class="h01class1">加盟礼拜五  <span>></span> </a></li>
+        <li><a href="">加盟条款</a></li>
+        <li><a href="">公司简介</a></li>
+        <li><a href="">服务协议</a></li>
+      </ul>
     </div>
+
+
+
+
   </div>
+
+
 </template>
 
 <script>
   export default {
-    name: "Gerenzhongxin",
-    data(){
+    name: "H01gylbw",
+    data() {
       return {
 
       }
     },
-    mounted(){
-      $('.nav2 ul li a').click(function () {
-        console.log($('.nav2 ul li a')[0])
-        for (var i = 0;i < $('.nav2 ul li a').length;i++){
-          if(this!=$('.nav2 ul li a')[0] || this!=$('.nav2 ul li a')[6] || this!=$('.nav2 ul li a')[12]){
-            $('.nav2 ul li a')[0].style.color = '#666666';
-            $('.nav2 ul li a')[6].style.color = '#666666';
-            $('.nav2 ul li a')[12].style.color = '#666666';
-          }
-          $('.nav2 ul li a')[i].style.borderBottom = '0';
-          $('.nav2 ul li a')[i].style.color = '#999999';
-        }
-        this.style.borderBottom = '#63a365 solid 1px';
-        this.style.color = '#63a365'
-      })
-    }
   }
 </script>
 
 <style scoped>
-  .content{
-    margin-top: 40px;
-    width: 1280px;
-  }
-  /*导航栏*/
-  .nav{
-    width: 170px;
-    height: 625px;
-    float: left;
-    border: solid #ececec 1px;
-  }
-  .body{
-    width: 1087px;
-    /*height: 625px;*/
-    float: right;
-    border: solid #ececec 1px;
-  }
-  .nav1{
-    height: 57px;
-    border-bottom: 1px solid #ececec;
-  }
-  .nav1>p{
-    line-height: 57px;
-    margin-left: 20px;
-    font-size: 17px;
-    color: #666666;
-  }
-  .nav2{
-    height: 567px;
-    overflow: hidden;
-  }
-  .nav2>ul{
-    margin: 20px 0;
-    height: 527px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  .nav2>ul>li>a{
-    display: inline;
-    margin-left: 20px;
-    font-size: 15px;
-    color: #999999;
-  }
-  .nav2>ul>li{
-    display: inline;
-  }
-  .nav2>ul>li>a>span{
-    float: right;
-    margin-right: 48px;
-  }
-  .nav2>ul>.max>a{
-    font-size: 18px;
-    color:#666666;
-  }
-  .nav2>ul>.max>a>span{
-    font-size: 16px;
-  }
-</style>
-<template>
-  <div class="content">
-    <!--导航栏-->
-    <div class="nav">
-      <div class="nav1">
-        <p>个人中心</p>
-      </div>
-      <div class="nav2">
-        <ul>
-          <li class="max"><a href="###">交易管理<span>></span></a></li>
-          <li><router-link to="/wodezhanghu">我的账户</router-link></li>
-          <li><router-link to="/wodedingdan">我的订单</router-link></li>
-          <li><a href="###">我的积分</a></li>
-          <li><a href="###">积分订单</a></li>
-          <li><a href="###">我的钱包</a></li>
-          <li class="max"><a href="###">会员资料<span>></span></a></li>
-          <li><router-link to="/gerenziliao">个人资料</router-link></li>
-          <li><router-link to="/dizhiguanli">地址管理</router-link></li>
-          <li><a href="###">我的收藏</a></li>
-          <li><a href="###">最近浏览</a></li>
-          <li><a href="###">修改密码</a></li>
-          <li class="max"><a href="###">站内信<span>></span></a></li>
-          <li><a href="###">我的消息</a></li>
-          <li><a href="###">意见反馈</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="body">
-      <router-view></router-view>
-    </div>
-  </div>
-</template>
 
-<script>
-  export default {
-    name: "Gerenzhongxin",
-    data(){
-      return {
-
-      }
-    },
-    mounted(){
-      $('.nav2 ul li a').click(function () {
-        console.log($('.nav2 ul li a')[0])
-        for (var i = 0;i < $('.nav2 ul li a').length;i++){
-          if(this!=$('.nav2 ul li a')[0] || this!=$('.nav2 ul li a')[6] || this!=$('.nav2 ul li a')[12]){
-            $('.nav2 ul li a')[0].style.color = '#666666';
-            $('.nav2 ul li a')[6].style.color = '#666666';
-            $('.nav2 ul li a')[12].style.color = '#666666';
-          }
-          $('.nav2 ul li a')[i].style.borderBottom = '0';
-          $('.nav2 ul li a')[i].style.color = '#999999';
-        }
-        this.style.borderBottom = '#63a365 solid 1px';
-        this.style.color = '#63a365'
-      })
+    #h01box{
+      width: 1280px;
+      margin: 20px auto;
+      position: relative;
     }
+  #h01div1{
+    background-color:rgb(230,230,230);
+    width: 100%;
+    height: 46px;
+    line-height: 46px;
+    margin-bottom: 20px;
   }
-</script>
+    #h01div1>span{
+      margin-left: 20px;
+      color: #666;
+    }
+    #h01div1>a{
+      color: #666;
+    }
+    #h01div1>a:nth-of-type(3){
+      color: #63a365;
+    }
 
-<style scoped>
-  .content{
-    margin-top: 40px;
-    width: 1280px;
-  }
-  /*导航栏*/
-  .nav{
-    width: 170px;
-    height: 625px;
-    float: left;
-    border: solid #ececec 1px;
-  }
-  .body{
-    width: 1087px;
-    /*height: 625px;*/
-    float: right;
-    border: solid #ececec 1px;
-  }
-  .nav1{
-    height: 57px;
-    border-bottom: 1px solid #ececec;
-  }
-  .nav1>p{
-    line-height: 57px;
-    margin-left: 20px;
-    font-size: 17px;
-    color: #666666;
-  }
-  .nav2{
-    height: 567px;
-    overflow: hidden;
-  }
-  .nav2>ul{
-    margin: 20px 0;
-    height: 527px;
-    display: flex;
+    #h01div2{
+      border: solid 1px #ececec;
+      height: 710px;
+      width: 170px;
+      display: inline-block;
+    }
+    #h01div2>div{
+      width: 100%;
+      height: 60px;
+      border-bottom: solid 1px #ececec;
+      font-size: 24px;
+      line-height: 60px;
+      color: #666;
+    }
+    #h01div2>div>p{
+      margin-left: 20px;
+    }
+
+  #h01ul1{
+    width: 100%;
+    height: 650px;
+    display:flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
   }
-  .nav2>ul>li>a{
-    display: inline;
-    margin-left: 20px;
-    font-size: 15px;
-    color: #999999;
-  }
-  .nav2>ul>li{
-    display: inline;
-  }
-  .nav2>ul>li>a>span{
-    float: right;
-    margin-right: 48px;
-  }
-  .nav2>ul>.max>a{
+    #h01ul1>li{
+      width: 100%;
+    }
+    #h01ul1>li>a{
+      margin-left: 20px;
+      color: #999;
+    }
+  .h01class1{
     font-size: 18px;
-    color:#666666;
+    color: #666 !important;
   }
-  .nav2>ul>.max>a>span{
-    font-size: 16px;
+  .h01class1>span{
+    float: right;
+    margin-right: 30px;
   }
 </style>

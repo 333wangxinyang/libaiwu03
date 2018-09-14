@@ -8,6 +8,7 @@ import Dizhiguanli from '@/components/LYL/Dizhiguanli'
 import Wodedingdan from '@/components/LYL/Wodedingdan'
 import X01 from '@/components/wxy/X01'
 import shouye from '@/components/wangxinyang/shouye'
+import H01gylbw from '@/components/HZH/H01gylbw'
 
 Vue.use(Router)
 
@@ -15,7 +16,7 @@ export default new Router({
   routes: [
 
     {
-      path: '/',
+      path: '/aaa1',
       name: 'shouye',
       component: shouye,
       redirect:'/shouye01',

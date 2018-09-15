@@ -5,7 +5,7 @@
         <button>查看订单</button>
       </div>
       <div class="body">
-        <input type="text" onkeydown="return noNumbers(event)" placeholder="请输入充值卡兑换码进行充值" maxlength="11"><br>
+        <input type="text" onkeyup="value=value.replace(/[^\d]/g,'')" placeholder="请输入充值卡兑换码进行充值" maxlength="11"><br>
         <button>充值</button>
       </div>
     </div>

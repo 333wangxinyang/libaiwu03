@@ -15,6 +15,7 @@ import shouye from '@/components/wangxinyang/shouye'
 import Tianjiadizhi from '@/components/LYL/Tianjiadizhi'
 
 import shouye01 from '@/components/wangxinyang/shouye01'
+import tongcheng from '@/components/wangxinyang/tongcheng'
 import H01gylbw from '@/components/HZH/H01gylbw'
 import Dingdanbianhao from '@/components/LYL/Dingdanbianhao'
 import Daifukuan from '@/components/LYL/Daifukuan'
@@ -47,8 +48,8 @@ export default new Router({
         },
         {
           path: '/tongcheng',
-          name: 'HelloWorld',
-          component: HelloWorld
+          name: 'tongcheng',
+          component: tongcheng
         },
         {
           path: '/libaiwu',

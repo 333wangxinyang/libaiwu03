@@ -38,6 +38,7 @@
 </template>
 
 <script>
+  import Bus from '../../assets/bus'
     export default {
         name: "navigation",
       data(){
@@ -53,6 +54,9 @@
         }
       },
       methods:{
+
+
+
         celan(){
           $("#n_div2").slideToggle(1000);
 
@@ -72,6 +76,11 @@
 
       },
       mounted(){
+
+
+        Bus.$on('change',function (n) {
+          this.mm = n ;
+        }.bind(this));
 $('#n_ul01>li>a').click(function () {
   $('#n_ul01>li>a').css({
     backgroundImage:"url('../../../static/wangxinyang/jingliang02.png')",

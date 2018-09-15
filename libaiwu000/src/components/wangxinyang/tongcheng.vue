@@ -20,33 +20,31 @@
       <span>销量</span>
     </div>
     <div id="t_div3">
-      <ul>
-        <li>
-          <img src="../../../static/wangxinyang/tcsp01.png" alt="">
-          <p>阳澄湖大闸蟹</p>
+      <ul v-for="(aa,index) in arr" v-if="aa.bol">
+        <li v-for="(bb,index1) in aa.arr1">
+          <a href="###">
+          <img :src="bb.src" alt="">
+          <p>{{bb.name}}</p>
           <span>
             <img src="../../../static/wangxinyang/xxa.png" alt="">
           </span>
-          <span>
-            <img src="../../../static/wangxinyang/XXL.png" alt="">
+          <span :style="'width:'+25*bb.pj + 'px'">
+            <img width="" src="../../../static/wangxinyang/XXL.png" alt="">
           </span>
-          <span>￥62/人</span>
-          <p>浙江省台州市温岭市人民西路2号</p>
-        </li>
-        <li>
-          <img src="../../../static/wangxinyang/tcsp02.png" alt="">
-        </li>
-        <li>
-          <img src="../../../static/wangxinyang/tcsp03.png" alt="">
-        </li>
-        <li>
-          <img src="../../../static/wangxinyang/tcsp04.png" alt="">
+          <span>{{bb.jg}}</span>
+          <p>{{bb.dq}}</p>
+          </a>
         </li>
       </ul>
 
 
     </div>
-
+    <div class="box">
+      <div id="pagination2" class="page fl"></div>
+      <!--<div class="info fl">-->
+        <!--<p>当前页数：<span id="current2">3</span></p>-->
+      <!--</div>-->
+    </div>
   </div>
 
 </template>
@@ -68,9 +66,41 @@
           src1:true,
           src2:false,
           arr:[
-            [],
-            [],
-            []
+            {bol:true,arr1:[
+                {src:'../../../static/wangxinyang/tcsp01.png',name:'阳澄湖大闸蟹',jg:'￥62/人',dq:'浙江省台州市温岭市人民西路2号',pj:1},
+                {src:'../../../static/wangxinyang/tcsp01.png',name:'阳澄湖大闸蟹',jg:'￥62/人',dq:'浙江省台州市温岭市人民西路2号',pj:2},
+                {src:'../../../static/wangxinyang/tcsp01.png',name:'阳澄湖大闸蟹',jg:'￥62/人',dq:'浙江省台州市温岭市人民西路2号',pj:3},
+                {src:'../../../static/wangxinyang/tcsp01.png',name:'阳澄湖大闸蟹',jg:'￥62/人',dq:'浙江省台州市温岭市人民西路2号',pj:4},
+                {src:'../../../static/wangxinyang/tcsp01.png',name:'阳澄湖大闸蟹',jg:'￥62/人',dq:'浙江省台州市温岭市人民西路2号',pj:1},
+                {src:'../../../static/wangxinyang/tcsp01.png',name:'阳澄湖大闸蟹',jg:'￥62/人',dq:'浙江省台州市温岭市人民西路2号',pj:2},
+                {src:'../../../static/wangxinyang/tcsp01.png',name:'阳澄湖大闸蟹',jg:'￥62/人',dq:'浙江省台州市温岭市人民西路2号',pj:3},
+                {src:'../../../static/wangxinyang/tcsp01.png',name:'阳澄湖大闸蟹',jg:'￥62/人',dq:'浙江省台州市温岭市人民西路2号',pj:4},
+                {src:'../../../static/wangxinyang/tcsp01.png',name:'阳澄湖大闸蟹',jg:'￥62/人',dq:'浙江省台州市温岭市人民西路2号',pj:1},
+                {src:'../../../static/wangxinyang/tcsp01.png',name:'阳澄湖大闸蟹',jg:'￥62/人',dq:'浙江省台州市温岭市人民西路2号',pj:2},
+                {src:'../../../static/wangxinyang/tcsp01.png',name:'阳澄湖大闸蟹',jg:'￥62/人',dq:'浙江省台州市温岭市人民西路2号',pj:3},
+                {src:'../../../static/wangxinyang/tcsp01.png',name:'阳澄湖大闸蟹',jg:'￥62/人',dq:'浙江省台州市温岭市人民西路2号',pj:4},
+              ]},
+            {bol:false,arr1:[
+                {src:'../../../static/wangxinyang/tcsp02.png',name:'阳澄湖大闸蟹',jg:'￥62/人',dq:'浙江省台州市温岭市人民西路2号',pj:1},
+                {src:'../../../static/wangxinyang/tcsp02.png',name:'阳澄湖大闸蟹',jg:'￥62/人',dq:'浙江省台州市温岭市人民西路2号',pj:2},
+                {src:'../../../static/wangxinyang/tcsp02.png',name:'阳澄湖大闸蟹',jg:'￥62/人',dq:'浙江省台州市温岭市人民西路2号',pj:3},
+                {src:'../../../static/wangxinyang/tcsp02.png',name:'阳澄湖大闸蟹',jg:'￥62/人',dq:'浙江省台州市温岭市人民西路2号',pj:4},
+                {src:'../../../static/wangxinyang/tcsp02.png',name:'阳澄湖大闸蟹',jg:'￥62/人',dq:'浙江省台州市温岭市人民西路2号',pj:1},
+                {src:'../../../static/wangxinyang/tcsp02.png',name:'阳澄湖大闸蟹',jg:'￥62/人',dq:'浙江省台州市温岭市人民西路2号',pj:2},
+                {src:'../../../static/wangxinyang/tcsp02.png',name:'阳澄湖大闸蟹',jg:'￥62/人',dq:'浙江省台州市温岭市人民西路2号',pj:3},
+                {src:'../../../static/wangxinyang/tcsp02.png',name:'阳澄湖大闸蟹',jg:'￥62/人',dq:'浙江省台州市温岭市人民西路2号',pj:4},
+                {src:'../../../static/wangxinyang/tcsp02.png',name:'阳澄湖大闸蟹',jg:'￥62/人',dq:'浙江省台州市温岭市人民西路2号',pj:1},
+                {src:'../../../static/wangxinyang/tcsp02.png',name:'阳澄湖大闸蟹',jg:'￥62/人',dq:'浙江省台州市温岭市人民西路2号',pj:2},
+                {src:'../../../static/wangxinyang/tcsp02.png',name:'阳澄湖大闸蟹',jg:'￥62/人',dq:'浙江省台州市温岭市人民西路2号',pj:3},
+                {src:'../../../static/wangxinyang/tcsp02.png',name:'阳澄湖大闸蟹',jg:'￥62/人',dq:'浙江省台州市温岭市人民西路2号',pj:4},
+              ]},
+            {bol:false,arr1:[
+                {src:'../../../static/wangxinyang/tcsp03.png',name:'阳澄湖大闸蟹',jg:'￥62/人',dq:'浙江省台州市温岭市人民西路2号',pj:4},
+                {src:'../../../static/wangxinyang/tcsp03.png',name:'阳澄湖大闸蟹',jg:'￥62/人',dq:'浙江省台州市温岭市人民西路2号',pj:4},
+                {src:'../../../static/wangxinyang/tcsp03.png',name:'阳澄湖大闸蟹',jg:'￥62/人',dq:'浙江省台州市温岭市人民西路2号',pj:4},
+                {src:'../../../static/wangxinyang/tcsp03.png',name:'阳澄湖大闸蟹',jg:'￥62/人',dq:'浙江省台州市温岭市人民西路2号',pj:4},
+
+              ]},
           ],
         }
       },
@@ -106,11 +136,88 @@
           this.src2 = true;
           this.src1 = false;
         }.bind(this))
+
+        var ys = this.arr.length;
+      //  分页
+        $("#pagination2").pagination({
+          currentPage: 1,
+          totalPage: ys,
+          isShow: false,
+          count: 5,
+          prevPageText: "<",
+          nextPageText: ">",
+          callback: function(current) {
+            // alert(current);
+            console.log(this.arr)
+            for(var i in this.arr){
+              this.arr[i].bol = false;
+            }
+            //
+            this.arr[current-1].bol = true
+
+          }.bind(this)
+        });
+
       }
     }
 </script>
 
 <style scoped>
+
+  body {
+    font-family: "微软雅黑";
+    /*background: #eee;*/
+  }
+
+  button {
+    display: inline-block;
+    padding: 6px 12px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    border-color: #498e3d;
+    color: #fff;
+    background-color: #498e3d;
+    margin: 20px 20px 0 0;
+  }
+
+  .box {
+    width: 1280px;
+    margin: 0px auto ;
+    height: 34px;
+  }
+
+  .page {
+    width: 1280px;
+
+  }
+  .info {
+    width: 200px;
+    height: 34px;
+    line-height: 34px;
+  }
+
+  .fl {
+    float: left;
+  }
+  #box .ui-pagination-container .ui-pagination-page-item.active {
+    background: #498e3d !important;
+    border-color: #498e3d !important;
+    color: #fff;
+    cursor: default;
+  }
+
+
+
+
+
+
+
+
   #t_div1{
     width: 1280px;
     margin: 0 auto;
@@ -180,6 +287,13 @@ float: right;
     position: relative;
 
   }
+  #t_div3>ul>li>a{
+    display:block;
+    width: 100%;
+    height: 100%;
+  color: #333333;
+
+  }
   #t_div3>ul>li:nth-of-type(4n){
     width: 305px;
     height: 300px;
@@ -188,14 +302,14 @@ float: right;
     background-color: #f8f6f7;
 
   }
-  #t_div3>ul>li>p:nth-of-type(1){
+  #t_div3>ul>li p:nth-of-type(1){
     width: 100%;
     padding: 18px 0;
     line-height: 24px;
     text-align: center;
     font-size: 24px;
   }
-  #t_div3>ul>li>p:nth-of-type(2){
+  #t_div3>ul>li p:nth-of-type(2){
     width: 100%;
     /*padding: 20px 0;*/
     line-height: 20px;
@@ -205,17 +319,18 @@ float: right;
     position: absolute;
     bottom: 20px;
   }
-  #t_div3>ul>li>span:nth-of-type(1){
+  #t_div3>ul>li span:nth-of-type(1){
     position: absolute;
     left: 55px;
     bottom: 50px;
   }
-  #t_div3>ul>li>span:nth-of-type(2){
+  #t_div3>ul>li span:nth-of-type(2){
     position: absolute;
+    overflow: hidden;
     left: 53px;
     bottom: 49px;
   }
-  #t_div3>ul>li>span:nth-of-type(3){
+  #t_div3>ul>li span:nth-of-type(3){
     position: absolute;
     left: 190px;
     line-height: 25px;

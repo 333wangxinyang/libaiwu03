@@ -3,8 +3,8 @@
       <img src="../../../static/wangxinyang/logo.png" alt="">
       <div id="s_div1">
         <div>
-          <input type="text">
-          <a href="###"></a>
+          <input id="input01" @input="aa($event)" type="text">
+          <router-link id="tt" :to="tt"></router-link>
           <router-link id="grzx" to="/grzx">个人中心</router-link>
           <router-link to="/gwc">购物车</router-link>
           <!--<router-link to="/grzx">购物车</router-link>-->
@@ -26,7 +26,33 @@
   import Bus from '../../assets/bus'
     export default {
         name: "seek",
+      data(){
+        return{
+          tt:'###',
+        }
+      },
+      methods :{
+          aa(v){
+
+             if($(v.target).val() !== '' ){
+               console.log(1111)
+               this.tt = '/sousuo/'+$(v.target).val();
+             }
+          },
+
+        // bb(){
+        //   alert('内容不能为空')
+        //   if($('#input01').val() === '' ){
+        //     alert('内容不能为空')
+        //   }
+        // }
+      },
       mounted(){
+        $('#tt').click(function () {
+          if($('#input01').val() === '' ){
+                alert('内容不能为空')
+              }
+        })
         $('#grzx').click(function () {
           Bus.$emit('change',8)
         })

@@ -5,6 +5,7 @@ import Gerenzhongxin from '@/components/LYL/Gerenzhongxin'
 import Gerenziliao from '@/components/LYL/Gerenziliao'
 import Wodezhanghu from '@/components/LYL/Wodezhanghu'
 import Dizhiguanli from '@/components/LYL/Dizhiguanli'
+import Dingdanpingjia from '@/components/LYL/Dingdanpingjia'
 import Wodedingdan from '@/components/LYL/Wodedingdan'
 import X01 from '@/components/wxy/X01'
 import X02 from '@/components/wxy/X02'
@@ -16,10 +17,20 @@ import Tianjiadizhi from '@/components/LYL/Tianjiadizhi'
 import shouye01 from '@/components/wangxinyang/shouye01'
 import tongcheng from '@/components/wangxinyang/tongcheng'
 import H01gylbw from '@/components/HZH/H01gylbw'
+
 import shangjiaxq from '@/components/wangxinyang/shangjiaxq'
 import shangjia01 from '@/components/wangxinyang/shangjia01'
 import shangpinfy01 from '@/components/wangxinyang/shangpinfy01'
 import zhuanti from '@/components/wangxinyang/zhuanti'
+
+import Dingdanbianhao from '@/components/LYL/Dingdanbianhao'
+import Daifukuan from '@/components/LYL/Daifukuan'
+
+
+
+
+
+
 Vue.use(Router)
 
 export default new Router({
@@ -104,20 +115,36 @@ export default new Router({
               component: Dizhiguanli,
             },
             {
-              path: '/wodedingdan',
-              name: 'Wodedingdan',
-              component: Wodedingdan,
+              path: '/dingdanpingjia',
+              name: 'Dingdanpingjia',
+              component: Dingdanpingjia,
             },
             {
               path: '/tianjiadizhi',
               name: 'Tianjiadizhi',
               component: Tianjiadizhi,
+            },
+            {
+              path: '/dingdanbianhao',
+              name: 'Dingdanbianhao',
+              component: Dingdanbianhao,
+            },
+            {
+              path: '/wodedingdan',
+              name: 'Wodedingdan',
+              component: Wodedingdan,
+              children:[
+                {
+                  path: '/daifukuan',
+                  name: 'Daifukuan',
+                  component: Daifukuan,
+                }
+              ]
             }
           ]
 
         }
-        ]
-
+        ],
     }
   ]
 })

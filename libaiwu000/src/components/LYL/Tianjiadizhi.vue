@@ -48,11 +48,11 @@
       <div class="body4">
         <span>*</span>
         <span>联系电话:</span>
-        <input type="text" maxlength="11">
+        <input type="text" maxlength="11" onkeyup="value=value.replace(/[^\d]/g,'')">
         <span>或固定电话：</span>
-        <input type="text" maxlength="4">
+        <input type="text" maxlength="4" onkeyup="value=value.replace(/[^\d]/g,'')">
         <span>-</span>
-        <input type="text" maxlength="6">
+        <input type="text" maxlength="6" onkeyup="value=value.replace(/[^\d]/g,'')">
       </div>
       <div class="body5">
         <input type="radio">

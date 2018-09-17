@@ -17,6 +17,12 @@ import Tianjiadizhi from '@/components/LYL/Tianjiadizhi'
 import shouye01 from '@/components/wangxinyang/shouye01'
 import tongcheng from '@/components/wangxinyang/tongcheng'
 import H01gylbw from '@/components/HZH/H01gylbw'
+
+import shangjiaxq from '@/components/wangxinyang/shangjiaxq'
+import shangjia01 from '@/components/wangxinyang/shangjia01'
+import shangpinfy01 from '@/components/wangxinyang/shangpinfy01'
+import zhuanti from '@/components/wangxinyang/zhuanti'
+
 import Dingdanbianhao from '@/components/LYL/Dingdanbianhao'
 import Daifukuan from '@/components/LYL/Daifukuan'
 import Daifahuo from '@/components/LYL/Daifahuo'
@@ -26,6 +32,7 @@ import Tuikuan from '@/components/LYL/Tuikuan'
 import Daipingjia from '@/components/LYL/Daipingjia'
 import Quanbu from '@/components/LYL/Quanbu'
 import Zhanghuziliao from '@/components/LYL/Zhanghuziliao'
+
 
 
 
@@ -61,8 +68,8 @@ export default new Router({
         },
         {
           path: '/libaiwu',
-          name: 'HelloWorld',
-          component: HelloWorld
+          name: 'shangjiaxq',
+          component: shangjiaxq
         },
         {
           path: '/X02',
@@ -77,8 +84,23 @@ export default new Router({
         },
         {
           path: '/daohang',
-          name: 'HelloWorld',
-          component: HelloWorld
+          name: 'shangpinfy01',
+          component: shangpinfy01
+        },
+        {
+          path: '/sousuo/:str',
+          name: 'shangpinfy01',
+          component: shangpinfy01
+        },
+        {
+          path: '/shangjia',
+          name: 'shangjiaxq',
+          component: shangjiaxq
+        },
+        {
+          path: '/zhuanti',
+          name: 'zhuanti',
+          component: zhuanti
         },
         {
           path: '/grzx',

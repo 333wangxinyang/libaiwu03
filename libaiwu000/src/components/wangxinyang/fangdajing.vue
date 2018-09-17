@@ -28,6 +28,19 @@
         }
       },
       mounted(){
+
+          $("#box").on("mouseenter",function(){
+           $('canvas').css({
+             left: '600px' ,
+            top: '310px',
+           })
+          });
+
+
+
+
+
+
         $('#lb>img').eq(0).click(function () {
           if(this.mm===1){
             this.mm = 4;
@@ -69,7 +82,6 @@
 #fdj{
   width: 500px;
   height: 345px;
-  /*position: relative;*/
 }
 #box{
   width: 500px;

@@ -22,8 +22,9 @@
     <div id="t_div3">
       <ul v-for="(aa,index) in arr" v-if="aa.bol">
         <li v-for="(bb,index1) in aa.arr1">
-          <a href="###">
-          <img :src="bb.src" alt="">
+          <!--<a href="###">-->
+          <router-link to="/shangjia">
+            <img :src="bb.src" alt="">
           <p>{{bb.name}}</p>
           <span>
             <img src="../../../static/wangxinyang/xxa.png" alt="">
@@ -33,7 +34,8 @@
           </span>
           <span>{{bb.jg}}</span>
           <p>{{bb.dq}}</p>
-          </a>
+          <!--</a>-->
+          </router-link>
         </li>
       </ul>
 

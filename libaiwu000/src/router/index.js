@@ -32,8 +32,10 @@ import Tuikuan from '@/components/LYL/Tuikuan'
 import Daipingjia from '@/components/LYL/Daipingjia'
 import Quanbu from '@/components/LYL/Quanbu'
 import Zhanghuziliao from '@/components/LYL/Zhanghuziliao'
-
-
+import Huanbangshouji from '@/components/LYL/Huanbangshouji'
+import Yuanshouji from '@/components/LYL/Yuanshouji'
+import Xinshouji from '@/components/LYL/Xinshouji'
+import Huanbangchenggong from '@/components/LYL/Huanbangchenggong'
 
 
 
@@ -135,6 +137,29 @@ export default new Router({
               path: '/zhanghuziliao',
               name: 'Zhanghuziliao',
               component: Zhanghuziliao,
+            },
+            {
+              path: '/huanbangshouji',
+              name: 'Huanbangshouji',
+              component: Huanbangshouji,
+              redirect:'/yuanshouji',
+              children:[
+                {
+                  path: '/yuanshouji',
+                  name: 'Yuanshouji',
+                  component: Yuanshouji,
+                },
+                {
+                  path: '/xinshouji',
+                  name: 'Xinshouji',
+                  component: Xinshouji,
+                },
+                {
+                  path: '/huanbangchenggong',
+                  name: 'Huanbangchenggong',
+                  component: Huanbangchenggong,
+                }
+              ]
             },
             {
               path: '/wodedingdan',

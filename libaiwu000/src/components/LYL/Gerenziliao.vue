@@ -5,13 +5,13 @@
       </div>
       <div class="grzl2">
         <div class="grzl2_1">
-          <div>
+          <div class="shoujihao">
             <input type="text" onkeyup="value=value.replace(/[^\d]/g,'')" placeholder="请输入手机号" maxlength="11">
           </div>
-          <div>
+          <div class="mima">
             <input type="password" placeholder="请输入密码（6-20位号码字符" maxlength="20" >
           </div>
-          <div>
+          <div class="mima">
             <input type="password" placeholder="请再次输入密码确认" maxlength="20">
           </div>
           <div class="yanzhengma">
@@ -21,7 +21,7 @@
           </div>
           <div class="sjyanzhengma">
             <input type="text" placeholder="手机验证码" maxlength="6">
-            <button>获取验证码</button>
+            <button @click="hqyzm()">获取验证码</button>
           </div>
           <div class="bangding">
             <button @click="panduan()">点击绑定</button>
@@ -214,19 +214,37 @@
               guolv += val[i]
             }
             console.log(guolv)
-            if (input[0].value == '' || input[1].value == '' || input[2].value == '' || input[3].value == '' || input[4].value == ''){
-              alert('请补全信息');
-            }else if (guolv != str) {
+
+            var bth = document.querySelectorAll('.shoujihao>input')[0].value
+            var mima = document.querySelectorAll('.mima>input')[0].value
+            var mima1 = document.querySelectorAll('.mima>input')[1].value
+            var yzm = document.querySelectorAll('.sjyanzhengma>input')[0].value
+            console.log(bth)
+            if (bth.length < 11){
+              alert('手机号格式不正确')
+            }else if(mima.length < 6){
+              alert('密码不能小于6位');
+            }else if (mima != mima1){
+              alert('密码不相同');
+            }else if (guolv != str){
               alert('验证码错误')
+            }else if(yzm.length < 6){
+              alert('手机验证码错误')
             }else {
               $('.chenggong').animate({
                 opacity:'1',
                 top:'70px',
               })
             }
-
-
-
+          },
+          hqyzm(){
+            var yzm = document.querySelectorAll('.sjyanzhengma>input')[0]
+            var a = '';
+            for (var i = 0;i < 6;i++){
+              a+= Math.floor(Math.random()*10);
+            }
+            yzm.value = a;
+            console.log(a)
           }
         }
     }
@@ -278,11 +296,12 @@
     }
     .sjyanzhengma>button{
       padding: 6px 12px;
-      background-color: #e8e8e8;
-      color: #a9a9a9;
+      background-color: #3d8e43;
+      color: white;
       position: absolute;
       left: 216px;
       top: 5.5px;
+      outline: none;
     }
     .bangding>button{
       padding: 12px 27px;

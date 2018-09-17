@@ -8,7 +8,7 @@
     <!--<head01></head01>-->
     <!--<h03dr></h03dr>-->
     <!--<h04wjmm></h04wjmm>-->
-
+    <!--<gerenziliao></gerenziliao>-->
 
     <!--<h01gylbw></h01gylbw>-->
 
@@ -66,7 +66,7 @@
   import navigation from '@/components/wangxinyang/navigation'
   import H03dr from '@/components/HZH/H03dr'
   import H04wjmm from '@/components/HZH/H04wjmm'
-
+  import Gerenziliao from '@/components/LYL/Gerenziliao'
 
 export default {
   name: 'App',
@@ -82,7 +82,8 @@ export default {
     h01gylbw:H01gylbw,
     h02drzc:H02drzc,
     h03dr:H03dr,
-    h04wjmm:H04wjmm
+    h04wjmm:H04wjmm,
+    gerenziliao:Gerenziliao
   },
 
 

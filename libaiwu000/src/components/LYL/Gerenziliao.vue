@@ -234,6 +234,7 @@
             var password1 = document.querySelector('.drzc3').value
             if (ha == true && hb == true && hc == true){
               axios.get('/api/php/hzhxqw/drzc2.PHP?type=1&phone='+phone1+'&password='+password1).then((response) => {
+              // axios.get('/api/php/hzhxqw/drzc2.php?type=1&phone='+phone1+'&password='+password1).then((response) => {
                 console.log(response.data);
                 if(response.data==0){
                   alert('注册成功');
@@ -283,6 +284,7 @@
             var password1 = document.querySelector('.drzc2').value
             if (ha == true && hb == true && hc == true){
               axios.get('/api/PHP/hzhxqw/drzc2.php?type=3&phone='+phone1+'&password='+password1).then((response) => {
+              // axios.get('/api/php/hzhxqw/drzc2.php?type=3&phone='+phone1+'&password='+password1).then((response) => {
                 console.log(response.data);
                 if(response.data==0){
                   alert('该账户不存在');

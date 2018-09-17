@@ -2,11 +2,11 @@
     <div>
       <div class="grzl1">
         <p>充值卡兑换</p>
-        <button>查看订单</button>
+        <button>查看账单</button>
       </div>
       <div class="body">
-        <input type="text" onkeydown="return noNumbers(event)" placeholder="请输入充值卡兑换码进行充值" maxlength="11"><br>
-        <button>充值</button>
+        <input type="text" onkeyup="value=value.replace(/[^\d]/g,'')" placeholder="请输入充值卡兑换码进行充值" maxlength="11"><br>
+        <router-link to="/zhanghuziliao"><button>充值</button></router-link>
       </div>
     </div>
 </template>
@@ -59,7 +59,7 @@
     text-indent: 20px;
     margin: 50px 30px;
   }
-  .body>button{
+  .body>a>button{
     height: 50px;
     width: 150px;
     font-size: 20px;

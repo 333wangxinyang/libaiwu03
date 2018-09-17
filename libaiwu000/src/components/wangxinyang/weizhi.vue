@@ -20,7 +20,7 @@
 
 <style scoped>
 #weizhi{
-  width: 1280px;
+  width: 1260px !important;
   margin: 20px auto;
   height: 14px;
   padding: 20px 0px 20px 20px;

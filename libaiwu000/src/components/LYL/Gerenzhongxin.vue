@@ -60,9 +60,10 @@
 
 <style scoped>
   .content{
-    margin-top: 40px;
     width: 1280px;
     margin: auto;
+    overflow: hidden;
+    margin-top: 40px;
   }
   /*导航栏*/
   .nav{

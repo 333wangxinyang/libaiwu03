@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+
     <!--<h01gylbw></h01gylbw>-->
     <!--<h02drzc></h02drzc>-->
     <!--<x01></x01>-->
@@ -9,11 +10,32 @@
     <h04wjmm></h04wjmm>
 
 
+    <!--<h01gylbw></h01gylbw>-->
 
 
+    <!--<x05></x05>-->
+
+
+
+
+    <!--<h01gylbw></h01gylbw>-->
+
+
+
+    <!--<h01gylbw></h01gylbw>-->
+
+
+
+    <!--<h01gylbw></h01gylbw>-->
+
+    <!--<x01></x01>-->
+    <!--<x02></x02>-->
+    <!--<head01></head01>-->
 <!--<x01></x01>-->
     <!--<x02></x02>-->
-
+      <!--<x03></x03>-->
+    <!--<x04></x04>-->
+    <!--<head01></head01>-->
     <!--<head01></head01>-->
     <!--<seek></seek>-->
     <!--<navigation></navigation>-->
@@ -28,6 +50,9 @@
 
   import X01 from '@/components/wxy/X01'
   import X02 from '@/components/wxy/X02'
+  import X03 from '@/components/wxy/X03'
+  import X04 from '@/components/wxy/X04'
+  import X05 from '@/components/wxy/X05'
   import head01 from '@/components/wangxinyang/head01'
   import H02drzc from '@/components/HZH/H02drzc'
 
@@ -36,16 +61,22 @@
 
 
 
+
   import seek from '@/components/wangxinyang/seek'
   import navigation from '@/components/wangxinyang/navigation'
   import H03dr from '@/components/HZH/H03dr'
   import H04wjmm from '@/components/HZH/H04wjmm'
+
+
 export default {
   name: 'App',
   components:{
     head01:head01,
     x01:X01,
     x02:X02,
+    x03:X03,
+    x04:X04,
+    x05:X05,
     seek:seek,
     navigation:navigation,
     h01gylbw:H01gylbw,

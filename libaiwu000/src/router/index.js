@@ -45,7 +45,7 @@ export default new Router({
   routes: [
 
     {
-      path: '/',
+      path: '/aaa',
       name: 'shouye',
       component: shouye,
       redirect:'/shouye01',

@@ -87,8 +87,8 @@
 
 
           <span class="hinput1">
-            <input type="text" placeholder="手机验证码">
-             <span>获取验证码</span>
+            <input type="text" placeholder="手机验证码" class="h04yzm2">
+            <button class="h04yzm">获取验证码</button>
           </span>
 
           <span class="h04span1"><a href="###">提交</a></span>
@@ -269,6 +269,41 @@
           alert('信息输入有误,请重新输入');
         }
       })
+
+
+    //  获取验证码
+
+      //产生随机数函数
+      function RndNum(n){
+        var rnd="";
+        for(var i=0;i<n;i++)
+          rnd+=Math.floor(Math.random()*10);
+        return rnd;
+      }
+
+      $(".h04yzm").click(function () {
+        var count = 10;
+        $(".h04yzm").html(count);
+        $(".h04yzm").css({backgroundColor:"rgb(128,128,128)"})
+        $('.h04yzm2').val(RndNum(5));
+
+        var timer = null;
+        timer = setInterval(function () {
+          if (count > 0) {
+            count = count - 1;
+            $(".h04yzm").html(count);
+            $(".h04yzm").attr('disabled','disabled')
+          }else {
+            clearInterval(timer);
+            $(".h04yzm").css({backgroundColor:'rgb(61,142,67)'})
+            $(".h04yzm").html('获取验证码');
+            $(".h04yzm").removeAttr('disabled');
+
+          }
+        }, 1000);
+      })
+
+
 
     }
 
@@ -528,7 +563,7 @@
     position: absolute;
     left: 90px;
   }
-  .hinput1>span{
+  .hinput1>button{
     display: inline-block;
     width: 102px;
     height: 33px;

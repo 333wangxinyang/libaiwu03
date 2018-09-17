@@ -47,12 +47,6 @@ export default new Router({
   routes: [
 
     {
-
-
-
-      // path: '/x04',
-
-
       path: '/',
       name: 'shouye',
       component: shouye,

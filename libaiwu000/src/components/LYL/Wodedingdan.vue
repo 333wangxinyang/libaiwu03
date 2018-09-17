@@ -5,13 +5,13 @@
       </div>
       <div class="nav">
         <ul class="ul">
-          <li><a href="###">全部</a></li>
+          <li><router-link to="/quanbu" class="aa">全部</router-link></li>
           <li><router-link to="/daifukuan">待付款</router-link></li>
-          <li><a href="###">待发货</a></li>
-          <li><a href="###">待收货</a></li>
-          <li><a href="###">待评价</a></li>
-          <li><a href="###">退款/售后</a> </li>
-          <li><a href="###">已完成/关闭</a></li>
+          <li><router-link to="/daifahuo">待发货</router-link></li>
+          <li><router-link to="/daishouhuo">待收货</router-link></li>
+          <li><router-link to="/daipingjia">待评价</router-link></li>
+          <li><router-link to="/tuikuan">退款/售后</router-link> </li>
+          <li><router-link to="/yiwancheng">已完成/关闭</router-link></li>
           <li><a href="###">订单回收站</a></li>
         </ul>
       </div>
@@ -23,13 +23,20 @@
     export default {
         name: "Wodedingdan",
         mounted(){
+          var one = document.getElementsByClassName('aa')[0]
           $('.ul li a').click(function () {
             for (var i = 0;i < $('.ul li a').length;i++){
               $('.ul li a')[i].style.color = '#666666';
               $('.ul li a')[i].style.borderBottom = '0';
+              one.style.color = 'white';
             }
-            $(this)[0].style.color = '#3e9444';
-            $(this)[0].style.borderBottom = 'solid 2px #3e9444 '
+            if ($(this)[0] == one){
+              $(this)[0].style.color = '#3e9444';
+            } else {
+              $(this)[0].style.color = '#3e9444';
+              $(this)[0].style.borderBottom = 'solid 2px #3e9444 '
+            }
+
           })
         }
     }
@@ -79,5 +86,8 @@
   }
   .nav>ul>li{
     padding: 0 30px;
+  }
+  .aa{
+    color: white;
   }
 </style>

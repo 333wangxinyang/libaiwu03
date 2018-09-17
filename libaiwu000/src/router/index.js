@@ -19,6 +19,14 @@ import tongcheng from '@/components/wangxinyang/tongcheng'
 import H01gylbw from '@/components/HZH/H01gylbw'
 import Dingdanbianhao from '@/components/LYL/Dingdanbianhao'
 import Daifukuan from '@/components/LYL/Daifukuan'
+import Daifahuo from '@/components/LYL/Daifahuo'
+import Yiwancheng from '@/components/LYL/Yiwancheng'
+import Daishouhuo from '@/components/LYL/Daishouhuo'
+import Tuikuan from '@/components/LYL/Tuikuan'
+import Daipingjia from '@/components/LYL/Daipingjia'
+import Quanbu from '@/components/LYL/Quanbu'
+import Zhanghuziliao from '@/components/LYL/Zhanghuziliao'
+
 
 
 
@@ -108,15 +116,51 @@ export default new Router({
               component: Dingdanbianhao,
             },
             {
+              path: '/zhanghuziliao',
+              name: 'Zhanghuziliao',
+              component: Zhanghuziliao,
+            },
+            {
               path: '/wodedingdan',
               name: 'Wodedingdan',
               component: Wodedingdan,
+              redirect:'/quanbu',
               children:[
                 {
                   path: '/daifukuan',
                   name: 'Daifukuan',
                   component: Daifukuan,
-                }
+                },
+                {
+                  path: '/daifahuo',
+                  name: 'Daifahuo',
+                  component: Daifahuo,
+                },
+                {
+                  path: '/yiwancheng',
+                  name: 'Yiwancheng',
+                  component: Yiwancheng,
+                },
+                {
+                  path: '/daishouhuo',
+                  name: 'Daishouhuo',
+                  component: Daishouhuo,
+                },
+                {
+                  path: '/tuikuan',
+                  name: 'Tuikuan',
+                  component: Tuikuan,
+                },
+                {
+                  path: '/daipingjia',
+                  name: 'Daipingjia',
+                  component: Daipingjia,
+                },
+                {
+                  path: '/quanbu',
+                  name: 'Quanbu',
+                  component: Quanbu,
+                },
               ]
             }
           ]

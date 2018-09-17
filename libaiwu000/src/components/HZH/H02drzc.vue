@@ -105,10 +105,6 @@
     export default {
         name: "H02drzc",
       mounted(){
-
-      }
-      ,
-      mounted(){
         $(document).ready(function(){
 
           $(function () {

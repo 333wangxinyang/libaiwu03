@@ -89,7 +89,7 @@
             <img src="../../../static/hzh/h02-10-w16.png" alt="">
             <span>我已阅读并同意 《礼拜五用户协议》</span>
           </div>
-          <span class="h02span2 hzc1"><a href="###">注册</a></span>
+          <span class="h02span2 hzc1"><a  href="#/H03dr">注册</a></span>
           <span class="h02span2 h02span3"><a href="###">登录</a></span>
         </div>
       </div>

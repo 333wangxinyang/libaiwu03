@@ -95,7 +95,6 @@
     top: 50px;
     left: 20px;
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
   }
 .ww{
@@ -104,6 +103,8 @@
   border: 1px solid #d9d9d9;
   position: relative;
   top: 10px;
+  margin-left: 15px;
+  margin-right: 15px;
 }
   .ww>img:nth-of-type(1){
     width: 170px;

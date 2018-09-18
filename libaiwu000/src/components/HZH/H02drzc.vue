@@ -48,7 +48,7 @@
         </div>
       </div>
 
-      <div class="hdrzc">
+      <div class="hdrzc hzh02">
         <div class="hdrzc2">
 
           <span class="hinput1">
@@ -93,6 +93,7 @@
           <span class="h02span2 h02span3"><a href="###">登录</a></span>
         </div>
       </div>
+
 
     </div>
 
@@ -587,5 +588,11 @@
   .h02span3{
     float: right;
     background-color:rgb(61,142,67);
+  }
+  .hzh03{
+    display: none;
+  }
+  .hzh04{
+    display: none;
   }
 </style>

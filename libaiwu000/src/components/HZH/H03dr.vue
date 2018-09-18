@@ -48,7 +48,7 @@
         </div>
       </div>
 
-      <div class="hdrzc">
+      <div class="hdrzc hzh03">
         <div class="hdrzc2">
 
           <div class="h03div1">
@@ -71,12 +71,6 @@
           </span>
           <div class="hdis1 drzc22"><img src="../../../static/hzh/h02-8-w12.png" alt=""> <span>密码长度不符合标准</span></div>
 
-          <!--<span class="hinput1">-->
-          <!--<input type="password" placeholder="请再次输入密码确认" class="drzc3">-->
-          <!--<img src="../../../static/hzh/h02-7-w12.png" alt="">-->
-          <!--</span>-->
-          <!--<div class="hdis1 drzc33"><img src="../../../static/hzh/h02-8-w12.png" alt=""> <span>两次输入的密码不同</span></div>-->
-
           <span class="hinput1" id="hinput2">
           <input type="text" placeholder="验证码" class="drzc4">
           <img src="../../../static/hzh/h02-7-w12.png" alt="">
@@ -86,17 +80,6 @@
             <canvas id="canvas" width="80" height="35"></canvas>
             <a href="#" id="changeImg">看不清换一张</a>
           </span>
-
-          <!--<span class="hinput1">-->
-            <!--<input type="text" placeholder="手机验证码">-->
-             <!--<span>获取验证码</span>-->
-          <!--</span>-->
-
-
-          <!--<div class="h02img2">-->
-            <!--<img src="../../../static/hzh/h02-10-w16.png" alt="">-->
-            <!--<span>我已阅读并同意 《礼拜五用户协议》</span>-->
-          <!--</div>-->
 
           <div class="h03div2">
             <span class="h03click1">

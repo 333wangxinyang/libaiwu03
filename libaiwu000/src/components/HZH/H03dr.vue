@@ -61,7 +61,7 @@
           </div>
 
 
-          <span class="h02span2 hzc1"><a href="###">登录</a></span>
+          <span class="h02span2 hzc1"><router-link to="">登录</router-link></span>
           <span class="h02span2 h02span3"><router-link to="/H02drzc">会员注册</router-link></span>
 
           <span class="h03span1">提示 : 未注册用户将直接注册成为礼拜五用户</span>
@@ -227,10 +227,15 @@
         if (ha == true && hb == true ){
           axios.get('/api/php/hzhxqw/drzc2.php?type=2&phone='+phone1+'').then((response) => {
             console.log(response.data);
+            console.log(response.data[0].id);
             if(response.data==0){
               alert('该账户不存在');
             }if(response.data[0].password == password1){
+
+              document.cookie = "state=" +response.data[0].id;
+
               alert('登录成功')
+              window.location.href = "/#/shouye01/"
             }else{
               alert('密码错误');
             }

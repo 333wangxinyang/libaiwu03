@@ -60,8 +60,12 @@
             <span>我已阅读并同意 《礼拜五用户协议》</span>
           </div>
 
-          <span class="h02span2 hzc1"><a href="###">注册</a></span>
-          <span class="h02span2 h02span3"><router-link to="/H03dr">登录</router-link></span>
+          <span class="h02span2 hzc1">
+            <router-link to="">注册</router-link>
+          </span>
+          <span class="h02span2 h02span3">
+            <router-link to="/H03dr">登录</router-link>
+          </span>
 
         </div>
       </div>
@@ -228,6 +232,7 @@
               console.log(response.data);
               if(response.data==0){
                 alert('注册成功');
+                window.location.href ="/#/H03dr/";
               }else{
                 alert('该账号已存在');
               }

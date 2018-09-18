@@ -55,30 +55,11 @@ export default new Router({
       component: fff
     },
     {
-      path: '/X06',
+      path: '/gwc',
       name: 'X06',
       component: X06,
-      redirect:'/x07',
+      redirect:'/gwc',
       children:[
-        {
-          path: '/x07',
-          name: 'X07',
-          component: X07
-        },
-        {
-          path: '/x08',
-          name: 'X08',
-          component: X08
-        },
-      ]
-    },
-    {
-      path: '/aaa',
-      name: 'shouye',
-      component: shouye,
-      redirect:'/shouye01',
-
-      children: [
         {
           path: '/gwc',
           name: 'gwc',
@@ -101,8 +82,27 @@ export default new Router({
               component: qrsh01
             },
           ]
-
         },
+        {
+          path: '/x07',
+          name: 'X07',
+          component: X07
+        },
+        {
+          path: '/x08',
+          name: 'X08',
+          component: X08
+        },
+      ]
+    },
+    {
+      path: '/aaa',
+      name: 'shouye',
+      component: shouye,
+      redirect:'/shouye01',
+
+      children: [
+
         {
           path: '/shouye01',
           name: 'shouye01',

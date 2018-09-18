@@ -91,7 +91,7 @@
         <span>￥2977</span>
         <span>订单完成后可获得积分：</span>
         <span>300积分</span>
-        <a href="###">提交订单</a>
+        <router-link to="/X07">提交订单</router-link>
       </div>
     </div>
 </template>

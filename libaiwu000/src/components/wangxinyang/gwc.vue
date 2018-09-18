@@ -43,7 +43,7 @@
         <span>批量删除</span>
         <span>商品总计：</span>
         <span>￥2977</span>
-        <a href="###">立即购买</a>
+        <router-link to="/qrddzy">立即购买</router-link>
       </div>
 
     </div>

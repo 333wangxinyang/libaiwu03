@@ -32,17 +32,22 @@ import Tuikuan from '@/components/LYL/Tuikuan'
 import Daipingjia from '@/components/LYL/Daipingjia'
 import Quanbu from '@/components/LYL/Quanbu'
 import Zhanghuziliao from '@/components/LYL/Zhanghuziliao'
-
+import gwc from '@/components/wangxinyang/gwc'
+import qrddzy from '@/components/wangxinyang/qrddzy'
+import qrdd from '@/components/wangxinyang/qrdd'
+import qrsh01 from '@/components/wangxinyang/qrsh01'
 import X06 from '@/components/wxy/X06'
 import X07 from '@/components/wxy/X07'
 import X08 from '@/components/wxy/X08'
 import X09 from '@/components/wxy/X09'
 import fff from '@/components/wxy/fff'
-
+import Yjfh from '@/components/wxy/Yjfh'
 import Huanbangshouji from '@/components/LYL/Huanbangshouji'
 import Yuanshouji from '@/components/LYL/Yuanshouji'
 import Xinshouji from '@/components/LYL/Xinshouji'
 import Huanbangchenggong from '@/components/LYL/Huanbangchenggong'
+import Zd from '@/components/wxy/Zd'
+import Liulan from '@/components/wxy/Liulan'
 Vue.use(Router)
 
 export default new Router({
@@ -53,11 +58,34 @@ export default new Router({
       component: fff
     },
     {
-      path: '/X06',
+      path: '/gwc',
       name: 'X06',
       component: X06,
-      redirect:'/x07',
+      redirect:'/gwc',
       children:[
+        {
+          path: '/gwc',
+          name: 'gwc',
+          component: gwc
+        },
+        {
+          path: '/qrddzy',
+          name: 'qrddzy',
+          component: qrddzy,
+          redirect:'/qrdd',
+          children: [
+            {
+              path: '/qrdd',
+              name: 'qrdd',
+              component: qrdd
+            },
+            {
+              path: '/qrsh01',
+              name: 'qrsh01',
+              component: qrsh01
+            },
+          ]
+        },
         {
           path: '/x07',
           name: 'X07',
@@ -77,6 +105,7 @@ export default new Router({
       redirect:'/shouye01',
 
       children: [
+
         {
           path: '/shouye01',
           name: 'shouye01',
@@ -134,6 +163,16 @@ export default new Router({
           component: Gerenzhongxin,
           children:[
             {
+              path:'/Yjfh',
+              name:'Yjfh',
+              component:Yjfh
+            },
+            {
+              path:'/Liulan',
+              name:'Liulan',
+              component:Liulan
+            },
+            {
               path: '/gerenziliao',
               name: 'Gerenziliao',
               component: Gerenziliao,
@@ -142,6 +181,11 @@ export default new Router({
               path: '/wodezhanghu',
               name: 'Wodezhanghu',
               component: Wodezhanghu,
+            },
+            {
+              path:'/Zd',
+              name:'Zd',
+              component: Zd
             },
             {
               path: '/dizhiguanli',
@@ -196,6 +240,7 @@ export default new Router({
               component: Wodedingdan,
               redirect:'/quanbu',
               children:[
+
                 {
                   path: '/daifukuan',
                   name: 'Daifukuan',

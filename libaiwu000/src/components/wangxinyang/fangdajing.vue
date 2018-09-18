@@ -30,9 +30,11 @@
       mounted(){
 
           $("#box").on("mouseenter",function(){
+            console.log($("#box").offset().left)
+
            $('canvas').css({
-             left: '600px' ,
-            top: '310px',
+             left: $("#box").offset().left + 550 ,
+              top: '310px',
            })
           });
 

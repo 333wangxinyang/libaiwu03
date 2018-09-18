@@ -8,6 +8,14 @@
     <!--<h03dr></h03dr>-->
     <!--<h04wjmm></h04wjmm>-->
     <!--<gerenziliao></gerenziliao>-->
+
+
+    <!--<h05jfdd></h05jfdd>-->
+    <!--<h06jfxq></h06jfxq>-->
+
+
+
+
     <!--<h01gylbw></h01gylbw>-->
     <!--<x05></x05>-->
     <!--<h01gylbw></h01gylbw>-->
@@ -15,7 +23,7 @@
     <!--<h01gylbw></h01gylbw>-->
     <!--<x01></x01>-->
     <!--<x02></x02>-->
-    <!--<head01></head01>-->
+    <head01></head01>
 <!--<x01></x01>-->
     <!--<x02></x02>-->
       <!--<x03></x03>-->
@@ -46,6 +54,9 @@
   import H03dr from '@/components/HZH/H03dr'
   import H04wjmm from '@/components/HZH/H04wjmm'
   import Gerenziliao from '@/components/LYL/Gerenziliao'
+
+  import H05jfdd from '@/components/HZH/H05jfdd'
+  import H06jfxq from '@/components/HZH/H06jfxq'
 export default {
   name: 'App',
   components:{
@@ -64,7 +75,9 @@ export default {
     h02drzc:H02drzc,
     h03dr:H03dr,
     h04wjmm:H04wjmm,
-    gerenziliao:Gerenziliao
+    gerenziliao:Gerenziliao,
+    h05jfdd:H05jfdd,
+    h06jfxq:H06jfxq
   },
 }
 </script>

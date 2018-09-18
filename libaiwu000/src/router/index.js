@@ -32,7 +32,10 @@ import Tuikuan from '@/components/LYL/Tuikuan'
 import Daipingjia from '@/components/LYL/Daipingjia'
 import Quanbu from '@/components/LYL/Quanbu'
 import Zhanghuziliao from '@/components/LYL/Zhanghuziliao'
-
+import gwc from '@/components/wangxinyang/gwc'
+import qrddzy from '@/components/wangxinyang/qrddzy'
+import qrdd from '@/components/wangxinyang/qrdd'
+import qrsh01 from '@/components/wangxinyang/qrsh01'
 import X06 from '@/components/wxy/X06'
 import X07 from '@/components/wxy/X07'
 import X08 from '@/components/wxy/X08'
@@ -53,11 +56,34 @@ export default new Router({
       component: fff
     },
     {
-      path: '/X06',
+      path: '/gwc',
       name: 'X06',
       component: X06,
-      redirect:'/x07',
+      redirect:'/gwc',
       children:[
+        {
+          path: '/gwc',
+          name: 'gwc',
+          component: gwc
+        },
+        {
+          path: '/qrddzy',
+          name: 'qrddzy',
+          component: qrddzy,
+          redirect:'/qrdd',
+          children: [
+            {
+              path: '/qrdd',
+              name: 'qrdd',
+              component: qrdd
+            },
+            {
+              path: '/qrsh01',
+              name: 'qrsh01',
+              component: qrsh01
+            },
+          ]
+        },
         {
           path: '/x07',
           name: 'X07',
@@ -77,6 +103,7 @@ export default new Router({
       redirect:'/shouye01',
 
       children: [
+
         {
           path: '/shouye01',
           name: 'shouye01',

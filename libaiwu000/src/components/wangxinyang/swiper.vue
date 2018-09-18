@@ -21,9 +21,9 @@
         var mySwiper = new Swiper ('.swiper-container', {
           direction: 'horizontal',
           loop: true,
-          autoplay: {
-            disableOnInteraction: false,
-          },
+          // autoplay: {
+          //   disableOnInteraction: false,
+          // },
 
           // 如果需要分页器
           pagination: {

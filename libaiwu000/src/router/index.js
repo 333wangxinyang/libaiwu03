@@ -33,9 +33,13 @@ import Daipingjia from '@/components/LYL/Daipingjia'
 import Quanbu from '@/components/LYL/Quanbu'
 import Zhanghuziliao from '@/components/LYL/Zhanghuziliao'
 import Huanbangshouji from '@/components/LYL/Huanbangshouji'
-import Yuanshouji from '@/components/LYL/Yuanshouji'
-import Xinshouji from '@/components/LYL/Xinshouji'
-import Huanbangchenggong from '@/components/LYL/Huanbangchenggong'
+import Wodejifen from '@/components/LYL/Wodejifen'
+import Zhanghuyue from '@/components/LYL/Zhanghuyue'
+import Wodeshoucang from '@/components/LYL/Wodeshoucang'
+import Zhanghuxiangqing from '@/components/LYL/Zhanghuxiangqing'
+import Wodexiaoxi from '@/components/LYL/Wodexiaoxi'
+import Wodexiaoxi1 from '@/components/LYL/Wodexiaoxi1'
+import Pingjiachenggong from '@/components/LYL/Pingjiachenggong'
 
 
 
@@ -114,6 +118,11 @@ export default new Router({
               component: Wodezhanghu,
             },
             {
+              path: '/zhanghuyue',
+              name: 'Zhanghuyue',
+              component: Zhanghuyue,
+            },
+            {
               path: '/dizhiguanli',
               name: 'Dizhiguanli',
               component: Dizhiguanli,
@@ -122,6 +131,11 @@ export default new Router({
               path: '/dingdanpingjia',
               name: 'Dingdanpingjia',
               component: Dingdanpingjia,
+            },
+            {
+              path: '/pingjiachenggong',
+              name: 'Pingjiachenggong',
+              component: Pingjiachenggong,
             },
             {
               path: '/tianjiadizhi',
@@ -142,23 +156,31 @@ export default new Router({
               path: '/huanbangshouji',
               name: 'Huanbangshouji',
               component: Huanbangshouji,
-              children:[
-                {
-                  path: '/yuanshouji',
-                  name: 'Yuanshouji',
-                  component: Yuanshouji,
-                },
-                {
-                  path: '/xinshouji',
-                  name: 'Xinshouji',
-                  component: Xinshouji,
-                },
-                {
-                  path: '/huanbangchenggong',
-                  name: 'Huanbangchenggong',
-                  component: Huanbangchenggong,
-                }
-              ]
+            },
+            {
+              path: '/wodejifen',
+              name: 'Wodejifen',
+              component: Wodejifen,
+            },
+            {
+              path: '/wodeshoucang',
+              name: 'Wodeshoucang',
+              component: Wodeshoucang
+            },
+            {
+              path: '/zhanghuxiangqing',
+              name: 'Zhanghuxiangqing',
+              component: Zhanghuxiangqing
+            },
+            {
+              path: '/wodexiaoxi',
+              name: 'Wodexiaoxi',
+              component: Wodexiaoxi
+            },
+            {
+              path: '/wodexiaoxi1',
+              name: 'Wodexiaoxi1',
+              component: Wodexiaoxi1
             },
             {
               path: '/wodedingdan',

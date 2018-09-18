@@ -23,18 +23,18 @@
         </div>
         <div class="body2_1">
           <select name="" class="select2">
-            <option value="北京">北京</option>
-            <option value="河南">河南</option>
-            <option value="上海">上海</option>
-            <option value="广州">广州</option>
+            <option value="驻马店">驻马店</option>
+            <option value="新乡">新乡</option>
+            <option value="郑州">郑州</option>
+            <option value="周口">周口</option>
             <option value="深圳">深圳</option>
           </select>
         </div>
         <div class="body2_1">
           <select name="" class="select3">
-            <option value="北京">北京</option>
+            <option value="西安">西安</option>
             <option value="河南">河南</option>
-            <option value="上海">上海</option>
+            <option value="上海" selected>上海</option>
             <option value="广州">广州</option>
             <option value="深圳">深圳</option>
           </select>
@@ -55,8 +55,8 @@
         <input type="text" maxlength="6" onkeyup="value=value.replace(/[^\d]/g,'')">
       </div>
       <div class="body5">
-        <input type="radio">
-        <span>设为常用地址</span><br/>
+        <input type="radio" id="aa">
+        <span><label for="aa">设为常用地址</label></span><br/>
         <button  @click="tijiao">保存</button>
       </div>
     </div>
@@ -89,16 +89,31 @@
           var input8 = document.querySelectorAll('.body4 input')[2].value
           console.log(input1)
           var a = [];
-          var dizhi = input2_2 + input3_2 + input4_2;
-          console.log(dizhi)
-          a.push(input1,dizhi,input5,input6,input7,input8);
+          // var dizhi = input2_2 + input3_2 + input4_2;
+          // console.log(dizhi)
+          a.push(input1,input2_2,input3_2,input4_2,input5,input6,input7,input8);
           this.obj = a;
           console.log(this.obj)
-            if (this.obj[0] == '' || this.obj[1] == '' || this.obj[2] == '' || this.obj[3] == '' || this.obj[4] == '' || this.obj[5] == '' || this.obj[6] == ''){
+            if (this.obj[0] == '' || this.obj[1] == '' || this.obj[2] == '' || this.obj[3] == '' || this.obj[4] == '' || this.obj[5] == '' || this.obj[6] == '' || this.obj[7] == ''){
                 alert('请补全信息')
             } else {
               this.$router.push({path:'/dizhiguanli',query:{obj:this.obj}});
             }
+        }
+      },
+      mounted(){
+        var obj = this.$route.query.obj
+        console.log(obj)
+        if (typeof(obj) == "object"){
+          document.querySelectorAll('.body1 input')[0].value = obj[0];
+          document.querySelectorAll('.select1')[0].value = obj[1];
+          document.querySelectorAll('.select2')[0].value = obj[2];
+          document.querySelectorAll('.select3')[0].value = obj[3];
+          document.querySelectorAll('.body3 input')[0].value = obj[4];
+          document.querySelectorAll('.body4 input')[0].value = obj[5];
+          document.querySelectorAll('.body4 input')[1].value = obj[6];
+          document.querySelectorAll('.body4 input')[2].value = obj[7];
+
         }
       }
     }

@@ -4,34 +4,6 @@
         <p>修改密码</p>
       </div>
 
-      <!--<div class="grzl2">-->
-        <!--<div class="grzl2_1">-->
-          <!--<div class="shoujihao">-->
-            <!--<input type="text" onkeyup="value=value.replace(/[^\d]/g,'')" placeholder="请输入手机号" maxlength="11">-->
-          <!--</div>-->
-          <!--<div class="mima">-->
-            <!--<input type="password" placeholder="请输入密码（6-20位号码字符" maxlength="20" >-->
-          <!--</div>-->
-          <!--<div class="mima">-->
-            <!--<input type="password" placeholder="请再次输入密码确认" maxlength="20">-->
-          <!--</div>-->
-          <!--<div class="yanzhengma">-->
-            <!--<input type="text" placeholder="验证码" maxlength="4">-->
-            <!--<canvas id="canvas" width="120" height="40"></canvas>-->
-            <!--<a href="#" id="changeImg">看不清，换一张</a>-->
-          <!--</div>-->
-          <!--<div class="sjyanzhengma">-->
-            <!--<input type="text" placeholder="手机验证码" maxlength="6">-->
-            <!--<button @click="hqyzm()">获取验证码</button>-->
-          <!--</div>-->
-          <!--<div class="bangding">-->
-            <!--<button @click="panduan()">点击绑定</button>-->
-          <!--</div>-->
-        <!--</div>-->
-        <!--<div class="chenggong">-->
-          <!--<img src="../../../static/LYLimg/bdcg.png" height="184" width="454"/>-->
-        <!--</div>-->
-      <!--</div>-->
 
       <div class="hdrzc">
         <div class="hdrzc2">
@@ -455,6 +427,7 @@
       border: solid #d3d3d3 1px;
       margin-bottom: 30px;
       text-indent: 13px;
+
     }
     .grzl2_1>div>input::-webkit-input-placeholder{
       color: #999999;
@@ -523,10 +496,10 @@
       width: 100%;
       height: 40px;
       line-height: 40px;
-      border: 1px solid #999;
+      border: 1px solid #d3d3d3;
       text-indent: 15px;
-      font-size: 20px;
-      background-color:rgb(242,242,242);
+      font-size: 18px;
+      background-color:#f9f9f9;
     }
     .hinput1>input::-webkit-input-placeholder{
       color:#aab2bd;

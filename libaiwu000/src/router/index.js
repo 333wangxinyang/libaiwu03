@@ -32,25 +32,50 @@ import Tuikuan from '@/components/LYL/Tuikuan'
 import Daipingjia from '@/components/LYL/Daipingjia'
 import Quanbu from '@/components/LYL/Quanbu'
 import Zhanghuziliao from '@/components/LYL/Zhanghuziliao'
+
+import X06 from '@/components/wxy/X06'
+import X07 from '@/components/wxy/X07'
+import X08 from '@/components/wxy/X08'
+import X09 from '@/components/wxy/X09'
+import fff from '@/components/wxy/fff'
+
 import Huanbangshouji from '@/components/LYL/Huanbangshouji'
 import Yuanshouji from '@/components/LYL/Yuanshouji'
 import Xinshouji from '@/components/LYL/Xinshouji'
 import Huanbangchenggong from '@/components/LYL/Huanbangchenggong'
-
-
-
-
-
 Vue.use(Router)
 
 export default new Router({
   routes: [
-
+    {
+      path: '/fff',
+      name: 'fff',
+      component: fff
+    },
+    {
+      path: '/X06',
+      name: 'X06',
+      component: X06,
+      redirect:'/x07',
+      children:[
+        {
+          path: '/x07',
+          name: 'X07',
+          component: X07
+        },
+        {
+          path: '/x08',
+          name: 'X08',
+          component: X08
+        },
+      ]
+    },
     {
       path: '/aaa',
       name: 'shouye',
       component: shouye,
       redirect:'/shouye01',
+
       children: [
         {
           path: '/shouye01',
@@ -77,6 +102,11 @@ export default new Router({
           path: '/X04',
           name: 'X04',
           component: X04
+        },
+        {
+          path: '/X09',
+          name: 'X09',
+          component: X09
         },
         {
           path: '/daohang',
@@ -208,5 +238,6 @@ export default new Router({
         }
         ],
     }
+
   ]
 })

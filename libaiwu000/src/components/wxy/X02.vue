@@ -22,7 +22,7 @@
           return {
             arr:[
               {
-                pic:'../../../static/wxy1/x-lz.png',
+                pic:'../../../static/wxy1/pt.png',
                 title:'新西兰佳沛黄金奇异果',
                 title1:'花蜜版的甘甜百吃不厌',
                 title2:'500',
@@ -30,7 +30,7 @@
                 title4:'立即兑换'
               },
               {
-                pic:'../../../static/wxy1/x-yz.png',
+                pic:'../../../static/wxy1/cz.png',
                 title:'新西兰佳沛黄金奇异果',
                 title1:'花蜜版的甘甜百吃不厌',
                 title2:'500',
@@ -38,7 +38,7 @@
                 title4:'立即兑换'
               },
               {
-                pic:'../../../static/wxy1/x-yz1.png',
+                pic:'../../../static/wxy1/hfs.png',
                 title:'新西兰佳沛黄金奇异果',
                 title1:'花蜜版的甘甜百吃不厌',
                 title2:'500',
@@ -46,7 +46,7 @@
                 title4:'立即兑换'
               },
               {
-                pic:'../../../static/wxy1/x-pg.png',
+                pic:'../../../static/wxy1/mg.png',
                 title:'新西兰佳沛黄金奇异果',
                 title1:'花蜜版的甘甜百吃不厌',
                 title2:'500',
@@ -54,7 +54,7 @@
                 title4:'立即兑换'
               },
               {
-                pic:'../../../static/wxy1/x-lz.png',
+                pic:'../../../static/wxy1/hfs.png',
                 title:'新西兰佳沛黄金奇异果',
                 title1:'花蜜版的甘甜百吃不厌',
                 title2:'500',
@@ -62,7 +62,7 @@
                 title4:'立即兑换'
               },
               {
-                pic:'../../../static/wxy1/x-yz.png',
+                pic:'../../../static/wxy1/mht.png',
                 title:'新西兰佳沛黄金奇异果',
                 title1:'花蜜版的甘甜百吃不厌',
                 title2:'500',
@@ -70,7 +70,7 @@
                 title4:'立即兑换'
               },
               {
-                pic:'../../../static/wxy1/x-yz1.png',
+                pic:'../../../static/wxy1/mg.png',
                 title:'新西兰佳沛黄金奇异果',
                 title1:'花蜜版的甘甜百吃不厌',
                 title2:'500',
@@ -78,14 +78,14 @@
                 title4:'立即兑换'
               },
               {
-                pic:'../../../static/wxy1/x-pg.png',
+                pic:'../../../static/wxy1//pt.png',
                 title:'新西兰佳沛黄金奇异果',
                 title1:'花蜜版的甘甜百吃不厌',
                 title2:'500',
                 title3:'￥20.0',
                 title4:'立即兑换'
               }, {
-                pic:'../../../static/wxy1/x-lz.png',
+                pic:'../../../static/wxy1/mg.png',
                 title:'新西兰佳沛黄金奇异果',
                 title1:'花蜜版的甘甜百吃不厌',
                 title2:'500',
@@ -93,7 +93,7 @@
                 title4:'立即兑换'
               },
               {
-                pic:'../../../static/wxy1/x-yz.png',
+                pic:'../../../static/wxy1/hlg.png',
                 title:'新西兰佳沛黄金奇异果',
                 title1:'花蜜版的甘甜百吃不厌',
                 title2:'500',
@@ -101,7 +101,7 @@
                 title4:'立即兑换'
               },
               {
-                pic:'../../../static/wxy1/x-yz1.png',
+                pic:'../../../static/wxy1/mht.png',
                 title:'新西兰佳沛黄金奇异果',
                 title1:'花蜜版的甘甜百吃不厌',
                 title2:'500',
@@ -109,7 +109,7 @@
                 title4:'立即兑换'
               },
               {
-                pic:'../../../static/wxy1/x-pg.png',
+                pic:'../../../static/wxy1//hfs.png',
                 title:'新西兰佳沛黄金奇异果',
                 title1:'花蜜版的甘甜百吃不厌',
                 title2:'500',
@@ -137,18 +137,18 @@
     height: 400px;
     position: relative;
     border: 1px solid #666;
-    background-color: white;
+    background-color: #ffffff;
   }
   .aa a{
     text-decoration: none;
     color: #666;
   }
   .aa img{
-    width: 128px;
+    width: 190px;
     height: 184px;
     position: absolute;
     top: 40px;
-    left: 85px;
+    left: 60px;
 
   }
   .aa>span:nth-of-type(1){

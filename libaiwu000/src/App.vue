@@ -31,6 +31,7 @@
     <!--<x06></x06>-->
     <!--<x07></x07>-->
     <!--<head01></head01>-->
+    <!--<head01></head01>-->
     <!--<seek></seek>-->
     <!--<navigation></navigation>-->
     <router-view/>

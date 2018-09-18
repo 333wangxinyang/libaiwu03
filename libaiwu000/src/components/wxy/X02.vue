@@ -154,7 +154,7 @@
     width: 24%;
     height: 400px;
     position: relative;
-    border: 1px solid #666;
+    border: 1px solid #dfdfdf;
     background-color: #ffffff;
   }
   .aa a{

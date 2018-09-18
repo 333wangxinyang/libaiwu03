@@ -18,7 +18,7 @@
         </div>
       </div>
 
-      <div class="hdrzc">
+      <div class="hdrzc hzh04">
         <div class="hdrzc2">
 
           <h1>重置密码</h1>

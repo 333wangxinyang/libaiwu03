@@ -70,12 +70,70 @@
       </ul>
     </div>
 
+    <div class="h06div5">
+      <div>
+        <span>爱果果水果店</span>
+        <span>规格</span>
+        <span>单价</span>
+        <span>数量</span>
+        <span>金额</span>
+      </div>
+
+      <ul>
+        <li v-for="item in arr">
+          <img :src="item.src" alt="">
+          <span>{{item.jj}}</span>
+          <span>{{item.spgg}}</span>
+          <span>¥{{item.spdj}}</span>
+          <span>{{item.spsl}}</span>
+          <span>{{item.spje}}积分</span>
+        </li>
+      </ul>
+
+    </div>
+    <p>积分 : <span>{{zjf}}</span></p>
+    <span>
+        <button>取消订单</button>
+        <button>立即兑换</button>
+      </span>
+
+
   </div>
 </template>
 
 <script>
     export default {
-        name: "H06jfxq"
+        name: "H06jfxq",
+      data(){
+          return {
+          arr:[
+            {
+              src:'../../../static/hzh/h06-1-w80.png',
+              jj:'云南蒙自石榴8个装',
+              spgg:'8个装',
+              spdj:'569',
+              spsl:'1',
+              spje:'50',
+            },
+            {
+              src:'../../../static/hzh/h06-1-w80.png',
+              jj:'云南蒙自石榴8个装',
+              spgg:'8个装',
+              spdj:'569',
+              spsl:'1',
+              spje:'50',
+            }
+          ],
+          zjf:0,
+      }
+    },
+      mounted(){
+          var zjf2 = 0;
+          for(var i = 0 ; i< this.arr.length; i++){
+              zjf2 = this.arr[i].spsl * this.arr[i].spje + zjf2
+          }
+          this.zjf = zjf2+'积分';
+      }
     }
 </script>
 
@@ -165,5 +223,88 @@
     color: rgb(77,156,80);
     margin-left: 20px;
   }
-
+   .h06div5{
+     width: 1044px;
+     border: 1px solid rgb(180,180,180);
+     margin: 20px auto;
+   }
+  .h06div5>div{
+    height: 48px;
+    width: 100%;
+    background-color:rgb(222,222,222);
+    line-height: 48px;
+    display: flex;
+    justify-content: space-between;
+    color: #666;
+  }
+  .h06div5>div>span:nth-of-type(1){
+    margin-left: 20px;
+  }
+  .h06div5>div>span:nth-of-type(2){
+    margin-left: 150px;
+  }
+  .h06div5>div>span:nth-of-type(5){
+    margin-right:20px;
+  }
+  .h06div5>ul>li{
+    width: 100%;
+    height: 120px;
+    border-bottom: 1px solid rgb(222,222,222);
+    line-height: 120px;
+  }
+  .h06div5>ul>li>img{
+    margin: 20px;
+  }
+  .h06div5>ul>li>span{
+   position: absolute;
+    font-size: 14px;
+    color:#666;
+  }
+  .h06div5>ul>li>span:nth-of-type(1){
+    left: 140px;
+  }
+  .h06div5>ul>li>span:nth-of-type(2){
+    left: 442px;
+  }
+  .h06div5>ul>li>span:nth-of-type(3){
+    left: 632px;
+  }
+  .h06div5>ul>li>span:nth-of-type(4){
+    left: 836px;
+  }
+  .h06div5>ul>li>span:nth-of-type(5){
+    right:36px;
+  }
+  .h05div1>p{
+    float: right;
+    margin-right: 20px;
+    font-size: 18px;
+    color:#666;
+    margin-top: 20px;
+  }
+  .h05div1>p>span{
+    color:red;
+    font-size: 24px;
+  }
+  .h05div1>span{
+    display: inline-block;
+    width: 344px;
+    height: 50px;
+    margin-top: 30px;
+    margin-left: 724px;
+    margin-bottom: 30px;
+  }
+  .h05div1>span>button{
+    width: 150px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 10px;
+    font-size: 19px;
+    color:white;
+    background-color:rgb(153,153,153);
+  }
+  .h05div1>span>button:nth-of-type(2){
+    float: right;
+    background-color:rgb(247,131,39);
+  }
 </style>

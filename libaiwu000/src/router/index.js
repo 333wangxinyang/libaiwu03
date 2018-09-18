@@ -37,14 +37,20 @@ import X07 from '@/components/wxy/X07'
 import X08 from '@/components/wxy/X08'
 import X09 from '@/components/wxy/X09'
 import fff from '@/components/wxy/fff'
+import Yjfh from '@/components/wxy/Yjfh'
 import Huanbangshouji from '@/components/LYL/Huanbangshouji'
 import Yuanshouji from '@/components/LYL/Yuanshouji'
 import Xinshouji from '@/components/LYL/Xinshouji'
 import Huanbangchenggong from '@/components/LYL/Huanbangchenggong'
+
 import H03dr from '@/components/HZH/H03dr'
 import H02drzc from '@/components/HZH/H02drzc'
 import H04wjmm from '@/components/HZH/H04wjmm'
 
+
+
+import Zd from '@/components/wxy/Zd'
+import Liulan from '@/components/wxy/Liulan'
 
 Vue.use(Router)
 
@@ -179,6 +185,16 @@ export default new Router({
           component: Gerenzhongxin,
           children:[
             {
+              path:'/Yjfh',
+              name:'Yjfh',
+              component:Yjfh
+            },
+            {
+              path:'/Liulan',
+              name:'Liulan',
+              component:Liulan
+            },
+            {
               path: '/gerenziliao',
               name: 'Gerenziliao',
               component: Gerenziliao,
@@ -187,6 +203,11 @@ export default new Router({
               path: '/wodezhanghu',
               name: 'Wodezhanghu',
               component: Wodezhanghu,
+            },
+            {
+              path:'/Zd',
+              name:'Zd',
+              component: Zd
             },
             {
               path: '/dizhiguanli',
@@ -241,6 +262,7 @@ export default new Router({
               component: Wodedingdan,
               redirect:'/quanbu',
               children:[
+
                 {
                   path: '/daifukuan',
                   name: 'Daifukuan',

@@ -9,7 +9,7 @@
         </div>
        <ul>
         <li v-for="(bb,index01) in aa.arr0">
-          <a href="###">
+          <router-link to="/spxq/id">
           <img :src="bb.src" alt="">
           <p>{{bb.name}}</p>
           <p>{{bb.guige}}</p>
@@ -17,7 +17,7 @@
           <span>￥{{bb.jg}}</span>
           <a  href="###"></a>
             <a class="gwc" href="###"></a>
-          </a>
+          </router-link>
         </li>
        </ul>
       </div>

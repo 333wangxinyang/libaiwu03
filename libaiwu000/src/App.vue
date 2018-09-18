@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <!--<h01gylbw></h01gylbw>-->
-    <h02drzc></h02drzc>
+    <!--<h02drzc></h02drzc>-->
     <!--<x01></x01>-->
     <!--<x02></x02>-->
     <!--<head01></head01>-->
@@ -16,13 +16,7 @@
 
 
 
-    <!--<h01gylbw></h01gylbw>-->
     <!--<x05></x05>-->
-    <!--<h01gylbw></h01gylbw>-->
-    <!--<h01gylbw></h01gylbw>-->
-    <!--<h01gylbw></h01gylbw>-->
-    <!--<x01></x01>-->
-    <!--<x02></x02>-->
     <head01></head01>
 <!--<x01></x01>-->
     <!--<x02></x02>-->

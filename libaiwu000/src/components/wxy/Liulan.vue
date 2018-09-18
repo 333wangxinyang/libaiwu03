@@ -33,41 +33,41 @@
             pic2:'../../../static/wxy1/gb.png',
             pic3:'../../../static/wxy1/gwc.png'
           },{
-            pic:'../../../static/wxy1/pt.png',
+            pic:'../../../static/wxy1/hlg.png',
             title:'新西兰佳沛黄金奇异果',
             title1:'果肉绵密,花蜜般的甘甜百吃不厌',
             pic1:'../../../static/wxy1/money.png',
             pic2:'../../../static/wxy1/gb.png',
             pic3:'../../../static/wxy1/gwc.png'
           },{
-            pic:'../../../static/wxy1/pt.png',
+            pic:'../../../static/wxy1/mg.png',
             title:'新西兰佳沛黄金奇异果',
             title1:'果肉绵密,花蜜般的甘甜百吃不厌',
             pic1:'../../../static/wxy1/money.png',
             pic2:'../../../static/wxy1/gb.png',
             pic3:'../../../static/wxy1/gwc.png'
           },{
-            pic:'../../../static/wxy1/pt.png',
+            pic:'../../../static/wxy1/hxy.png',
             title:'新西兰佳沛黄金奇异果',
             title1:'果肉绵密,花蜜般的甘甜百吃不厌',
             pic1:'../../../static/wxy1/money.png',
             pic2:'../../../static/wxy1/gb.png',
             pic3:'../../../static/wxy1/gwc.png'
           },{
-            pic:'../../../static/wxy1/pt.png',
+            pic:'../../../static/wxy1/mht.png',
             title:'新西兰佳沛黄金奇异果',
             title1:'果肉绵密,花蜜般的甘甜百吃不厌',
             pic1:'../../../static/wxy1/money.png',
             pic2:'../../../static/wxy1/gb.png',
             pic3:'../../../static/wxy1/gwc.png'
           },{
-            pic:'../../../static/wxy1/pt.png',
+            pic:'../../../static/wxy1/hfs.png',
             title:'新西兰佳沛黄金奇异果',
             title1:'果肉绵密,花蜜般的甘甜百吃不厌',
             pic1:'../../../static/wxy1/money.png',
             pic2:'../../../static/wxy1/gb.png',
             pic3:'../../../static/wxy1/gwc.png'
-          },
+          }
         ]
       }
     }

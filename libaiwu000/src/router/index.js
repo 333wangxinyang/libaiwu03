@@ -32,11 +32,11 @@ import Tuikuan from '@/components/LYL/Tuikuan'
 import Daipingjia from '@/components/LYL/Daipingjia'
 import Quanbu from '@/components/LYL/Quanbu'
 import Zhanghuziliao from '@/components/LYL/Zhanghuziliao'
+import gwc from '@/components/wangxinyang/gwc'
+import qrddzy from '@/components/wangxinyang/qrddzy'
 
-
-
-
-
+import qrdd from '@/components/wangxinyang/qrdd'
+import qrsh01 from '@/components/wangxinyang/qrsh01'
 
 
 Vue.use(Router)
@@ -56,6 +56,30 @@ export default new Router({
       component: shouye,
       redirect:'/shouye01',
       children: [
+        {
+          path: '/gwc',
+          name: 'gwc',
+          component: gwc
+        },
+        {
+          path: '/qrddzy',
+          name: 'qrddzy',
+          component: qrddzy,
+          redirect:'/qrdd',
+          children: [
+            {
+              path: '/qrdd',
+              name: 'qrdd',
+              component: qrdd
+            },
+            {
+              path: '/qrsh01',
+              name: 'qrsh01',
+              component: qrsh01
+            },
+          ]
+
+        },
         {
           path: '/shouye01',
           name: 'shouye01',

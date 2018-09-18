@@ -71,7 +71,7 @@ export default new Router({
       ]
     },
     {
-      path: '/aaa',
+      path: '/',
       name: 'shouye',
       component: shouye,
       redirect:'/shouye01',

@@ -24,8 +24,27 @@
         navigation:navigation,
         foot:foot,
       },
+      methods:{
+       hasKey(key) {
+    var strArr = document.cookie.split(";");
+    for(var i = 0; i < strArr.length; i++) {
+      var kvArr = strArr[i].split("=");
+      if(kvArr[0].trim() == key) {
+        //相等
+        return true;
+      }
+    }
+    //不相等
+    return false;
+  }
+      },
       mounted(){
-        document.cookie = "state=0";
+
+       if(!this.hasKey("state")){
+         document.cookie = "state=0";
+       }
+
+
       }
     }
 </script>

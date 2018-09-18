@@ -5,7 +5,7 @@
       </div>
       <div class="body">
         <div class="body1">
-          <span>当前头像:</span>
+          <span>当前头像 :</span>
           <div class="xuantu1">
             <div class="box">
               <img class="imgshow" src="" alt=""/>
@@ -18,7 +18,7 @@
         </div>
         <div class="body2">
           <span>昵称 :</span>
-          <input type="text">
+          <input type="text" maxlength="10">
         </div>
         <div class="body3">
           <span>性别 :</span>
@@ -77,7 +77,7 @@
         </div>
         <div class="body5">
           <span>手机 :</span>
-          <input type="text">
+          <input type="text" maxlength="11">
           <span>更换手机</span>
         </div>
         <div class="body5">
@@ -126,6 +126,9 @@
     float: left;
     line-height: 60px;
   }
+  .body1>span:nth-of-type(1){
+    margin-left: 6px;
+  }
   .body1>span:nth-of-type(2){
     margin-left: 15px;
     color: #4c9b50;
@@ -133,7 +136,7 @@
   .xuantu1{
     width: 60px;
     height: 60px;
-    margin-left: 5px;
+    margin-left: 15px;
     position: relative;
     float: left;
   }
@@ -276,5 +279,6 @@
     margin-left: 90px;
     margin-top: 40px;
     margin-bottom: 152px;
+    outline: none;
   }
 </style>

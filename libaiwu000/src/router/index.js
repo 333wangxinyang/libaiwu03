@@ -142,7 +142,6 @@ export default new Router({
               path: '/huanbangshouji',
               name: 'Huanbangshouji',
               component: Huanbangshouji,
-              redirect:'/yuanshouji',
               children:[
                 {
                   path: '/yuanshouji',

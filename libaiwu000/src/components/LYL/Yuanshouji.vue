@@ -9,7 +9,7 @@
         <a href="#" id="changeImg">看不清，换一张</a>
       </div>
       <div class="password">
-        <input type="text" placeholder="输入密码验证身份">
+        <input type="password" placeholder="输入密码验证身份" maxlength="20">
       </div>
       <button @click="yanzheng">提交验证</button>
     </div>
@@ -20,20 +20,116 @@
         name: "Yuanshouji",
       data(){
         return {
-          obj:[]
+          obj:'',
         }
       },
       methods:{
         yanzheng(){
-          var js = document.querySelectorAll('.js>input')[0].value
-          var yanzhengma = document.querySelectorAll('.yanzhengma>input')[0].value
-          if (js.length < 11){
-            alert('手机号格式不正确')
-          }else if (yanzhengma != this.obj){
-
+          var aa = '';
+          console.log(this.obj)
+          for (var i = 0;i < this.obj.length;i++){
+            aa+=this.obj[i];
           }
-          else {
-            this.$router.push({path:'/xinshouji'});
+          console.log(aa)
+          var input = document.querySelectorAll('.yanzhengma input')[0]
+          var val = input.value.split('');
+
+          for (var i = 0;i < val.length;i++){
+            if (val[i] == 'a'){
+              val[i] = 'A'
+            }
+            if (val[i] == 'b'){
+              val[i] = 'B'
+            }
+            if (val[i] == 'c'){
+              val[i] = 'C'
+            }
+            if (val[i] == 'd'){
+              val[i] = 'D'
+            }
+            if (val[i] == 'e'){
+              val[i] = 'E'
+            }
+            if (val[i] == 'f'){
+              val[i] = 'F'
+            }
+            if (val[i] == 'g'){
+              val[i] = 'G'
+            }
+            if (val[i] == 'h'){
+              val[i] = 'H'
+            }
+            if (val[i] == 'j'){
+              val[i] = 'J'
+            }
+            if (val[i] == 'k'){
+              val[i] = 'K'
+            }
+            if (val[i] == 'l'){
+              val[i] = 'L'
+            }
+            if (val[i] == 'm'){
+              val[i] = 'M'
+            }
+            if (val[i] == 'n'){
+              val[i] = 'N'
+            }
+            if (val[i] == 'o'){
+              val[i] = 'O'
+            }
+            if (val[i] == 'p'){
+              val[i] = 'P'
+            }
+            if (val[i] == 'q'){
+              val[i] = 'Q'
+            }
+            if (val[i] == 'r'){
+              val[i] = 'R'
+            }
+            if (val[i] == 's'){
+              val[i] = 'S'
+            }
+            if (val[i] == 't'){
+              val[i] = 'T'
+            }
+            if (val[i] == 'u'){
+              val[i] = 'U'
+            }
+            if (val[i] == 'v'){
+              val[i] = 'V'
+            }
+            if (val[i] == 'w'){
+              val[i] = 'W'
+            }
+            if (val[i] == 'x'){
+              val[i] = 'X'
+            }
+            if (val[i] == 'y'){
+              val[i] = 'Y'
+            }
+            if (val[i] == 'z'){
+              val[i] = 'Z'
+            }
+          }
+          var guolv = '';
+          for (var i = 0;i < val.length;i++){
+            guolv += val[i]
+          }
+          console.log(guolv)
+
+          var sj = document.querySelectorAll('.sj input')[0].value
+          var yanzhengma = document.querySelectorAll('.yanzhengma input')[0].value
+          var password = document.querySelectorAll('.password input')[0].value
+          console.log(password)
+          console.log(sj,yanzhengma)
+          if (sj.length < 11){
+            alert('手机号格式不正确')
+          }else if (guolv != aa){
+            alert('验证码错误')
+          }else if (password.length < 6){
+            alert('密码长度小于六位')
+          }else {
+            this.$router.push({path:'/xinshouji',query:{num:2}});
           }
         }
       },
@@ -84,7 +180,7 @@
           obj = [];
           for(var i=0; i<4; i++){
             var txt = str[randomNum(0,str.length)];
-            obj.push(txt)
+            obj.push(txt);
             ctx.fillStyle = randomColor(50,160);  //随机生成字体颜色
             ctx.font = randomNum(15,40)+'px SimHei'; //随机生成字体大小
             var x = 10+i*25;

@@ -46,6 +46,10 @@
             this.data[index].bol = false;
             console.log(this.data[index].bol)
           }
+        },
+        mounted(){
+          console.log(this.bol)
+          this.bol = localStorage.bol = true;
         }
     }
 </script>

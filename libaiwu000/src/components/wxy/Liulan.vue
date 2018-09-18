@@ -47,7 +47,7 @@
             pic2:'../../../static/wxy1/gb.png',
             pic3:'../../../static/wxy1/gwc.png'
           },{
-            pic:'../../../static/wxy1/hxy.png',
+            pic:'../../../static/wxy1/cz.png',
             title:'新西兰佳沛黄金奇异果',
             title1:'果肉绵密,花蜜般的甘甜百吃不厌',
             pic1:'../../../static/wxy1/money.png',

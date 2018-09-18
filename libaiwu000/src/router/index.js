@@ -46,6 +46,8 @@ import Huanbangshouji from '@/components/LYL/Huanbangshouji'
 import Yuanshouji from '@/components/LYL/Yuanshouji'
 import Xinshouji from '@/components/LYL/Xinshouji'
 import Huanbangchenggong from '@/components/LYL/Huanbangchenggong'
+import Zd from '@/components/wxy/Zd'
+import Liulan from '@/components/wxy/Liulan'
 Vue.use(Router)
 
 export default new Router({
@@ -166,6 +168,11 @@ export default new Router({
               component:Yjfh
             },
             {
+              path:'/Liulan',
+              name:'Liulan',
+              component:Liulan
+            },
+            {
               path: '/gerenziliao',
               name: 'Gerenziliao',
               component: Gerenziliao,
@@ -174,6 +181,11 @@ export default new Router({
               path: '/wodezhanghu',
               name: 'Wodezhanghu',
               component: Wodezhanghu,
+            },
+            {
+              path:'/Zd',
+              name:'Zd',
+              component: Zd
             },
             {
               path: '/dizhiguanli',
@@ -228,6 +240,7 @@ export default new Router({
               component: Wodedingdan,
               redirect:'/quanbu',
               children:[
+
                 {
                   path: '/daifukuan',
                   name: 'Daifukuan',

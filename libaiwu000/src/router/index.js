@@ -11,18 +11,14 @@ import X01 from '@/components/wxy/X01'
 import X02 from '@/components/wxy/X02'
 import X04 from '@/components/wxy/X04'
 import shouye from '@/components/wangxinyang/shouye'
-
 import Tianjiadizhi from '@/components/LYL/Tianjiadizhi'
-
 import shouye01 from '@/components/wangxinyang/shouye01'
 import tongcheng from '@/components/wangxinyang/tongcheng'
 import H01gylbw from '@/components/HZH/H01gylbw'
-
 import shangjiaxq from '@/components/wangxinyang/shangjiaxq'
 import shangjia01 from '@/components/wangxinyang/shangjia01'
 import shangpinfy01 from '@/components/wangxinyang/shangpinfy01'
 import zhuanti from '@/components/wangxinyang/zhuanti'
-
 import Dingdanbianhao from '@/components/LYL/Dingdanbianhao'
 import Daifukuan from '@/components/LYL/Daifukuan'
 import Daifahuo from '@/components/LYL/Daifahuo'
@@ -45,10 +41,30 @@ import Huanbangshouji from '@/components/LYL/Huanbangshouji'
 import Yuanshouji from '@/components/LYL/Yuanshouji'
 import Xinshouji from '@/components/LYL/Xinshouji'
 import Huanbangchenggong from '@/components/LYL/Huanbangchenggong'
+import H03dr from '@/components/HZH/H03dr'
+import H02drzc from '@/components/HZH/H02drzc'
+import H04wjmm from '@/components/HZH/H04wjmm'
+
+
 Vue.use(Router)
 
 export default new Router({
   routes: [
+    {
+      path: '/H04wjmm',
+      name: 'H04wjmm',
+      component: H04wjmm
+    },
+    {
+      path: '/H02drzc',
+      name: 'H02drzc',
+      component: H02drzc
+    },
+    {
+      path: '/H03dr',
+      name: 'H03dr',
+      component: H03dr
+    },
     {
       path: '/fff',
       name: 'fff',
@@ -96,13 +112,17 @@ export default new Router({
       ]
     },
     {
-      path: '/aaa',
+      path: '/',
       name: 'shouye',
       component: shouye,
       redirect:'/shouye01',
 
       children: [
-
+        {
+          path: '/spxq/:id',
+          name: 'X09',
+          component: X09
+        },
         {
           path: '/shouye01',
           name: 'shouye01',
@@ -115,14 +135,13 @@ export default new Router({
         },
         {
           path: '/libaiwu',
-          name: 'shangjiaxq',
-          component: shangjiaxq
+          name: 'H01gylbw',
+          component: H01gylbw
         },
         {
           path: '/X02',
           name: 'X02',
           component: X02,
-
         },
         {
           path: '/X04',

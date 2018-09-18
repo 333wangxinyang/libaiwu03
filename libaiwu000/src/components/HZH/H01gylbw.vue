@@ -76,6 +76,7 @@
       width: 1280px;
       margin: 20px auto;
       position: relative;
+      overflow: hidden;
     }
   #h01div1{
     background-color:rgb(230,230,230);

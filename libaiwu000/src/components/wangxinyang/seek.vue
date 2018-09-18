@@ -5,7 +5,7 @@
         <div>
           <input id="input01" @input="aa($event)" type="text">
           <router-link id="tt" :to="tt"></router-link>
-          <router-link id="grzx" to="/grzx">个人中心</router-link>
+          <router-link id="grzx" :to="state==0?'/H03dr':'/grzx'">个人中心</router-link>
           <router-link to="/gwc">购物车</router-link>
           <!--<router-link to="/grzx">购物车</router-link>-->
           <!--<a href="###"></a>-->
@@ -29,6 +29,7 @@
       data(){
         return{
           tt:'###',
+          state:0,
         }
       },
       methods :{
@@ -39,7 +40,16 @@
                this.tt = '/sousuo/'+$(v.target).val();
              }
           },
-
+        getValueByKey(key) {
+          //获取所有键值对
+          var strArr = document.cookie.split(";");
+          for (var i = 0; i < strArr.length; i++) {
+            var kvArr = strArr[i].split("=");
+            if (kvArr[0].trim() == key) {
+              return kvArr[1];
+            }
+          }
+        }
         // bb(){
         //   alert('内容不能为空')
         //   if($('#input01').val() === '' ){
@@ -48,6 +58,13 @@
         // }
       },
       mounted(){
+console.log(document.cookie)
+
+        this.state = this.getValueByKey("state")
+
+
+
+
         $('#tt').click(function () {
           if($('#input01').val() === '' ){
                 alert('内容不能为空')

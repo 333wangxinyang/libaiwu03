@@ -30,7 +30,6 @@
     <!--<x04></x04>-->
     <!--<x06></x06>-->
     <!--<x07></x07>-->
-    <head01></head01>
     <!--<head01></head01>-->
     <!--<seek></seek>-->
     <!--<navigation></navigation>-->
@@ -45,9 +44,6 @@
   import X05 from '@/components/wxy/X05'
   import X06 from '@/components/wxy/X06'
   import head01 from '@/components/wangxinyang/head01'
-  import H01gylbw from '@/components/HZH/H01gylbw'
-  import seek from '@/components/wangxinyang/seek'
-  import navigation from '@/components/wangxinyang/navigation'
   import fff from '@/components/wxy/fff'
   import X09 from '@/components/wxy/X09'
   import H02drzc from '@/components/HZH/H02drzc'

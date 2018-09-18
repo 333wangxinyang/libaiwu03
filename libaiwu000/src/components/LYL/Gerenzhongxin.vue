@@ -16,12 +16,12 @@
             <li class="max"><a href="###">会员资料<span>></span></a></li>
             <li><router-link to="/huanbangshouji">个人资料</router-link></li>
             <li><router-link to="/dizhiguanli">地址管理</router-link></li>
-            <li><a href="###">我的收藏</a></li>
-            <li><a href="###">最近浏览</a></li>
+            <li><router-link to="">我的收藏</router-link></li>
+            <li><router-link to="">最近浏览</router-link></li>
             <li><router-link to="/gerenziliao">修改密码</router-link></li>
             <li class="max"><a href="###">站内信<span>></span></a></li>
             <li><a href="###">我的消息</a></li>
-            <li><a href="###">意见反馈</a></li>
+            <li><router-link to="/Yjfh">意见反馈</router-link></li>
           </ul>
         </div>
       </div>

@@ -38,7 +38,7 @@ import X07 from '@/components/wxy/X07'
 import X08 from '@/components/wxy/X08'
 import X09 from '@/components/wxy/X09'
 import fff from '@/components/wxy/fff'
-
+import Yjfh from '@/components/wxy/Yjfh'
 import Huanbangshouji from '@/components/LYL/Huanbangshouji'
 import Yuanshouji from '@/components/LYL/Yuanshouji'
 import Xinshouji from '@/components/LYL/Xinshouji'
@@ -71,7 +71,7 @@ export default new Router({
       ]
     },
     {
-      path: '/aaa',
+      path: '/',
       name: 'shouye',
       component: shouye,
       redirect:'/shouye01',
@@ -133,6 +133,11 @@ export default new Router({
           name: 'Gerenzhongxin',
           component: Gerenzhongxin,
           children:[
+            {
+              path:'/Yjfh',
+              name:'Yjfh',
+              component:Yjfh
+            },
             {
               path: '/gerenziliao',
               name: 'Gerenziliao',

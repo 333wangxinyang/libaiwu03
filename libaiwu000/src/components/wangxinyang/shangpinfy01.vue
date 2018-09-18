@@ -20,7 +20,7 @@
     <div id="t_div3">
       <ul v-for="(aa,index) in arr" v-if="aa.bol">
         <li v-for="(bb,index01) in aa.arr1">
-          <a href="###">
+          <router-link to="/spxq/id">
             <img :src="bb.src" alt="">
             <p>{{bb.name}}</p>
             <p>{{bb.guige}}</p>
@@ -28,7 +28,7 @@
             <span>￥{{bb.jg}}</span>
             <a  href="###"></a>
             <a class="gwc" href="###"></a>
-          </a>
+          </router-link>
         </li>
       </ul>
 

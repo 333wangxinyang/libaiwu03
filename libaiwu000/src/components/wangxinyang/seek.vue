@@ -1,6 +1,8 @@
 <template>
     <div id="seek">
+      <router-link to="/">
       <img src="../../../static/wangxinyang/logo.png" alt="">
+      </router-link>
       <div id="s_div1">
         <div>
           <input id="input01" @input="aa($event)" type="text">
@@ -88,7 +90,7 @@ console.log(document.cookie)
     position: relative;
     /*background-color: #F00;*/
   }
-  #seek>img{
+  #seek>a>img{
     display: block;
     position: absolute;
     left: 0;

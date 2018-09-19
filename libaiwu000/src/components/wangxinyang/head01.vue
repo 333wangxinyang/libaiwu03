@@ -37,11 +37,11 @@
       </div>
 
       <div class="headkong2">
-      <div class="hdrzc hzh03">
-        <div class="hdrzc2">
+      <div class="hzh03">
+        <div class="hzh04">
 
 
-          <div class="h03div1">
+          <div class="hzh05">
             <span>登录</span>
             <span>
             <a href="">手机验证登录</a>
@@ -49,30 +49,30 @@
           </span>
           </div>
 
-          <span class="hinput1">
-            <input type="text" placeholder="请输入手机号" class="drzc1">
+          <span class="hzh06">
+            <input type="text" placeholder="请输入手机号" class="hzh07">
             <img src="../../../static/hzh/h02-7-w12.png" alt="">
           </span>
-          <div class="hdis1 drzc11"><img src="../../../static/hzh/h02-8-w12.png" alt=""> <span>手机号码不正确,请重新输入</span></div>
+          <div class="hdis11 hzh77"><img src="../../../static/hzh/h02-8-w12.png" alt=""> <span>手机号码不正确,请重新输入</span></div>
 
-          <span class="hinput1">
-            <input type="password" placeholder="密码" class="drzc2">
+          <span class="hzh06">
+            <input type="password" placeholder="密码" class="drzcB">
             <img src="../../../static/hzh/h02-7-w12.png" alt="">
           </span>
-          <div class="hdis1 drzc22"><img src="../../../static/hzh/h02-8-w12.png" alt=""> <span>密码长度不符合标准</span></div>
+          <div class="hdis11 drzcBB"><img src="../../../static/hzh/h02-8-w12.png" alt=""> <span>密码长度不符合标准</span></div>
 
-          <span class="hinput1" id="hinput2">
-          <input type="text" placeholder="验证码" class="drzc4">
+          <span class="hzh06" id="hinput22">
+          <input type="text" placeholder="验证码" class="drzcD">
           <img src="../../../static/hzh/h02-7-w12.png" alt="">
           </span>
 
-          <span class="hcanvas1">
+          <span class="hcanvasA">
             <canvas id="canvas" width="80" height="35"></canvas>
             <a href="#" id="changeImg">看不清换一张</a>
           </span>
 
-          <div class="h03div2">
-            <span class="h03click1">
+          <div class="h03divB">
+            <span class="h03clickA">
               <img src="../../../static/hzh/h02-9-w16.png" alt="">
               <p>自动登录</p>
             </span>
@@ -80,17 +80,17 @@
           </div>
 
 
-          <span class="h02span2 hzc1"><router-link to="">登录</router-link></span>
-          <span class="h02span2 h02span3"><router-link to="/H02drzc">会员注册</router-link></span>
+          <span class="h02spanB hzcA"><router-link to="">登录</router-link></span>
+          <span class="h02spanB h02spanC"><router-link to="/H02drzc">会员注册</router-link></span>
 
-          <span class="h03span1">提示 : 未注册用户将直接注册成为礼拜五用户</span>
+          <span class="h03spanA">提示 : 未注册用户将直接注册成为礼拜五用户</span>
 
-          <div class="h03div3">
+          <div class="h03divC">
             -------- 用合作网站登录 -------
           </div>
 
 
-          <div class="h03div4">
+          <div class="h03divD">
             <img src="../../../static/hzh/h03-2-w40.png" alt="">
             <img src="../../../static/hzh/h03-3-w40.png" alt="">
           </div>
@@ -249,39 +249,39 @@ data(){
         var h03a = true;
 
         // 手机号
-        $('.drzc1').blur(function () {
-          var phone = document.querySelector('.drzc1').value
+        $('.hzh07').blur(function () {
+          var phone = document.querySelector('.hzh07').value
           if (!(/^1[34578]\d{9}$/.test(phone))) {
-            $('.drzc11').css({opacity: 1})
-            $('.drzc1').next().css({display: "none"})
+            $('.hzh77').css({opacity: 1})
+            $('.hzh07').next().css({display: "none"})
             console.log(phone)
             ha = false
           } else {
-            $('.drzc11').css({opacity: 0})
-            $('.drzc1').next().css({display: "block"})
+            $('.hzh77').css({opacity: 0})
+            $('.hzh07').next().css({display: "block"})
             ha = true
           }
         })
 
         //  密码
-        $('.drzc2').blur(function () {
-          var password1 = document.querySelector('.drzc2').value
+        $('.drzcB').blur(function () {
+          var password1 = document.querySelector('.drzcB').value
           if (password1.length < 6 || password1.length > 20) {
-            $('.drzc22').css({opacity: 1})
-            $('.drzc2').next().css({display: "none"})
+            $('.drzcBB').css({opacity: 1})
+            $('.drzcB').next().css({display: "none"})
             hb = false
             console.log(password1)
           } else {
-            $('.drzc22').css({opacity: 0})
-            $('.drzc2').next().css({display: "block"})
+            $('.drzcBB').css({opacity: 0})
+            $('.drzcB').next().css({display: "block"})
             hb = true
           }
         })
 
         // 登录
-        $('.hzc1').click(function () {
-          var phone1 = document.querySelector('.drzc1').value
-          var password1 = document.querySelector('.drzc2').value
+        $('.hzcA').click(function () {
+          var phone1 = document.querySelector('.hzh07').value
+          var password1 = document.querySelector('.drzcB').value
           if (ha == true && hb == true) {
             axios.get('/api/php/hzhxqw/drzc2.php?type=2&phone=' + phone1 + '').then((response) => {
               console.log(response.data);
@@ -317,12 +317,12 @@ data(){
 
 
         //  自动登录换图
-        $('.h03click1').click(function () {
+        $('.h03clickA').click(function () {
           if (h03a == true) {
-            $('.h03click1>img').attr({src: "../../../static/hzh/h02-10-w16.png"})
+            $('.h03clickA>img').attr({src: "../../../static/hzh/h02-10-w16.png"})
             h03a = false
           } else {
-            $('.h03click1>img').attr({src: "../../../static/hzh/h02-9-w16.png"})
+            $('.h03clickA>img').attr({src: "../../../static/hzh/h02-9-w16.png"})
             h03a = true
           }
         })
@@ -460,7 +460,7 @@ data(){
 
 
 
-  .hdrzc{
+  .hzh03{
     width: 388px;
     height: 498px;
     background-color:white;
@@ -474,13 +474,13 @@ data(){
     display: inline-block;
     border: 2px solid #999;
   }
-  .hdrzc2{
+  .hzh04{
     width: 312px;
     height: 444px;
     margin: auto;
     margin-top: 30px;
   }
-  .hinput1>input{
+  .hzh06>input{
     width: 100%;
     height: 40px;
     line-height: 40px;
@@ -489,37 +489,37 @@ data(){
     font-size: 20px;
     background-color:rgb(242,242,242);
   }
-  .hinput1>input::-webkit-input-placeholder{
+  .hzh06>input::-webkit-input-placeholder{
     color:#aab2bd;
   }
-  .hinput1{
+  .hzh06{
     display: inline-block;
     width: 100%;
     height: 40px;
     line-height: 40px;
     position: relative;
   }
-  .hinput1>img{
+  .hzh06>img{
     position: absolute;
     right: 10px;
     top: 15px;
     display: none;
   }
-  #hinput2{
+  #hinput22{
     width: 112px;
     margin-bottom: 30px;
   }
-  #hinput2>img{
+  #hinput22>img{
     right: 5px;
   }
-  .hdis1{
+  .hdis11{
     margin-top: 5px;
     margin-bottom: 5px;
     color:red;
     font-size:14px;
     opacity: 0;
   }
-  .hcanvas1{
+  .hcanvasA{
     display: inline-block;
     width: 190px;
     height: 35px;
@@ -528,13 +528,13 @@ data(){
     left:170px ;
     top:231px;
   }
-  .hcanvas1>a{
+  .hcanvasA>a{
     color:rgb(252,192,132);
     font-size: 16px;
     position: absolute;
     left: 90px;
   }
-  .hinput1>span{
+  .hzh06>span{
     display: inline-block;
     width: 102px;
     height: 33px;
@@ -548,7 +548,7 @@ data(){
     top: 4.4px;
   }
 
-  .h02span2{
+  .h02spanB{
     display: inline-block;
     width: 135px;
     height: 46px;
@@ -558,31 +558,31 @@ data(){
     border-radius: 10px;
     font-size:25px;
   }
-  .h02span2>a{
+  .h02spanB>a{
     color:white;
   }
-  .h02span3{
+  .h02spanC{
     float: right;
     background-color:rgb(61,142,67);
   }
-  .h03div1{
+  .hzh05{
     position: relative;
     margin-bottom: 12px;
   }
-  .h03div1>span:nth-of-type(1){
+  .hzh05>span:nth-of-type(1){
     font-size: 32px;
     color: #555;
   }
-  .h03div1>span:nth-of-type(2){
+  .hzh05>span:nth-of-type(2){
     position: absolute;
     right: 0;
     bottom: 6px;
   }
-  .h03div1>span:nth-of-type(2)>a{
+  .hzh05>span:nth-of-type(2)>a{
     color: #4b943d;
     font-size: 19px;
   }
-  .h03div2{
+  .h03divB{
     width: 100%;
     height: 30px;
     line-height: 30px;
@@ -591,33 +591,33 @@ data(){
     margin-top: -17px;
     margin-bottom: 10px;
   }
-  .h03div2>span{
+  .h03divB>span{
     display: inline-block;
     width: 35%;
     height: 100%;
     line-height: 30px;
     position: relative;
   }
-  .h03div2>span:nth-of-type(1)>img{
+  .h03divB>span:nth-of-type(1)>img{
     position: absolute;
     top: 7.3px;
     left: 0;
   }
-  .h03div2>span:nth-of-type(1)>p{
+  .h03divB>span:nth-of-type(1)>p{
     margin-left: 25px;
     color: #888;
     font-size: 17px;
   }
-  .h03div2>span:nth-of-type(2){
+  .h03divB>span:nth-of-type(2){
     position: absolute;
     right: -28px;
     text-decoration:underline;
   }
-  .h03div2>span:nth-of-type(2)>a{
+  .h03divB>span:nth-of-type(2)>a{
     color: rgb(252,192,132);
     font-size: 18px;
   }
-  .h03span1{
+  .h03spanA{
     display: inline-block;
     width: 100%;
     height: 40px;
@@ -625,13 +625,13 @@ data(){
     font-size: 14px;
     color: #999;
   }
-  .h03div3{
+  .h03divC{
     height: 30px;
     font-size: 18px;
     line-height: 30px;
     color: #777;
   }
-  .h03div4{
+  .h03divD{
     width: 100px;
     display: flex;
     justify-content: space-between;

@@ -11,6 +11,11 @@
     <!--<h05jfdd></h05jfdd>-->
     <!--<h06jfxq></h06jfxq>-->
     <!--<x05></x05>-->
+
+
+    <!--<head01></head01>-->
+<!--<x01></x01>-->
+    <!--<x02></x02>-->
       <!--<x03></x03>-->
     <!--<x04></x04>-->
     <!--<x06></x06>-->
@@ -62,6 +67,19 @@ export default {
     h05jfdd:H05jfdd,
     h06jfxq:H06jfxq
   },
+  methods:{
+
+  },
+  beforeCreate(){
+
+    //在vue实例创建完成之前执行
+    console.log('beforeCreate创建之前')
+      document.cookie = "state=0";
+
+  },
+  mounted(){
+
+  }
 }
 </script>
 

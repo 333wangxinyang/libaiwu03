@@ -70,10 +70,8 @@ export default {
 
   },
   beforeCreate(){
-
     console.log('beforeCreate创建之前')
       document.cookie = "state=0";
-
   },
   mounted(){
 

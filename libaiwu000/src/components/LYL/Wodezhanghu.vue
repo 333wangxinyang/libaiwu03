@@ -2,7 +2,7 @@
     <div>
       <div class="grzl1">
         <p>充值卡兑换</p>
-        <button>查看账单</button>
+        <button> <router-link to="/Zd">查看账单</router-link></button>
       </div>
       <div class="body">
         <input type="text" onkeyup="value=value.replace(/[^\d]/g,'')" placeholder="请输入充值卡兑换码进行充值" maxlength="11"><br>
@@ -21,6 +21,9 @@
 </script>
 
 <style scoped>
+  a{
+    color: #ffffff;
+  }
   .grzl1{
     height: 57px;
     border-bottom: 1px solid #ececec;

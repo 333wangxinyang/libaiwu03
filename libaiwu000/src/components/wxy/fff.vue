@@ -71,7 +71,7 @@
     mounted(){
 
 
-      
+
       // $("#box").on("mouseenter",function(){
       //   $('canvas').css({
       //     left: '600px' ,

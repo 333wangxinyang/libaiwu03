@@ -6,9 +6,9 @@
     <img src="../../../static/wxy1/x-bc.png" alt="">
    <p>您要查看的网址可能已被删除、名称已被更改、或者暂时不可用</p>
     <router-link to="">
-    <span class="span1">返回上一页面</span>
+    <span @click="aa" class="span1">返回上一页面</span>
     </router-link>
-    <router-link to="">
+    <router-link to="/">
       <span class="span2">返回网站首页</span>
     </router-link>
   </div>
@@ -18,7 +18,12 @@
 
 <script>
     export default {
-        name: "X01"
+        name: "X01",
+      methods:{
+          aa(){
+            history.back();
+          }
+      }
     }
 </script>
 

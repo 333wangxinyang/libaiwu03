@@ -626,7 +626,7 @@
       height: 185px;
       background-color:rgb(217,217,217);
       position: absolute;
-      left: 940px;
+      left: 700px;
       top: 450px;
       border-radius: 20px;
       display: none;

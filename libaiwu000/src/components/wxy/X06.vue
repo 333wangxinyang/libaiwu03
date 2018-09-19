@@ -1,21 +1,18 @@
 <template>
 <div class="box">
   <div class="title">
-    <router-link to="/">
     <img src="../../../static/wxy1/logo1.png" alt="">
-    </router-link>
     <router-link to="">
       <span class="aa">我的购物车   ></span>
     </router-link>
     <router-link to="/x09">
       <span class="aa1">确认订单信息   ></span>
     </router-link>
-    <router-link to="/x07">
+    <router-link to="/">
       <span class="aa2">订单提交成功</span>
     </router-link>
-
+    <router-view/>
   </div>
-  <router-view/>
 </div>
 
 
@@ -39,7 +36,6 @@
 <style scoped>
 .box{
   width: 1280px;
-  margin: 0 auto;
   position: relative;
   top: 0;
 }

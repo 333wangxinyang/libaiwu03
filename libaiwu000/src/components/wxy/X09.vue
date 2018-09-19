@@ -18,15 +18,7 @@
           <img class="bb" src="../../../static/wangxinyang/right1.png" alt="">
         </div>
 
-        <div class="time1">
-          <span>距离开始还剩</span>
-          <span class="time">{{d}}天</span>
-          <span class="time2 time">{{h}}</span>
-          <span>：</span>
-          <span class="time3 time">{{m}}</span>
-          <span>：</span>
-          <span class="time4 time">{{s}}</span>
-        </div>
+
         <div class="right">
           <span>新疆哈密瓜1500kg</span>
           <div class="jia">
@@ -148,13 +140,8 @@
     },
     data(){
       return {
-
         mm:1,
         src:'../../../static/wxy1/ti01.jpg',
-        m:0,
-        s:0,
-        h:0,
-        d:0,
         arr1:[
           {
             name:'男士端衬衫',
@@ -174,29 +161,7 @@
         str:1
       }
     },
-
     mounted(){
-      var ft = new Date(2018, 9, 2, 23, 0, 0);
-      setInterval(function(){
-        var nDate = new Date();
-
-        var a = (ft.getTime()-nDate.getTime())/1000;
-
-        var d = Math.floor(a / (3600 * 24));
-        var h = Math.floor(a % (3600 * 24) / 3600);
-        var m = Math.floor(a % (3600 * 24) % 3600 / 60);
-        var s = Math.floor(a % 60);
-     this.s=s;
-        this.d=d;
-        this.m=m;
-        this.h=h;
-      }.bind(this), 1000);
-
-
-
-
-
-
 
       $("#box").on("mouseenter",function(){
         $('canvas').css({
@@ -270,54 +235,6 @@
 </script>
 
 <style scoped>
-  .time1{
-    position: absolute;
-    width:350px;
-    height: 30px;
-    top: 0;
-    left: 50px;
-    background-color: #f3f5f8;
-    opacity: 0.8;
-  }
-  .time1>span:nth-of-type(1){
-    position: absolute;
-    top: 5px;
-    left: 5px;
-  }
-.time{
-  display: block;
-  color:#ffffff;
-  width: 40px;
-  height: 20px;
-  position: absolute;
-  top: 5px;
-  background-color: #ff5757;
-  left: 110px;
-  text-align: center;
-
-}
-.time1>span:nth-of-type(4){
-  position: absolute;
-  top: 5px;
-  left: 200px;
-  color:#ff5757;
-}
-.time2{
-  left: 160px;
-}
-  .time3{
-    left: 210px;
-  }
-  .time1>span:nth-of-type(6){
-    position: absolute;
-    top: 5px;
-    left: 250px;
-    color:#ff5757;
-  }
-  .time4{
-    left: 260px;
-  }
-
   .box1{
     width: 1280px;
     position: relative;

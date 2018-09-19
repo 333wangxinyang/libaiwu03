@@ -23,20 +23,21 @@
   width: 600px;
   height: 360px;
   position: relative;
-  top: 60px;
-  left: 70px;
+  top: 150px;
+  /*border: 1px solid;*/
+  left: 400px;
 }
   .box>img{
     position: absolute;
     top: 50px;
-    left: 250px;
+    /*left: 550px;*/
   }
   .box>span:nth-of-type(1){
     position: absolute;
     top: 150px;
-    left: 250px;
+    /*left: 550px;*/
     font-size: 20px;
-    color:#f08404;
+    color:#f08404 ;
   }
   .cc{
     position: absolute;

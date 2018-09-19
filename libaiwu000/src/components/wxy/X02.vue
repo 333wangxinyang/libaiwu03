@@ -1,6 +1,4 @@
 <template>
- <div id="x02">
-   <swiper></swiper>
 <div class="box">
   <div class="aa" v-for="item in arr">
     <router-link to="">
@@ -15,21 +13,11 @@
     </router-link>
   </div>
 </div>
- </div>
 </template>
 
 <script>
-
-  import swiper from '@/components/wangxinyang/swiper'
     export default {
         name: "X02",
-
-      components:{
-        swiper:swiper,
-
-
-      },
-
       data(){
           return {
             arr:[
@@ -147,12 +135,6 @@
 </script>
 
 <style scoped>
-  #x02{
-
-
-
-  }
-
 .box{
   width: 1280px;
   height: 1250px;
@@ -166,7 +148,7 @@
     width: 24%;
     height: 400px;
     position: relative;
-    border: 1px solid #dfdfdf;
+    border: 1px solid #666;
     background-color: #ffffff;
   }
   .aa a{

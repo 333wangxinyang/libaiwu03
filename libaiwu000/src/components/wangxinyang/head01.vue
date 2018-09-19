@@ -26,26 +26,90 @@
           <a href="###">我是商家</a>
           <a href="###">我的消息</a>
           <a href="###">我的订单</a>
+
           <span  :style=" state=='0'?'display:none' :'display:inline-block'">您好 ,<a href="###">{{state}}</a><a id="tc" href="###">退出</a></span>
-          <a :style=" state!='0'?'display:none' :'display:inline-block'" id="dl" >注册登录</a>
+          <a :style=" state!='0'?'display:none' :'display:inline-block'" id="dl" class="headclick">注册登录</a>
         </div>
-
-
       </div>
+
+
+      <div id="headkong">
+      </div>
+
+      <div class="headkong2">
+      <div class="hdrzc hzh03">
+        <div class="hdrzc2">
+
+
+          <div class="h03div1">
+            <span>登录</span>
+            <span>
+            <a href="">手机验证登录</a>
+            <img src="../../../static/hzh/h03-1-w12h16.png" alt="">
+          </span>
+          </div>
+
+          <span class="hinput1">
+            <input type="text" placeholder="请输入手机号" class="drzc1">
+            <img src="../../../static/hzh/h02-7-w12.png" alt="">
+          </span>
+          <div class="hdis1 drzc11"><img src="../../../static/hzh/h02-8-w12.png" alt=""> <span>手机号码不正确,请重新输入</span></div>
+
+          <span class="hinput1">
+            <input type="password" placeholder="密码" class="drzc2">
+            <img src="../../../static/hzh/h02-7-w12.png" alt="">
+          </span>
+          <div class="hdis1 drzc22"><img src="../../../static/hzh/h02-8-w12.png" alt=""> <span>密码长度不符合标准</span></div>
+
+          <span class="hinput1" id="hinput2">
+          <input type="text" placeholder="验证码" class="drzc4">
+          <img src="../../../static/hzh/h02-7-w12.png" alt="">
+          </span>
+
+          <span class="hcanvas1">
+            <canvas id="canvas" width="80" height="35"></canvas>
+            <a href="#" id="changeImg">看不清换一张</a>
+          </span>
+
+          <div class="h03div2">
+            <span class="h03click1">
+              <img src="../../../static/hzh/h02-9-w16.png" alt="">
+              <p>自动登录</p>
+            </span>
+            <span><router-link to="/H04wjmm">忘记密码?</router-link></span>
+          </div>
+
+
+          <span class="h02span2 hzc1"><router-link to="">登录</router-link></span>
+          <span class="h02span2 h02span3"><router-link to="/H02drzc">会员注册</router-link></span>
+
+          <span class="h03span1">提示 : 未注册用户将直接注册成为礼拜五用户</span>
+
+          <div class="h03div3">
+            -------- 用合作网站登录 -------
+          </div>
+
+
+          <div class="h03div4">
+            <img src="../../../static/hzh/h03-2-w40.png" alt="">
+            <img src="../../../static/hzh/h03-3-w40.png" alt="">
+          </div>
+
+        </div>
+      </div>
+      </div>
+
     </div>
 </template>
 
 <script>
-  import Bus from '../../assets/bus'
+
     export default {
         name: "head01",
 data(){
-   return{
-     state:0,
-
-   }
-
-
+  return{
+    state:0,
+  }
 },
       methods:{
         getValueByKey(key) {
@@ -61,54 +125,26 @@ data(){
       },
 
 
-      mounted(){
-
-        Bus.$on('aa',function (n) {
-          this.state = n ;
-        }.bind(this))
-
-
-        this.state = this.getValueByKey("state")
-console.log(this.getValueByKey("state"))
-          $('#tc').click(function () {
-
-            document.cookie = "state=0";
-            this.state = this.getValueByKey("state")
-            Bus.$emit('bb',this.state)
-
-            window.location.href = "/#/shouye01/"
-
-          }.bind(this))
-
-        // $('#dl').click(function () {
-        //
-        //   document.cookie = "state=1";
-        //   this.state = this.getValueByKey("state")
-        //
-        //   Bus.$emit('change',this.state)
-        // }.bind(this))
-
-
-
-        $(document).ready(function(){
+      mounted() {
+        $(document).ready(function () {
 
           $(function () {
 
-            $('.ct_nav').click(function(){
+            $('.ct_nav').click(function () {
 
-              $(".ct_link").attr('class','ct_link ct_hovers');
-
-            });
-
-            $('#closect').click(function(){
-
-              $(".ct_link").attr('class','ct_link');
+              $(".ct_link").attr('class', 'ct_link ct_hovers');
 
             });
 
-            $('.ct_links').click(function(){
+            $('#closect').click(function () {
 
-              $(".ct_link").attr('class','ct_link');
+              $(".ct_link").attr('class', 'ct_link');
+
+            });
+
+            $('.ct_links').click(function () {
+
+              $(".ct_link").attr('class', 'ct_link');
 
               $("#ctname").html($(this).html());
 
@@ -117,6 +153,177 @@ console.log(this.getValueByKey("state"))
           });
 
         });
+
+
+        //  验证码
+
+        /**生成一个随机数**/
+        function randomNum(min, max) {
+          return Math.floor(Math.random() * (max - min) + min);
+        }
+
+        /**生成一个随机色**/
+        function randomColor(min, max) {
+          var r = randomNum(min, max);
+          var g = randomNum(min, max);
+          var b = randomNum(min, max);
+          return "rgb(" + r + "," + g + "," + b + ")";
+        }
+
+        drawPic();
+        document.getElementById("changeImg").onclick = function (e) {
+          e.preventDefault();
+          drawPic();
+        }
+
+        /**绘制验证码图片**/
+        function drawPic() {
+          var canvas = document.getElementById("canvas");
+          var width = canvas.width;
+          var height = canvas.height;
+          var ctx = canvas.getContext('2d');
+          ctx.textBaseline = 'bottom';
+
+          /**绘制背景色**/
+          ctx.fillStyle = randomColor(180, 240); //颜色若太深可能导致看不清
+          ctx.fillRect(0, 0, width, height);
+          /**绘制文字**/
+          var str = 'ABCEFGHJKLMNPQRSTWXY123456789';
+          for (var i = 0; i < 4; i++) {
+            var txt = str[randomNum(0, str.length)];
+            ctx.fillStyle = randomColor(50, 160);  //随机生成字体颜色
+            ctx.font = randomNum(15, 40) + 'px SimHei'; //随机生成字体大小
+            var x = 10 + i * 25;
+            var y = randomNum(25, 45);
+            var deg = randomNum(-45, 45);
+            //修改坐标原点和旋转角度
+            ctx.translate(x, y);
+            ctx.rotate(deg * Math.PI / 180);
+            ctx.fillText(txt, 0, 0);
+            //恢复坐标原点和旋转角度
+            ctx.rotate(-deg * Math.PI / 180);
+            ctx.translate(-x, -y);
+          }
+          /**绘制干扰线**/
+          for (var i = 0; i < 8; i++) {
+            ctx.strokeStyle = randomColor(40, 180);
+            ctx.beginPath();
+            ctx.moveTo(randomNum(0, width), randomNum(0, height));
+            ctx.lineTo(randomNum(0, width), randomNum(0, height));
+            ctx.stroke();
+          }
+          /**绘制干扰点**/
+          for (var i = 0; i < 100; i++) {
+            ctx.fillStyle = randomColor(0, 255);
+            ctx.beginPath();
+            ctx.arc(randomNum(0, width), randomNum(0, height), 1, 0, 2 * Math.PI);
+            ctx.fill();
+          }
+        };
+
+        //  注册input js效果
+        var ha = false;
+        var hb = false;
+        var h03a = true;
+
+        // 手机号
+        $('.drzc1').blur(function () {
+          var phone = document.querySelector('.drzc1').value
+          if (!(/^1[34578]\d{9}$/.test(phone))) {
+            $('.drzc11').css({opacity: 1})
+            $('.drzc1').next().css({display: "none"})
+            console.log(phone)
+            ha = false
+          } else {
+            $('.drzc11').css({opacity: 0})
+            $('.drzc1').next().css({display: "block"})
+            ha = true
+          }
+        })
+
+        //  密码
+        $('.drzc2').blur(function () {
+          var password1 = document.querySelector('.drzc2').value
+          if (password1.length < 6 || password1.length > 20) {
+            $('.drzc22').css({opacity: 1})
+            $('.drzc2').next().css({display: "none"})
+            hb = false
+            console.log(password1)
+          } else {
+            $('.drzc22').css({opacity: 0})
+            $('.drzc2').next().css({display: "block"})
+            hb = true
+          }
+        })
+
+        // 登录
+        $('.hzc1').click(function () {
+          var phone1 = document.querySelector('.drzc1').value
+          var password1 = document.querySelector('.drzc2').value
+          if (ha == true && hb == true) {
+            axios.get('/api/php/hzhxqw/drzc2.php?type=2&phone=' + phone1 + '').then((response) => {
+              console.log(response.data);
+              console.log(response.data[0].id);
+              if (response.data == 0) {
+                alert('该账户不存在');
+              }
+              if (response.data[0].password == password1) {
+
+                alert('登录成功')
+                $('#headkong').css({display: "none"})
+                $('.headkong2').fadeOut(1000);
+                window.location.href = "/#/shouye01/"
+                document.cookie = "state=" + response.data[0].id;
+
+              } else {
+                alert('密码错误');
+              }
+            });
+          } else {
+            alert('信息输入有误,请重新输入');
+          }
+        })
+
+
+        //  自动登录换图
+        $('.h03click1').click(function () {
+          if (h03a == true) {
+            $('.h03click1>img').attr({src: "../../../static/hzh/h02-10-w16.png"})
+            h03a = false
+          } else {
+            $('.h03click1>img').attr({src: "../../../static/hzh/h02-9-w16.png"})
+            h03a = true
+          }
+        })
+
+
+        //  点击登录显示遮罩
+        $('.headclick').click(function () {
+          $('#headkong').css({display: "block"})
+          $('.headkong2').fadeIn(1500);
+        })
+        $('.headkong2').dblclick(function () {
+          $('#headkong').css({display: "none"})
+          $('.headkong2').fadeOut(1000);
+        })
+
+
+        Bus.$on('aa', function (n) {
+          this.state = n;
+        }.bind(this))
+
+
+        this.state = this.getValueByKey("state")
+        console.log(this.getValueByKey("state"))
+        $('#tc').click(function () {
+
+          document.cookie = "state=0";
+          this.state = this.getValueByKey("state")
+          Bus.$emit('bb', this.state)
+
+          window.location.href = "/#/shouye01/"
+
+        }.bind(this))
       }
     }
 </script>
@@ -157,6 +364,7 @@ console.log(this.getValueByKey("state"))
   width: 1280px;
   margin: 0 auto;
   height: 16px;
+  /*display: inline-block;*/
   /*background-color: #fff;*/
 }
 #h_div1>span{
@@ -190,7 +398,7 @@ console.log(this.getValueByKey("state"))
   }
   #h_div2>a:nth-of-type(5){
     border-left: 0px solid #6f6f6f;
-    /*display: none;*/
+    display: none;
     color: #4b943d;
   }
   #h_div2>span{
@@ -233,4 +441,205 @@ console.log(this.getValueByKey("state"))
 .ct_links {width:60px;margin-right:1px;height:30px;line-height:30px;font-size:13px;text-align:center;background:#f6f6f6;vertical-align:top;margin-bottom:1px;display:inline-block;}
 
 .ct_show {background:#ccc;height:18px;line-height:18px;padding:5px;cursor:pointer;}
+
+
+
+  .hdrzc{
+    width: 388px;
+    height: 498px;
+    background-color:white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 99;
+    display: inline-block;
+    border: 2px solid #999;
+  }
+  .hdrzc2{
+    width: 312px;
+    height: 444px;
+    margin: auto;
+    margin-top: 30px;
+  }
+  .hinput1>input{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #999;
+    text-indent: 15px;
+    font-size: 20px;
+    background-color:rgb(242,242,242);
+  }
+  .hinput1>input::-webkit-input-placeholder{
+    color:#aab2bd;
+  }
+  .hinput1{
+    display: inline-block;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    position: relative;
+  }
+  .hinput1>img{
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    display: none;
+  }
+  #hinput2{
+    width: 112px;
+    margin-bottom: 30px;
+  }
+  #hinput2>img{
+    right: 5px;
+  }
+  .hdis1{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color:red;
+    font-size:14px;
+    opacity: 0;
+  }
+  .hcanvas1{
+    display: inline-block;
+    width: 190px;
+    height: 35px;
+    line-height: 35px;
+    position: absolute;
+    left:170px ;
+    top:231px;
+  }
+  .hcanvas1>a{
+    color:rgb(252,192,132);
+    font-size: 16px;
+    position: absolute;
+    left: 90px;
+  }
+  .hinput1>span{
+    display: inline-block;
+    width: 102px;
+    height: 33px;
+    line-height: 33px;
+    text-align: center;
+    background-color:rgb(61,142,67);
+    font-size: 15px;
+    color:white;
+    position: absolute;
+    right: 5px;
+    top: 4.4px;
+  }
+
+  .h02span2{
+    display: inline-block;
+    width: 135px;
+    height: 46px;
+    line-height: 46px;
+    text-align: center;
+    background-color:rgb(247,131,39);
+    border-radius: 10px;
+    font-size:25px;
+  }
+  .h02span2>a{
+    color:white;
+  }
+  .h02span3{
+    float: right;
+    background-color:rgb(61,142,67);
+  }
+  .h03div1{
+    position: relative;
+    margin-bottom: 12px;
+  }
+  .h03div1>span:nth-of-type(1){
+    font-size: 32px;
+    color: #555;
+  }
+  .h03div1>span:nth-of-type(2){
+    position: absolute;
+    right: 0;
+    bottom: 6px;
+  }
+  .h03div1>span:nth-of-type(2)>a{
+    color: #4b943d;
+    font-size: 19px;
+  }
+  .h03div2{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    position: relative;
+    overflow: hidden;
+    margin-top: -17px;
+    margin-bottom: 10px;
+  }
+  .h03div2>span{
+    display: inline-block;
+    width: 35%;
+    height: 100%;
+    line-height: 30px;
+    position: relative;
+  }
+  .h03div2>span:nth-of-type(1)>img{
+    position: absolute;
+    top: 7.3px;
+    left: 0;
+  }
+  .h03div2>span:nth-of-type(1)>p{
+    margin-left: 25px;
+    color: #888;
+    font-size: 17px;
+  }
+  .h03div2>span:nth-of-type(2){
+    position: absolute;
+    right: -28px;
+    text-decoration:underline;
+  }
+  .h03div2>span:nth-of-type(2)>a{
+    color: rgb(252,192,132);
+    font-size: 18px;
+  }
+  .h03span1{
+    display: inline-block;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    color: #999;
+  }
+  .h03div3{
+    height: 30px;
+    font-size: 18px;
+    line-height: 30px;
+    color: #777;
+  }
+  .h03div4{
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 106px;
+    margin-top: 5px;
+  }
+  #headkong{
+    width: 100%;
+    height: 100%;
+    background-color:rgb(127,127,127);
+    opacity: 0.3;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 88;
+    display: none;
+  }
+  .headkong2{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 89;
+    display: none;
+  }
 </style>

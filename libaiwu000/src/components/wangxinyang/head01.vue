@@ -67,8 +67,8 @@
           </span>
 
           <span class="hcanvasA">
-            <canvas id="canvas" width="80" height="35"></canvas>
-            <a href="#" id="changeImg">看不清换一张</a>
+            <canvas id="canvasA" width="80" height="35"></canvas>
+            <a href="#" id="changeImgA">看不清换一张</a>
           </span>
 
           <div class="h03divB">
@@ -193,14 +193,14 @@ data(){
         }
 
         drawPic();
-        document.getElementById("changeImg").onclick = function (e) {
+        document.getElementById("changeImgA").onclick = function (e) {
           e.preventDefault();
           drawPic();
         }
 
         /**绘制验证码图片**/
         function drawPic() {
-          var canvas = document.getElementById("canvas");
+          var canvas = document.getElementById("canvasA");
           var width = canvas.width;
           var height = canvas.height;
           var ctx = canvas.getContext('2d');

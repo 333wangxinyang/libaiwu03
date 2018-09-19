@@ -1,13 +1,11 @@
 <template>
     <div id="seek">
-      <router-link to="/">
       <img src="../../../static/wangxinyang/logo.png" alt="">
-      </router-link>
       <div id="s_div1">
         <div>
           <input id="input01" @input="aa($event)" type="text">
           <router-link id="tt" :to="tt"></router-link>
-          <router-link id="grzx" :to="state==0?'/H03dr':'/grzx'">个人中心</router-link>
+          <router-link id="grzx" to="/grzx">个人中心</router-link>
           <router-link to="/gwc">购物车</router-link>
           <!--<router-link to="/grzx">购物车</router-link>-->
           <!--<a href="###"></a>-->
@@ -31,7 +29,6 @@
       data(){
         return{
           tt:'###',
-          state:0,
         }
       },
       methods :{
@@ -42,24 +39,10 @@
                this.tt = '/sousuo/'+$(v.target).val();
              }
           },
-        getValueByKey(key) {
-          //获取所有键值对
-          var strArr = document.cookie.split(";");
-          for (var i = 0; i < strArr.length; i++) {
-            var kvArr = strArr[i].split("=");
-            if (kvArr[0].trim() == key) {
-              return kvArr[1];
-            }
-          }
-        }
-        // bb(){
-        //   alert('内容不能为空')
-        //   if($('#input01').val() === '' ){
-        //     alert('内容不能为空')
-        //   }
-        // }
+
       },
       mounted(){
+
 console.log(document.cookie)
 
         this.state = this.getValueByKey("state")
@@ -95,9 +78,9 @@ console.log(document.cookie)
     padding-top: 25px;
     margin: 0 auto;
     position: relative;
-    /*background-color: #F00;*/
+
   }
-  #seek>a>img{
+  #seek>img{
     display: block;
     position: absolute;
     left: 0;
@@ -110,10 +93,7 @@ console.log(document.cookie)
     padding-top: 25px;
     height: 80px;
   }
-  /*#s_div1>div:nth-of-type(1){*/
 
-
-  /*}*/
   #s_div1>div>input{
     width: 458px;
     position: absolute;

@@ -47,6 +47,7 @@ import H02drzc from '@/components/HZH/H02drzc'
 import H04wjmm from '@/components/HZH/H04wjmm'
 import Zd from '@/components/wxy/Zd'
 import Liulan from '@/components/wxy/Liulan'
+import X05 from '@/components/wxy/X05'
 
 Vue.use(Router)
 
@@ -140,6 +141,12 @@ export default new Router({
           name: 'H01gylbw',
           component: H01gylbw
         },
+        {
+          path: '/X05',
+          name: 'X05',
+          component: X05
+        },
+
         {
           path: '/X02',
           name: 'X02',

@@ -23,8 +23,8 @@
           <a href="###">我是商家</a>
           <a href="###">我的消息</a>
           <a href="###">我的订单</a>
-          <span>您好 ,<a href="###">17701269859</a><a href="###">退出</a></span>
-          <a >注册登录</a>
+          <span  :style=" state=='0'?'display:none' :'display:inline-block'">您好 ,<a href="###">17701269859</a><a id="tc" href="###">退出</a></span>
+          <a :style=" state!=='0'?'display:none' :'display:inline-block'" id="dl" >注册登录</a>
         </div>
 
 
@@ -33,16 +33,51 @@
 </template>
 
 <script>
-
+  import Bus from '../../assets/bus'
     export default {
         name: "head01",
+data(){
+   return{
+     state:0,
+
+   }
 
 
-    mounted(){
+},
+      methods:{
+        getValueByKey(key) {
+          //获取所有键值对
+          var strArr = document.cookie.split(";");
+          for (var i = 0; i < strArr.length; i++) {
+            var kvArr = strArr[i].split("=");
+            if (kvArr[0].trim() == key) {
+              return kvArr[1];
+            }
+          }
+        }
+      },
 
-    }
-    ,
       mounted(){
+
+        this.state = this.getValueByKey("state")
+console.log(this.getValueByKey("state"))
+          $('#tc').click(function () {
+
+            document.cookie = "state=0";
+            this.state = this.getValueByKey("state")
+            Bus.$emit('change',this.state)
+          }.bind(this))
+
+        $('#dl').click(function () {
+
+          document.cookie = "state=1";
+          this.state = this.getValueByKey("state")
+
+          Bus.$emit('change',this.state)
+        }.bind(this))
+
+
+
         $(document).ready(function(){
 
           $(function () {
@@ -143,7 +178,7 @@
   }
   #h_div2>a:nth-of-type(5){
     border-left: 0px solid #6f6f6f;
-    display: none;
+    /*display: none;*/
     color: #4b943d;
   }
   #h_div2>span{

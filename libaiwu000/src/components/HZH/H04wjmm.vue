@@ -39,9 +39,6 @@
             <a href="#" id="changeImg">看不清换一张</a>
           </span>
 
-
-
-
           <span class="hinput1">
             <input type="password" placeholder="请输入密码(6-20位号码字符)" class="drzc2">
             <img src="../../../static/hzh/h02-7-w12.png" alt="">

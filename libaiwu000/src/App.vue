@@ -77,11 +77,9 @@ export default {
 
   },
   beforeCreate(){
-
     //在vue实例创建完成之前执行
     console.log('beforeCreate创建之前')
       document.cookie = "state=0";
-
   },
   mounted(){
 

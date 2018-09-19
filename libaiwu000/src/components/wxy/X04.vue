@@ -17,8 +17,6 @@
         <img :class="mm==4&&'aa'" src="../../../static/wxy1/ti04.jpg" alt="">
         <img class="bb" src="../../../static/wangxinyang/right1.png" alt="">
       </div>
-
-
       <div class="right">
         <span>新疆哈密瓜1500kg</span>
         <div class="tt">

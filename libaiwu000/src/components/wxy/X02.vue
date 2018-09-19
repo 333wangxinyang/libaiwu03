@@ -188,6 +188,7 @@
   top: 260px;
   left: 60px;
   font-size: 14px;
+  color: #707070;
 }
 .aa>span:nth-of-type(3){
   display: block;
@@ -207,6 +208,7 @@
   position: absolute;
   top: 290px;
  right: 30px;
+  color: #707070;
 }
   .dh{
     width: 150px;

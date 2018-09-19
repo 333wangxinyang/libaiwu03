@@ -69,32 +69,12 @@
       }
     },
     mounted(){
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       // $("#box").on("mouseenter",function(){
       //   $('canvas').css({
       //     left: '600px' ,
       //     top: '310px',
       //   })
       // });
-
-
-
-
-
-
       $('#lb>img').eq(0).click(function () {
         if(this.mm===1){
           this.mm = 4;

@@ -1,6 +1,6 @@
 <template>
     <div>
-      <head01></head01>
+      <!--<head01></head01>-->
       <seek></seek>
       <navigation></navigation>
       <router-view/>

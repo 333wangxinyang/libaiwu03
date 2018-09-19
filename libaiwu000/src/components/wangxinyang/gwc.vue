@@ -10,7 +10,7 @@
         <div v-for="(aa,index) in arr">
           <p>
             <span></span>
-            <img src="../../../static/wangxinyang/gwcxuanzhong.png" alt="">
+            <img @click="qx(index,$event)"  src="../../../static/wangxinyang/gwcxuanzhong.png" alt="">
             <span>{{aa.spname}}</span>
             <span>规格</span>
             <span>单价</span>
@@ -21,7 +21,7 @@
           <ul>
             <li v-for="(bb,index1) in aa.arr0">
               <span></span>
-              <img src="../../../static/wangxinyang/gwcxuanzhong.png" alt="">
+              <img @click="gx(index,index1)" :style="bb.bol?'opacity:1':'opacity:0'" src="../../../static/wangxinyang/gwcxuanzhong.png" alt="">
               <span><img :src="bb.src" alt=""></span>
               <span>{{bb.name}}</span>
               <span>{{bb.guige}}</span>
@@ -54,28 +54,75 @@
         name: "gwc",
       data(){
           return{
-
+            bol01:true,
+            arr1:[],
             arr:[
               {spname:'爱果果水果店',
                 arr0:[
-                  {name:'云南蒙自石榴 8个装',guige:'8个装',dj:569,num:1,id:1,src:'../../../static/wangxinyang/gwcwp01.png'},
-                  {name:'云南蒙自石榴 8个装',guige:'8个装',dj:569,num:1,id:1,src:'../../../static/wangxinyang/gwcwp01.png'},
-                  {name:'云南蒙自石榴 8个装',guige:'8个装',dj:569,num:1,id:1,src:'../../../static/wangxinyang/gwcwp01.png'},
+                  {bol:false,name:'云南蒙自石榴 8个装',guige:'8个装',dj:569,num:1,id:1,src:'../../../static/wangxinyang/gwcwp01.png'},
+                  {bol:true,name:'云南蒙自石榴 8个装',guige:'8个装',dj:569,num:1,id:1,src:'../../../static/wangxinyang/gwcwp01.png'},
+                  {bol:true,name:'云南蒙自石榴 8个装',guige:'8个装',dj:569,num:1,id:1,src:'../../../static/wangxinyang/gwcwp01.png'},
                 ]
 
               },
               {spname:'爱果果水果店',
                 arr0:[
-                  {name:'云南蒙自石榴 8个装',guige:'8个装',dj:569,num:1,id:1,src:'../../../static/wangxinyang/gwcwp01.png'},
-                  {name:'云南蒙自石榴 8个装',guige:'8个装',dj:569,num:1,id:1,src:'../../../static/wangxinyang/gwcwp01.png'},
-                  {name:'云南蒙自石榴 8个装',guige:'8个装',dj:569,num:1,id:1,src:'../../../static/wangxinyang/gwcwp01.png'},
+                  {bol:true,name:'云南蒙自石榴 8个装',guige:'8个装',dj:569,num:1,id:1,src:'../../../static/wangxinyang/gwcwp01.png'},
+                  {bol:true,name:'云南蒙自石榴 8个装',guige:'8个装',dj:569,num:1,id:1,src:'../../../static/wangxinyang/gwcwp01.png'},
+                  {bol:true,name:'云南蒙自石榴 8个装',guige:'8个装',dj:569,num:1,id:1,src:'../../../static/wangxinyang/gwcwp01.png'},
                 ]
               },
             ]
 
 
           }
+      },
+      methods:{
+
+          aa(){
+            this.arr1 = this.arr;
+
+            for(var i in this.arr1){
+
+            }
+
+
+          },
+
+
+
+
+
+
+        gx(index,index1){
+          this.arr[index].arr0[index1].bol = !this.arr[index].arr0[index1].bol;
+
+        },
+        qx(index,v){
+          if(this.bol01){
+            for(var i in this.arr[index].arr0 ){
+              this.arr[index].arr0[i].bol = true;
+            }
+            v.target.style.opacity = '1';
+
+          }else {
+            for(var i in this.arr[index].arr0 ){
+              this.arr[index].arr0[i].bol = false;
+            }
+            v.target.style.opacity = '0';
+          }
+
+          this.bol01 = !this.bol01;
+
+
+        }
+      },
+      mounted(){
+
+
+
       }
+
     }
 </script>
 

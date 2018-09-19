@@ -48,6 +48,21 @@
         // }
       },
       mounted(){
+
+console.log(document.cookie)
+
+        this.state = this.getValueByKey("state")
+
+        Bus.$on('aa',function (n) {
+          this.state = n ;
+        }.bind(this))
+
+
+        Bus.$on('bb',function (n) {
+          this.state = n ;
+        }.bind(this))
+
+
         $('#tt').click(function () {
           if($('#input01').val() === '' ){
                 alert('内容不能为空')

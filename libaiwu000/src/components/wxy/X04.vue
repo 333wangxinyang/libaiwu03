@@ -18,7 +18,7 @@
         <img class="bb" src="../../../static/wangxinyang/right1.png" alt="">
       </div>
       <div class="right">
-        <span>新疆哈密瓜1500kg</span>
+        <span>{{arr0[0].name}}</span>
         <div class="tt">
           <img src="../../../static/wxy1/cheng2.png" alt="">
           <span>资深买家</span>
@@ -29,7 +29,7 @@
           </p>
         </div>
         <span>500积分</span>
-        <span>价值：￥20.0</span>
+        <span>价值：￥{{arr0[0].xj}}</span>
         <span>请选择规则：</span>
         <span class="aaa">500g</span>
         <span class="aaa aa1">1000g</span>
@@ -121,6 +121,7 @@
 <script>
   import fff from '@/components/wxy/fff'
   import PicZoom from 'vue-piczoom'
+
     export default {
         name: "X04",
       components:{
@@ -131,6 +132,12 @@
         return {
             mm:1,
             src:'../../../static/wxy1/ti01.jpg',
+
+          arr0:[{
+              name:'',
+            xj:''
+          }
+          ],
           arr1:[
             {
               name:'男士端衬衫',
@@ -150,7 +157,20 @@
           str:1
         }
       },
+
+
+
       mounted(){
+
+          console.log(this.$route.params.id);
+        axios.get('/api/php/hzhxqw/jf.php?id='+this.$route.params.id).then((response) => {
+          console.log(response.data);
+          this.arr0 = response.data;
+          console.log(this.arr0);
+        });
+
+
+
 
         $("#box").on("mouseenter",function(){
           $('canvas').css({

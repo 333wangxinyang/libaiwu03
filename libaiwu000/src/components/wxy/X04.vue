@@ -26,6 +26,7 @@
             入我国。是中国三大石榴之一，粒大皮薄，汁多味甜爽口。雀斑石榴持续热卖！云
             南蒙自石榴，原产波斯（今伊朗）一带，公元前二世纪时传入我国。是中国三大石
             榴之一，粒大皮薄，汁多味甜爽口。
+
           </p>
         </div>
         <span>500积分</span>
@@ -39,7 +40,7 @@
         <span class="bbb bb1">1000g</span>
         <span>数量：</span>
         <span class="cc"><button>-</button>{{str}}<button>+</button></span>
-        <router-link to="">
+        <router-link to="/X03">
           <span class="xx">立即兑换</span>
         </router-link>
         <div class="last">
@@ -54,6 +55,7 @@
         </div>
       </div>
     </div>
+
   </div>
   <div class="sp">
   <div class="xq">
@@ -165,8 +167,13 @@
       mounted(){
 
           console.log(this.$route.params.id);
-        axios.get('/api/php/hzhxqw/jf.php?id='+this.$route.params.id).then((response) => {
-          // console.log(response.data);
+          if(this.$route.params.id){
+            window.localStorage.id = this.$route.params.id;
+          }
+          var id = this.$route.params.id||window.localStorage.id;
+          console.log(id);
+        axios.get('/api/php/hzhxqw/jf.php?id='+id).then((response) => {
+          console.log(response.data);
           this.arr0 = response.data;
           // console.log(this.arr0);
         });

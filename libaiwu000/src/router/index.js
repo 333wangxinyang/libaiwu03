@@ -114,7 +114,7 @@ export default new Router({
       ]
     },
     {
-      path: '/',
+      path: '/aaa',
       name: 'shouye',
       component: shouye,
       redirect:'/shouye01',

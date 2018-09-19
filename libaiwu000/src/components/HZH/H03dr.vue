@@ -86,6 +86,7 @@
 </template>
 
 <script>
+  import Bus from '../../assets/bus'
   export default {
     name: "H03dr",
     mounted(){
@@ -226,13 +227,15 @@
         var password1 = document.querySelector('.drzc2').value
         if (ha == true && hb == true ){
           axios.get('/api/php/hzhxqw/drzc2.php?type=2&phone='+phone1+'').then((response) => {
-            console.log(response.data);
-            console.log(response.data[0].id);
+            // console.log(response.data);
+            // console.log(response.data[0].id);
             if(response.data==0){
               alert('该账户不存在');
             }if(response.data[0].password == password1){
 
               document.cookie = "state=" +response.data[0].id;
+
+              Bus.$emit('aa',response.data[0].id)
 
               alert('登录成功')
               window.location.href = "/#/shouye01/"

@@ -64,12 +64,14 @@ console.log(document.cookie)
 
         this.state = this.getValueByKey("state")
 
-
-        Bus.$on('change',function (n) {
+        Bus.$on('aa',function (n) {
           this.state = n ;
         }.bind(this))
 
 
+        Bus.$on('bb',function (n) {
+          this.state = n ;
+        }.bind(this))
 
 
         $('#tt').click(function () {

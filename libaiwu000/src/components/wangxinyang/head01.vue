@@ -103,7 +103,7 @@
 </template>
 
 <script>
-
+  import Bus from '../../assets/bus'
     export default {
         name: "head01",
 data(){
@@ -126,6 +126,28 @@ data(){
 
 
       mounted() {
+
+        Bus.$on('aa', function (n) {
+          this.state = n;
+        }.bind(this))
+
+
+        this.state = this.getValueByKey("state")
+        console.log(this.getValueByKey("state"))
+        $('#tc').click(function () {
+
+          document.cookie = "state=0";
+          this.state = this.getValueByKey("state")
+          Bus.$emit('bb', this.state)
+
+          window.location.href = "/#/shouye01/"
+
+        }.bind(this))
+
+
+
+
+
         $(document).ready(function () {
 
           $(function () {
@@ -269,11 +291,20 @@ data(){
               }
               if (response.data[0].password == password1) {
 
-                alert('登录成功')
+                // alert('登录成功')
                 $('#headkong').css({display: "none"})
                 $('.headkong2').fadeOut(1000);
+                // window.location.href = "/#/shouye01/"
+                // document.cookie = "state=" + response.data[0].id;
+
+
+
+                document.cookie = "state=" +response.data[0].id;
+
+                Bus.$emit('cc',response.data[0].id)
+
+                alert('登录成功')
                 window.location.href = "/#/shouye01/"
-                document.cookie = "state=" + response.data[0].id;
 
               } else {
                 alert('密码错误');
@@ -308,22 +339,7 @@ data(){
         })
 
 
-        Bus.$on('aa', function (n) {
-          this.state = n;
-        }.bind(this))
 
-
-        this.state = this.getValueByKey("state")
-        console.log(this.getValueByKey("state"))
-        $('#tc').click(function () {
-
-          document.cookie = "state=0";
-          this.state = this.getValueByKey("state")
-          Bus.$emit('bb', this.state)
-
-          window.location.href = "/#/shouye01/"
-
-        }.bind(this))
       }
     }
 </script>

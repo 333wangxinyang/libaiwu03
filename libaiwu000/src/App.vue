@@ -17,7 +17,7 @@
 
 
     <!--<x05></x05>-->
-    <head01></head01>
+    <!--<head01></head01>-->
 <!--<x01></x01>-->
     <!--<x02></x02>-->
       <!--<x03></x03>-->
@@ -74,23 +74,17 @@ export default {
     h06jfxq:H06jfxq
   },
   methods:{
-    hasKey(key) {
-      var strArr = document.cookie.split(";");
-      for(var i = 0; i < strArr.length; i++) {
-        var kvArr = strArr[i].split("=");
-        if(kvArr[0].trim() == key) {
-          //相等
-          return true;
-        }
-      }
-      //不相等
-      return false;
-    }
+
+  },
+  beforeCreate(){
+
+    //在vue实例创建完成之前执行
+    console.log('beforeCreate创建之前')
+      document.cookie = "state=0";
+
   },
   mounted(){
-    if(!this.hasKey("state")){
-      document.cookie = "state=0";
-    }
+
   }
 }
 </script>

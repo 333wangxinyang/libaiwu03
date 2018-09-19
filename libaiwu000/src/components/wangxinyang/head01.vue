@@ -27,7 +27,7 @@
           <a href="###">我的消息</a>
           <a href="###">我的订单</a>
           <span  :style=" state=='0'?'display:none' :'display:inline-block'">您好 ,<a href="###">{{state}}</a><a id="tc" href="###">退出</a></span>
-          <a :style=" state!=='0'?'display:none' :'display:inline-block'" id="dl" >注册登录</a>
+          <a :style=" state!='0'?'display:none' :'display:inline-block'" id="dl" >注册登录</a>
         </div>
 
 
@@ -59,6 +59,7 @@ data(){
           }
         }
       },
+
 
       mounted(){
 

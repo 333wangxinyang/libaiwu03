@@ -80,8 +80,12 @@
           </div>
 
 
-          <span class="h02spanB hzcA"><router-link to="">登录</router-link></span>
-          <span class="h02spanB h02spanC"><router-link to="/H02drzc">会员注册</router-link></span>
+          <span class="h02spanB hzcA">
+            <router-link to="">登录</router-link>
+          </span>
+          <span class="h02spanB h02spanC">
+            <router-link to="">会员注册</router-link>
+          </span>
 
           <span class="h03spanA">提示 : 未注册用户将直接注册成为礼拜五用户</span>
 
@@ -315,6 +319,12 @@ data(){
           }
         })
 
+        // 点击注册跳转注册页面
+        $('.h02spanC').click(function () {
+          $('#headkong').css({display: "none"})
+          $('.headkong2').fadeOut(1000);
+          window.location.href = "/#/H02drzc/"
+        })
 
         //  自动登录换图
         $('.h03clickA').click(function () {

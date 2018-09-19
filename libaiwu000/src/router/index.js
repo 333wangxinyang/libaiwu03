@@ -313,7 +313,16 @@ export default new Router({
 
         }
         ],
-    }
+    },
+    {
 
+      path: "/X01",
+      name: "notFound",
+      component: X01
+    }, {
+      path: "*", // 此处需特别注意置于最底部
+      redirect: "/X01"
+
+    }
   ]
 })

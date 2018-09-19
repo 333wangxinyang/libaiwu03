@@ -135,7 +135,9 @@
 
           arr0:[{
               name:'',
-            xj:''
+            xj:'',
+            src:''
+
           }
           ],
           arr1:[
@@ -164,9 +166,9 @@
 
           console.log(this.$route.params.id);
         axios.get('/api/php/hzhxqw/jf.php?id='+this.$route.params.id).then((response) => {
-          console.log(response.data);
+          // console.log(response.data);
           this.arr0 = response.data;
-          console.log(this.arr0);
+          // console.log(this.arr0);
         });
 
 

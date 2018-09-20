@@ -102,6 +102,14 @@
       }
     },
     mounted(){
+      console.log()
+
+
+alert(this.$route.params.str);
+
+
+
+
       $('#t_div1>a').click(function () {
         $('#t_div1>a').css({
           'background-color': '#fff',

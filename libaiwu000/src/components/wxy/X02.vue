@@ -11,7 +11,10 @@
     <span>{{item.title1}}</span>
     <span>  积分：{{item.title2}}</span>
     <span>价值：{{item.title3}}</span>
-    <router-link to="/X04">
+    <router-link :to="{
+    name:'X04',
+    params:{id:item.id}
+    }">
     <span class="dh">{{item.title4}}</span>
     </router-link>
   </div>

@@ -1,5 +1,6 @@
 <template>
 <div class="box">
+  <swiper></swiper>
   <div class="aa" v-for="item in arr">
     <router-link to="">
     <img :src="item.pic" alt="">
@@ -16,8 +17,14 @@
 </template>
 
 <script>
+  import swiper from '@/components/wangxinyang/swiper'
     export default {
         name: "X02",
+      components:{
+        swiper:swiper,
+
+
+      },
       data(){
           return {
             arr:[
@@ -139,14 +146,15 @@
   width: 1280px;
   height: 1250px;
   display: flex;
-  margin: 50px auto;
+  margin: 0 auto;
+  overflow: hidden;
   justify-content: center;
   flex-wrap: wrap;
 }
   .aa{
     margin: 5px 5px 0 5px;
     width: 24%;
-    height: 400px;
+    height: 1800px;
     position: relative;
     border: 1px solid #dfdfdf;
     background-color: #ffffff;

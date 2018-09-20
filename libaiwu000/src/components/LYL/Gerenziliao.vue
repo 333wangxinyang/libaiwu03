@@ -3,36 +3,6 @@
       <div class="grzl1">
         <p>修改密码</p>
       </div>
-
-      <!--<div class="grzl2">-->
-        <!--<div class="grzl2_1">-->
-          <!--<div class="shoujihao">-->
-            <!--<input type="text" onkeyup="value=value.replace(/[^\d]/g,'')" placeholder="请输入手机号" maxlength="11">-->
-          <!--</div>-->
-          <!--<div class="mima">-->
-            <!--<input type="password" placeholder="请输入密码（6-20位号码字符" maxlength="20" >-->
-          <!--</div>-->
-          <!--<div class="mima">-->
-            <!--<input type="password" placeholder="请再次输入密码确认" maxlength="20">-->
-          <!--</div>-->
-          <!--<div class="yanzhengma">-->
-            <!--<input type="text" placeholder="验证码" maxlength="4">-->
-            <!--<canvas id="canvas" width="120" height="40"></canvas>-->
-            <!--<a href="#" id="changeImg">看不清，换一张</a>-->
-          <!--</div>-->
-          <!--<div class="sjyanzhengma">-->
-            <!--<input type="text" placeholder="手机验证码" maxlength="6">-->
-            <!--<button @click="hqyzm()">获取验证码</button>-->
-          <!--</div>-->
-          <!--<div class="bangding">-->
-            <!--<button @click="panduan()">点击绑定</button>-->
-          <!--</div>-->
-        <!--</div>-->
-        <!--<div class="chenggong">-->
-          <!--<img src="../../../static/LYLimg/bdcg.png" height="184" width="454"/>-->
-        <!--</div>-->
-      <!--</div>-->
-
       <div class="hdrzc">
         <div class="hdrzc2">
 
@@ -68,14 +38,6 @@
             <input type="text" placeholder="手机验证码" class="h04yzm2">
             <button class="h04yzm">获取验证码</button>
           </span>
-
-
-          <!--<div class="h02img2">-->
-            <!--<img src="../../../static/hzh/h02-10-w16.png" alt="">-->
-            <!--<span>我已阅读并同意 《礼拜五用户协议》</span>-->
-          <!--</div>-->
-          <!--<span class="h02span2 hzc1"><a href="###">注册</a></span>-->
-          <!--<span class="h02span2 h02span3"><a href="###">登录</a></span>-->
 
           <span class="h04span1"><a href="###">提交</a></span>
         </div>
@@ -280,39 +242,18 @@
           })
           // 修改密码
           $('.h04span1').click(function () {
-            var phone1 = document.querySelector('.drzc1').value
-            var password1 = document.querySelector('.drzc2').value
-            if (ha == true && hb == true && hc == true){
-              axios.get('/api/PHP/hzhxqw/drzc2.php?type=3&phone='+phone1+'&password='+password1).then((response) => {
-              // axios.get('/api/php/hzhxqw/drzc2.php?type=3&phone='+phone1+'&password='+password1).then((response) => {
-                console.log(response.data);
-                if(response.data==0){
-                  alert('该账户不存在');
-                }if(response.data==1){
-                  // alert('密码修改成功')
-                  $('.h04div5').fadeIn(1500);
-                  $('.h04div5').fadeOut(2000);
-                }
-              });
-            }else {
-              alert('信息输入有误,请重新输入');
-            }
-          })
+            console.log(this.obj)
+            var input = document.getElementsByClassName('drzc4')[0]
+            console.log(input.value)
 
-
-
-        },
-        methods:{
-          panduan(){
-            var input = document.querySelectorAll('.grzl2_1 div input')
-            console.log(input)
             var str = '';
             for (var i = 0;i < this.obj.length;i++){
               str+= this.obj[i];
             }
             console.log(str)
-            var val = input[3].value.split('');
-            console.log(val+'11111')
+            var val = input.value.split('');
+
+            // console.log(val)
             for (var i = 0;i < val.length;i++){
               if (val[i] == 'a'){
                 val[i] = 'A'
@@ -334,6 +275,9 @@
               }
               if (val[i] == 'g'){
                 val[i] = 'G'
+              }
+              if (val[i] == 'i'){
+                val[i] = 'I'
               }
               if (val[i] == 'h'){
                 val[i] = 'H'
@@ -394,39 +338,28 @@
             for (var i = 0;i < val.length;i++){
               guolv += val[i]
             }
-            console.log(guolv)
-
-            var bth = document.querySelectorAll('.shoujihao>input')[0].value
-            var mima = document.querySelectorAll('.mima>input')[0].value
-            var mima1 = document.querySelectorAll('.mima>input')[1].value
-            var yzm = document.querySelectorAll('.sjyanzhengma>input')[0].value
-            console.log(bth)
-            if (bth.length < 11){
-              alert('手机号格式不正确')
-            }else if(mima.length < 6){
-              alert('密码不能小于6位');
-            }else if (mima != mima1){
-              alert('密码不相同');
-            }else if (guolv != str){
-              alert('验证码错误')
-            }else if(yzm.length < 6){
-              alert('手机验证码错误')
+            console.log(str,guolv)
+            var phone1 = document.querySelector('.drzc1').value
+            var password1 = document.querySelector('.drzc2').value
+            if (ha == true && hb == true && hc == true){
+              axios.get('/api/PHP/hzhxqw/drzc2.php?type=3&phone='+phone1+'&password='+password1).then((response) => {
+              // axios.get('/api/php/hzhxqw/drzc2.php?type=3&phone='+phone1+'&password='+password1).then((response) => {
+                console.log(response.data);
+                if(response.data==0){
+                  alert('该账户不存在');
+                }else if (str != guolv){
+                  alert('验证码错误');
+                }else if(response.data==1){
+                  // alert('密码修改成功')
+                  $('.h04div5').fadeIn(1500);
+                  $('.h04div5').fadeOut(2000);
+                }
+              });
             }else {
-              $('.chenggong').animate({
-                opacity:'1',
-                top:'70px',
-              })
+              alert('信息输入有误,请重新输入');
             }
-          },
-          hqyzm(){
-            var yzm = document.querySelectorAll('.sjyanzhengma>input')[0]
-            var a = '';
-            for (var i = 0;i < 6;i++){
-              a+= Math.floor(Math.random()*10);
-            }
-            yzm.value = a;
-            console.log(a)
-          }
+          }.bind(this))
+
         }
     }
 </script>
@@ -455,6 +388,7 @@
       border: solid #d3d3d3 1px;
       margin-bottom: 30px;
       text-indent: 13px;
+
     }
     .grzl2_1>div>input::-webkit-input-placeholder{
       color: #999999;
@@ -523,10 +457,10 @@
       width: 100%;
       height: 40px;
       line-height: 40px;
-      border: 1px solid #999;
+      border: 1px solid #d3d3d3;
       text-indent: 15px;
-      font-size: 20px;
-      background-color:rgb(242,242,242);
+      font-size: 15px;
+      background-color:#f9f9f9;
     }
     .hinput1>input::-webkit-input-placeholder{
       color:#aab2bd;

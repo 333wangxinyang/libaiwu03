@@ -1,33 +1,27 @@
 <template>
-    <div>
+    <div class="content">
       <div class="title">
         <p>换绑手机</p>
       </div>
       <div class="nav1">
-        <router-link to="/yuanshouji">
           <div>
-            <img src="../../../static/LYLimg/juxing11.png" height="42" width="236"/>
+            <img src="../../../static/LYLimg/juxing11.png" height="42" width="236" />
             <span>1.验证原手机号</span>
           </div>
-        </router-link>
-        <router-link to="/xinshouji">
           <div>
             <img src="../../../static/LYLimg/juxing2.png" height="42" width="236"/>
             <span>2.验证新手机号</span>
           </div>
-        </router-link>
-        <router-link to="/huanbangchenggong">
           <div>
             <img src="../../../static/LYLimg/juxing3.png" height="42" width="236"/>
             <span>3.换绑成功</span>
           </div>
-        </router-link>
       </div>
 
 
       <div class="box">
         <div class="sj">
-          <input type="text" placeholder="请输入原手机号" maxlength="11">
+          <input type="text" placeholder="请输入原手机号" maxlength="11" id="input">
         </div>
         <div class="yanzhengma">
           <input type="text" placeholder="验证码" maxlength="4">
@@ -40,7 +34,9 @@
         <button @click="yanzheng">提交验证</button>
       </div>
 
-
+      <div class="img">
+        <img src="../../../static/LYLimg/xiugaicg.png" height="42" width="233"/>
+      </div>
 
       <router-view></router-view>
     </div>
@@ -52,30 +48,10 @@
       data(){
         return {
           obj:'',
+          a:1,
         }
       },
       mounted(){
-        // $('.nav1>a').click(function () {
-        //   $('.nav1>a:eq(0)>div>img').attr('src','../../../static/LYLimg/juxing1.png')
-        //   $('.nav1>a:eq(1)>div>img').attr('src','../../../static/LYLimg/juxing2.png')
-        //   $('.nav1>a:eq(2)>div>img').attr('src','../../../static/LYLimg/juxing3.png')
-        //   $('.nav1>a:eq(0)>div>span').css('color','black')
-        //   $('.nav1>a:eq(1)>div>span').css('color','black')
-        //   $('.nav1>a:eq(2)>div>span').css('color','black')
-        //   if ($(this)[0] == $('.nav1>a')[0]){
-        //     $('.nav1>a:eq(0)>div>img').attr('src','../../../static/LYLimg/juxing11.png')
-        //     $('.nav1>a:eq(0)>div>span').css('color','white')
-        //   }
-        //   if ($(this)[0] == $('.nav1>a')[1]){
-        //     $('.nav1>a:eq(1)>div>img').attr('src','../../../static/LYLimg/juxing22.png')
-        //     $('.nav1>a:eq(1)>div>span').css('color','white')
-        //   }
-        //   if ($(this)[0] == $('.nav1>a')[2]){
-        //     $('.nav1>a:eq(2)>div>img').attr('src','../../../static/LYLimg/juxing33.png')
-        //     $('.nav1>a:eq(2)>div>span').css('color','white')
-        //   }
-        // })
-
 
         var obj = [];
         /**生成一个随机数**/
@@ -165,7 +141,7 @@
           console.log(aa)
           var input = document.querySelectorAll('.yanzhengma input')[0]
           var val = input.value.split('');
-
+          console.log(val)
           for (var i = 0;i < val.length;i++){
             if (val[i] == 'a'){
               val[i] = 'A'
@@ -190,6 +166,9 @@
             }
             if (val[i] == 'h'){
               val[i] = 'H'
+            }
+            if (val[i] == 'i'){
+              val[i] = 'I'
             }
             if (val[i] == 'j'){
               val[i] = 'J'
@@ -247,21 +226,37 @@
           for (var i = 0;i < val.length;i++){
             guolv += val[i]
           }
-          console.log(guolv)
+          console.log(guolv);
 
-          var sj = document.querySelectorAll('.sj input')[0].value
-          var yanzhengma = document.querySelectorAll('.yanzhengma input')[0].value
-          var password = document.querySelectorAll('.password input')[0].value
-          console.log(password)
-          console.log(sj,yanzhengma)
-          if (sj.length < 11){
+          var sj = document.querySelectorAll('.sj input')[0].value;
+          var password = document.querySelectorAll('.password input')[0].value;
+          console.log(password);
+          if (!(/^1[34578]\d{9}$/.test(sj))){
             alert('手机号格式不正确')
           }else if (guolv != aa){
             alert('验证码错误')
           }else if (password.length < 6){
             alert('密码长度小于六位')
-          }else {
-            this.$router.push({path:'/xinshouji',query:{num:2}});
+          }else if (this.a == 1) {
+            $('#input').val('')
+            $('.yanzhengma>input').val('')
+            $('.password>input').val('')
+            $('#input').attr('placeholder','请输入新手机号');
+            $('.nav1>div:eq(0)>img').attr('src','../../../static/LYLimg/juxing1.png');
+            $('.nav1>div:eq(1)>img').attr('src','../../../static/LYLimg/juxing22.png');
+            $('.nav1>div:eq(2)>img').attr('src','../../../static/LYLimg/juxing3.png');
+            $('.nav1>div:eq(0)>span').css('color','black')
+            $('.nav1>div:eq(1)>span').css('color','white')
+            this.a = 2;
+
+          }else if (this.a == 2){
+            $('.img').css('display','block')
+            $('.box').css('display','none')
+            $('.nav1>div:eq(0)>img').attr('src','../../../static/LYLimg/juxing1.png');
+            $('.nav1>div:eq(1)>img').attr('src','../../../static/LYLimg/juxing2.png');
+            $('.nav1>div:eq(2)>img').attr('src','../../../static/LYLimg/juxing33.png');
+            $('.nav1>div:eq(1)>span').css('color','black')
+            $('.nav1>div:eq(2)>span').css('color','white')
           }
         }
       },
@@ -284,14 +279,14 @@
     margin-top: 40px;
     margin-left: 40px;
   }
-  .nav1>a:nth-of-type(n+2)>div{
+  .nav1>div:nth-of-type(n+2){
     margin-left: -10px;
   }
-  .nav1>a>div{
+  .nav1>div{
     float: left;
     position: relative;
   }
-  .nav1>a>div>span{
+  .nav1>div>span{
     height: 25px;
     text-align: center;
     position: absolute;
@@ -301,14 +296,12 @@
     right: 0;
     margin: auto;
   }
-  .nav1>a:nth-of-type(1)>div>span{
+  .nav1>div:nth-of-type(1)>span{
     color: white;
   }
-  .nav1>a:nth-of-type(n+2)>div>span{
+  .nav1>div:nth-of-type(n+2)>span{
     color: black;
   }
-
-
 
 
   .box{
@@ -357,5 +350,22 @@
     margin-top: 40px;
     font-size: 18px;
     outline: none;
+    margin-bottom: 154px;
+  }
+  .content{
+    position: relative;
+    margin-top: 0;
+    overflow: hidden;
+  }
+  .img{
+    height: 480px;
+    display: none;
+  }
+  .img>img{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 200px;
+    margin: auto;
   }
 </style>

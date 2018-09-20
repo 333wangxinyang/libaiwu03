@@ -31,6 +31,9 @@
 .box{
   width: 100%;
   height: 100%;
+  position: absolute;
+  top: 0;
+  background-color: #fff;
 }
   .center{
     width: 1280px;
@@ -41,14 +44,14 @@
   .center>img:nth-of-type(1){
     width: 600px;
     height: 150px;
-    margin-left: 250px;
+    margin-left: 295px;
   }
 .center>img:nth-of-type(2){
   width: 150px;
   height: 150px;
   position: absolute;
-  top: 0;
-  left: 470px;
+  top: 15px;
+  left: 520px;
 }
 .center>img:nth-of-type(3){
   width: 800px;
@@ -82,14 +85,16 @@
   }
   .span1{
     position: absolute;
-    bottom: 100px;
+    bottom: 60px;
     left: 400px;
     background-color: #f08200;
+    border-radius: 10px;
   }
   .span2{
     background-color: #498e3d;
     position: absolute;
-    bottom: 100px;
+    bottom: 60px;
     right: 400px;
+    border-radius: 10px;
   }
 </style>

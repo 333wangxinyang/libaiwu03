@@ -4,34 +4,21 @@
     <!--<h02drzc></h02drzc>-->
     <!--<x01></x01>-->
     <!--<x02></x02>-->
-    <!--<head01></head01>-->
+    <head01></head01>
     <!--<h03dr></h03dr>-->
     <!--<h04wjmm></h04wjmm>-->
     <!--<gerenziliao></gerenziliao>-->
-
-
     <!--<h05jfdd></h05jfdd>-->
     <!--<h06jfxq></h06jfxq>-->
-
-
-
-
-    <!--<h01gylbw></h01gylbw>-->
     <!--<x05></x05>-->
-    <!--<h01gylbw></h01gylbw>-->
-    <!--<h01gylbw></h01gylbw>-->
-    <!--<h01gylbw></h01gylbw>-->
-    <!--<x01></x01>-->
-    <!--<x02></x02>-->
-    <head01></head01>
+    <!--<x05></x05>-->
+    <!--<head01></head01>-->
 <!--<x01></x01>-->
     <!--<x02></x02>-->
       <!--<x03></x03>-->
     <!--<x04></x04>-->
     <!--<x06></x06>-->
     <!--<x07></x07>-->
-    <!--<head01></head01>-->
-    <!--<head01></head01>-->
     <!--<seek></seek>-->
     <!--<navigation></navigation>-->
     <router-view/>
@@ -79,6 +66,16 @@ export default {
     h05jfdd:H05jfdd,
     h06jfxq:H06jfxq
   },
+  methods:{
+
+  },
+  beforeCreate(){
+    console.log('beforeCreate创建之前')
+      document.cookie = "state=0";
+  },
+  mounted(){
+
+  }
 }
 </script>
 

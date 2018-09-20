@@ -39,7 +39,7 @@
     height: 830px;
     position: relative;
     top: 10px;
-    border:1px solid #666;
+    border:1px solid #ececec;
   }
   .two>span:nth-of-type(1){
     font-size: 30px;
@@ -61,6 +61,7 @@
     left: 10px;
     width: 97%;
     height: 0.2px;
+    color: #ececec;
   }
   .two>p:nth-of-type(1){
     position: absolute;

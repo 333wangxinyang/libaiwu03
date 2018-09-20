@@ -1,6 +1,4 @@
 <template>
- <div id="x02">
-   <swiper></swiper>
 <div class="box">
   <div class="aa" v-for="item in arr">
     <router-link to="">
@@ -10,30 +8,21 @@
     <span>{{item.title1}}</span>
     <span>  积分：{{item.title2}}</span>
     <span>价值：{{item.title3}}</span>
-    <router-link to="/X04">
+    <router-link :to="{name: 'X04',params: {id:item.id }}">
     <span class="dh">{{item.title4}}</span>
     </router-link>
   </div>
 </div>
- </div>
 </template>
 
 <script>
-
-  import swiper from '@/components/wangxinyang/swiper'
     export default {
         name: "X02",
-
-      components:{
-        swiper:swiper,
-
-
-      },
-
       data(){
           return {
             arr:[
               {
+                id:21,
                 pic:'../../../static/wxy1/pt.png',
                 title:'新西兰佳沛黄金奇异果',
                 title1:'花蜜版的甘甜百吃不厌',
@@ -42,6 +31,7 @@
                 title4:'立即兑换'
               },
               {
+                id:22,
                 pic:'../../../static/wxy1/cz.png',
                 title:'新西兰佳沛黄金奇异果',
                 title1:'花蜜版的甘甜百吃不厌',
@@ -50,6 +40,7 @@
                 title4:'立即兑换'
               },
               {
+                id:23,
                 pic:'../../../static/wxy1/hfs.png',
                 title:'新西兰佳沛黄金奇异果',
                 title1:'花蜜版的甘甜百吃不厌',
@@ -58,6 +49,7 @@
                 title4:'立即兑换'
               },
               {
+                id:24,
                 pic:'../../../static/wxy1/mg.png',
                 title:'新西兰佳沛黄金奇异果',
                 title1:'花蜜版的甘甜百吃不厌',
@@ -66,6 +58,7 @@
                 title4:'立即兑换'
               },
               {
+                id:23,
                 pic:'../../../static/wxy1/hfs.png',
                 title:'新西兰佳沛黄金奇异果',
                 title1:'花蜜版的甘甜百吃不厌',
@@ -74,6 +67,7 @@
                 title4:'立即兑换'
               },
               {
+                id:25,
                 pic:'../../../static/wxy1/mht.png',
                 title:'新西兰佳沛黄金奇异果',
                 title1:'花蜜版的甘甜百吃不厌',
@@ -82,6 +76,7 @@
                 title4:'立即兑换'
               },
               {
+                id:24,
                 pic:'../../../static/wxy1/mg.png',
                 title:'新西兰佳沛黄金奇异果',
                 title1:'花蜜版的甘甜百吃不厌',
@@ -90,6 +85,7 @@
                 title4:'立即兑换'
               },
               {
+                id:21,
                 pic:'../../../static/wxy1//pt.png',
                 title:'新西兰佳沛黄金奇异果',
                 title1:'花蜜版的甘甜百吃不厌',
@@ -97,6 +93,7 @@
                 title3:'￥20.0',
                 title4:'立即兑换'
               }, {
+                id:24,
                 pic:'../../../static/wxy1/mg.png',
                 title:'新西兰佳沛黄金奇异果',
                 title1:'花蜜版的甘甜百吃不厌',
@@ -105,6 +102,7 @@
                 title4:'立即兑换'
               },
               {
+                id:26,
                 pic:'../../../static/wxy1/hlg.png',
                 title:'新西兰佳沛黄金奇异果',
                 title1:'花蜜版的甘甜百吃不厌',
@@ -113,6 +111,7 @@
                 title4:'立即兑换'
               },
               {
+                id:25,
                 pic:'../../../static/wxy1/mht.png',
                 title:'新西兰佳沛黄金奇异果',
                 title1:'花蜜版的甘甜百吃不厌',
@@ -121,6 +120,7 @@
                 title4:'立即兑换'
               },
               {
+                id:23,
                 pic:'../../../static/wxy1//hfs.png',
                 title:'新西兰佳沛黄金奇异果',
                 title1:'花蜜版的甘甜百吃不厌',
@@ -135,12 +135,6 @@
 </script>
 
 <style scoped>
-  #x02{
-
-
-
-  }
-
 .box{
   width: 1280px;
   height: 1250px;
@@ -188,6 +182,7 @@
   top: 260px;
   left: 60px;
   font-size: 14px;
+  color: #707070;
 }
 .aa>span:nth-of-type(3){
   display: block;
@@ -207,6 +202,7 @@
   position: absolute;
   top: 290px;
  right: 30px;
+  color: #707070;
 }
   .dh{
     width: 150px;

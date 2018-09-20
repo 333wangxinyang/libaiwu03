@@ -18,7 +18,7 @@
         <li><a href="###" class="h01class2">发票说明</a></li>
         <li><a href="###" class="h01class1">售后服务 <span>></span></a></li>
         <li><a href="###" class="h01class2">退换货原则</a></li>
-        <li><a href="###" class="h01class2">服务保障承诺</a></li>
+        <li><router-link to="/x05" class="h01class2">优质保障</router-link></li>
         <li><a href="###" class="h01class2">验货与签收</a></li>
         <li><a href="###" class="h01class2">发票说明</a></li>
         <li><a href="###" class="h01class1">加盟礼拜五  <span>></span> </a></li>

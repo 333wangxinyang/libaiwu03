@@ -50,20 +50,25 @@
             }
           }
         }
-        // bb(){
-        //   alert('内容不能为空')
-        //   if($('#input01').val() === '' ){
-        //     alert('内容不能为空')
-        //   }
-        // }
+
       },
       mounted(){
+
 console.log(document.cookie)
 
         this.state = this.getValueByKey("state")
 
+        Bus.$on('aa',function (n) {
+          this.state = n ;
+        }.bind(this))
 
 
+        Bus.$on('bb',function (n) {
+          this.state = n ;
+        }.bind(this))
+        Bus.$on('cc',function (n) {
+          this.state = n ;
+        }.bind(this))
 
         $('#tt').click(function () {
           if($('#input01').val() === '' ){
@@ -86,7 +91,7 @@ console.log(document.cookie)
     padding-top: 25px;
     margin: 0 auto;
     position: relative;
-    /*background-color: #F00;*/
+
   }
   #seek>img{
     display: block;
@@ -101,10 +106,7 @@ console.log(document.cookie)
     padding-top: 25px;
     height: 80px;
   }
-  /*#s_div1>div:nth-of-type(1){*/
 
-
-  /*}*/
   #s_div1>div>input{
     width: 458px;
     position: absolute;

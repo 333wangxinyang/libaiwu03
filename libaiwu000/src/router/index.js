@@ -39,6 +39,7 @@ import X09 from '@/components/wxy/X09'
 import fff from '@/components/wxy/fff'
 import Yjfh from '@/components/wxy/Yjfh'
 import Huanbangshouji from '@/components/LYL/Huanbangshouji'
+
 import Wodejifen from '@/components/LYL/Wodejifen'
 import Zhanghuyue from '@/components/LYL/Zhanghuyue'
 import Wodeshoucang from '@/components/LYL/Wodeshoucang'
@@ -49,14 +50,18 @@ import Pingjiachenggong from '@/components/LYL/Pingjiachenggong'
 //三级联动组件
 import Sanjiliandong from '@/components/LYL/Sanjiliandong'
 
+
+// import Yuanshouji from '@/components/LYL/Yuanshouji'
+// import Xinshouji from '@/components/LYL/Xinshouji'
+// import Huanbangchenggong from '@/components/LYL/Huanbangchenggong'
+
 import H03dr from '@/components/HZH/H03dr'
 import H02drzc from '@/components/HZH/H02drzc'
 import H04wjmm from '@/components/HZH/H04wjmm'
-
-
-
 import Zd from '@/components/wxy/Zd'
 import Liulan from '@/components/wxy/Liulan'
+import X05 from '@/components/wxy/X05'
+import X03 from '@/components/wxy/X03'
 
 Vue.use(Router)
 
@@ -157,6 +162,12 @@ export default new Router({
           component: H01gylbw
         },
         {
+          path: '/X05',
+          name: 'X05',
+          component: X05
+        },
+
+        {
           path: '/X02',
           name: 'X02',
           component: X02,
@@ -165,6 +176,11 @@ export default new Router({
           path: '/X04',
           name: 'X04',
           component: X04
+        },
+        {
+          path: '/X03',
+          name: 'X03',
+          component: X03
         },
         {
           path: '/X09',
@@ -334,7 +350,16 @@ export default new Router({
 
         }
         ],
-    }
+    },
+    {
 
+      path: "/X01",
+      name: "notFound",
+      component: X01
+    }, {
+      path: "*", // 此处需特别注意置于最底部
+      redirect: "/X01"
+
+    }
   ]
 })

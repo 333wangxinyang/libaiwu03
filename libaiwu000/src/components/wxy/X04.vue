@@ -17,10 +17,8 @@
         <img :class="mm==4&&'aa'" src="../../../static/wxy1/ti04.jpg" alt="">
         <img class="bb" src="../../../static/wangxinyang/right1.png" alt="">
       </div>
-
-
       <div class="right">
-        <span>新疆哈密瓜1500kg</span>
+        <span>{{arr0[0].name}}</span>
         <div class="tt">
           <img src="../../../static/wxy1/cheng2.png" alt="">
           <span>资深买家</span>
@@ -28,10 +26,11 @@
             入我国。是中国三大石榴之一，粒大皮薄，汁多味甜爽口。雀斑石榴持续热卖！云
             南蒙自石榴，原产波斯（今伊朗）一带，公元前二世纪时传入我国。是中国三大石
             榴之一，粒大皮薄，汁多味甜爽口。
+
           </p>
         </div>
         <span>500积分</span>
-        <span>价值：￥20.0</span>
+        <span>价值：￥{{arr0[0].xj}}</span>
         <span>请选择规则：</span>
         <span class="aaa">500g</span>
         <span class="aaa aa1">1000g</span>
@@ -41,7 +40,7 @@
         <span class="bbb bb1">1000g</span>
         <span>数量：</span>
         <span class="cc"><button>-</button>{{str}}<button>+</button></span>
-        <router-link to="">
+        <router-link to="/X03">
           <span class="xx">立即兑换</span>
         </router-link>
         <div class="last">
@@ -56,6 +55,7 @@
         </div>
       </div>
     </div>
+
   </div>
   <div class="sp">
   <div class="xq">
@@ -123,6 +123,7 @@
 <script>
   import fff from '@/components/wxy/fff'
   import PicZoom from 'vue-piczoom'
+
     export default {
         name: "X04",
       components:{
@@ -133,6 +134,13 @@
         return {
             mm:1,
             src:'../../../static/wxy1/ti01.jpg',
+
+          arr0:[{
+              name:'',
+            xj:'',
+            src:''
+          }
+          ],
           arr1:[
             {
               name:'男士端衬衫',
@@ -152,7 +160,25 @@
           str:1
         }
       },
+
+
+
       mounted(){
+
+          console.log(this.$route.params.id);
+          if(this.$route.params.id){
+            window.localStorage.id = this.$route.params.id;
+          }
+          var id = this.$route.params.id||window.localStorage.id;
+          console.log(id);
+        axios.get('/api/php/hzhxqw/jf.php?id='+id).then((response) => {
+          console.log(response.data);
+          this.arr0 = response.data;
+          // console.log(this.arr0);
+        });
+
+
+
 
         $("#box").on("mouseenter",function(){
           $('canvas').css({

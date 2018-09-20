@@ -11,8 +11,9 @@
     <router-link to="/">
       <span class="aa2">订单提交成功</span>
     </router-link>
-    <router-view/>
+
   </div>
+  <router-view/>
 </div>
 
 
@@ -38,6 +39,7 @@
   width: 1280px;
   position: relative;
   top: 0;
+  margin: 0 auto;
 }
   .title{
     width: 1280px;

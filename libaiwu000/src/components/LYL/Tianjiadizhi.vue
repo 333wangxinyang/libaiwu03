@@ -12,33 +12,34 @@
       <div class="body2">
         <span>*&nbsp</span>
         <span>所在地区 :</span>
-        <div class="body2_1">
-          <select name="" class="select1">
-            <option value="北京">北京</option>
-            <option value="河南">河南</option>
-            <option value="上海">上海</option>
-            <option value="广州">广州</option>
-            <option value="深圳">深圳</option>
-          </select>
-        </div>
-        <div class="body2_1">
-          <select name="" class="select2">
-            <option value="驻马店">驻马店</option>
-            <option value="新乡">新乡</option>
-            <option value="郑州">郑州</option>
-            <option value="周口">周口</option>
-            <option value="深圳">深圳</option>
-          </select>
-        </div>
-        <div class="body2_1">
-          <select name="" class="select3">
-            <option value="西安">西安</option>
-            <option value="河南">河南</option>
-            <option value="上海" selected>上海</option>
-            <option value="广州">广州</option>
-            <option value="深圳">深圳</option>
-          </select>
-        </div>
+        <!--<div class="body2_1">-->
+          <!--<select name="" class="select1">-->
+            <!--<option value="北京">北京</option>-->
+            <!--<option value="河南">河南</option>-->
+            <!--<option value="上海">上海</option>-->
+            <!--<option value="广州">广州</option>-->
+            <!--<option value="深圳">深圳</option>-->
+          <!--</select>-->
+        <!--</div>-->
+        <!--<div class="body2_1">-->
+          <!--<select name="" class="select2">-->
+            <!--<option value="驻马店">驻马店</option>-->
+            <!--<option value="新乡">新乡</option>-->
+            <!--<option value="郑州">郑州</option>-->
+            <!--<option value="周口">周口</option>-->
+            <!--<option value="深圳">深圳</option>-->
+          <!--</select>-->
+        <!--</div>-->
+        <!--<div class="body2_1">-->
+          <!--<select name="" class="select3">-->
+            <!--<option value="西安">西安</option>-->
+            <!--<option value="河南">河南</option>-->
+            <!--<option value="上海" selected>上海</option>-->
+            <!--<option value="广州">广州</option>-->
+            <!--<option value="深圳">深圳</option>-->
+          <!--</select>-->
+        <!--</div>-->
+        <Sanjiliandong class="Sanjiliandong"></Sanjiliandong>
       </div>
       <div class="body3">
         <span>*</span>
@@ -64,8 +65,12 @@
 </template>
 
 <script>
+  import Sanjiliandong from '@/components/LYL/Sanjiliandong'
     export default {
       name: "Tianjiadizhi",
+      components:{
+        Sanjiliandong:Sanjiliandong
+      },
       data(){
         return {
           obj:[]
@@ -73,16 +78,21 @@
       },
       methods:{
         tijiao(){
+
           var input1 = document.querySelectorAll('.body1 input')[0].value
-          var input2 = document.querySelectorAll('.select1')[0]
-          var input2_1 = input2.selectedIndex;
-          var input2_2 = input2.options[input2_1].value;
-          var input3 = document.querySelectorAll('.select2')[0]
-          var input3_1 = input3.selectedIndex;
-          var input3_2 = input3.options[input3_1].value;
-          var input4 = document.querySelectorAll('.select3')[0]
-          var input4_1 = input4.selectedIndex;
-          var input4_2 = input4.options[input4_1].value;
+          var input2 = document.querySelectorAll('.Sanjiliandong input')[0].value
+          var input3 = document.querySelectorAll('.Sanjiliandong input')[1].value
+          var input4 = document.querySelectorAll('.Sanjiliandong input')[2].value
+          console.log(input2,input3,input4);
+          // var input2 = document.querySelectorAll('.select1')[0]
+          // var input2_1 = input2.selectedIndex;
+          // var input2_2 = input2.options[input2_1].value;
+          // var input3 = document.querySelectorAll('.select2')[0]
+          // var input3_1 = input3.selectedIndex;
+          // var input3_2 = input3.options[input3_1].value;
+          // var input4 = document.querySelectorAll('.select3')[0]
+          // var input4_1 = input4.selectedIndex;
+          // var input4_2 = input4.options[input4_1].value;
           var input5 = document.querySelectorAll('.body3 input')[0].value
           var input6 = document.querySelectorAll('.body4 input')[0].value
           var input7 = document.querySelectorAll('.body4 input')[1].value
@@ -91,7 +101,7 @@
           var a = [];
           // var dizhi = input2_2 + input3_2 + input4_2;
           // console.log(dizhi)
-          a.push(input1,input2_2,input3_2,input4_2,input5,input6,input7,input8);
+          a.push(input1,input2,input3,input4,input5,input6,input7,input8);
           this.obj = a;
           console.log(this.obj)
             if (this.obj[0] == '' || this.obj[1] == '' || this.obj[2] == '' || this.obj[3] == '' || this.obj[4] == '' || this.obj[5] == '' || this.obj[6] == '' || this.obj[7] == ''){
@@ -106,9 +116,9 @@
         console.log(obj)
         if (typeof(obj) == "object"){
           document.querySelectorAll('.body1 input')[0].value = obj[0];
-          document.querySelectorAll('.select1')[0].value = obj[1];
-          document.querySelectorAll('.select2')[0].value = obj[2];
-          document.querySelectorAll('.select3')[0].value = obj[3];
+          document.querySelectorAll('.Sanjiliandong input')[0].value = obj[1];
+          document.querySelectorAll('.Sanjiliandong input')[1].value = obj[2];
+          document.querySelectorAll('.Sanjiliandong input')[2].value = obj[3];
           document.querySelectorAll('.body3 input')[0].value = obj[4];
           document.querySelectorAll('.body4 input')[0].value = obj[5];
           document.querySelectorAll('.body4 input')[1].value = obj[6];

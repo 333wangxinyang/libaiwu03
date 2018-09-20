@@ -17,11 +17,11 @@
             <li><router-link to="/zhanghuziliao">个人资料</router-link></li>
             <li><router-link to="/dizhiguanli">地址管理</router-link></li>
             <li><router-link to="/wodeshoucang">我的收藏</router-link></li>
-            <li><a href="###">最近浏览</a></li>
+            <li><router-link to="/Liulan">最近浏览</router-link></li>
             <li><router-link to="/gerenziliao">修改密码</router-link></li>
             <li class="max"><a href="###">站内信<span>></span></a></li>
             <li><router-link to="/wodexiaoxi1">我的消息</router-link></li>
-            <li><a href="###">意见反馈</a></li>
+            <li><router-link to="/Yjfh">意见反馈</router-link></li>
           </ul>
         </div>
       </div>
@@ -74,7 +74,7 @@
   }
   .body{
     width: 1087px;
-    /*height: 625px;*/
+    min-height: 625px;
     float: right;
     border: solid #ececec 1px;
   }

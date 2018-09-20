@@ -1,35 +1,5 @@
 <template>
   <div>
-    <div id="head01">
-      <div id="h_div1">
-        <span>所在城市 : </span>
-        <div class="ct f_l" style="padding: 0">
-
-          <div class="ct_now" id="ctname">北京朝阳区</div>
-
-          <div class="ct_swich" id="qiehuan"><span class="ct_nav"></span></div>
-
-          <div class="ct_link">
-
-            <div class="ct_show"><span id="closect" class="f_r" title="关闭窗口">X</span><span class="f_l">城市列表</span></div>
-
-            <a class="ct_links" href="javascript:">全国</a><a class="ct_links" href="javascript:">上海</a><a class="ct_links" href="javascript:">杭州</a><a class="ct_links" href="javascript:">北京</a><a class="ct_links" href="javascript:">深圳</a><a class="ct_links" href="javascript:">广州</a><a class="ct_links" href="javascript:">东莞</a><a class="ct_links" href="javascript:">汕头</a><a class="ct_links" href="javascript:">珠海</a><a class="ct_links" href="javascript:">佛山</a><a class="ct_links" href="javascript:">福州</a><a class="ct_links" href="javascript:">南京</a><a class="ct_links" href="javascript:">苏州</a><a class="ct_links" href="javascript:">武汉</a><span class="ct_links"></span><span class="ct_links"></span><span class="ct_links"></span><span class="ct_links"></span>
-
-          </div>
-
-        </div>
-
-        <div id="h_div2">
-          <a href="###">400-800-8820</a>
-          <a href="###">我是商家</a>
-          <a href="###">我的消息</a>
-          <a href="###">我的订单</a>
-          <span>您好 ,<a href="###">17701269859</a><a href="###">退出</a></span>
-          <a >注册登录</a>
-        </div>
-      </div>
-    </div>
-
     <div class="h02div1">
       <div class="h02div3">
         <img src="../../../static/hzh/h02-2-w370h67.png" alt="">
@@ -48,7 +18,7 @@
         </div>
       </div>
 
-      <div class="hdrzc">
+      <div class="hdrzc hzh04">
         <div class="hdrzc2">
 
           <h1>重置密码</h1>

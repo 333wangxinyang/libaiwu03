@@ -30,9 +30,11 @@
       mounted(){
 
           $("#box").on("mouseenter",function(){
+            console.log($("#box").offset().left)
+
            $('canvas').css({
-             left: '600px' ,
-            top: '310px',
+             left: $("#box").offset().left + 550 ,
+              top: '310px',
            })
           });
 
@@ -56,7 +58,7 @@
           }else {
             this.mm = this.mm+1;
           }
-          this.src = '../../../static/wangxinyang/tcsp0'+this.mm + '.png'
+          this.src = '../../../static/wangxinyang/tcsp0'+this.mm + '.png';
         }.bind(this))
         $('#lb>img').eq(1).click(function () {
           this.mm = 1;
@@ -106,6 +108,7 @@ pic-zoom{
   width: 86px;
   height: 46px;
   border: 2px solid #dfdfdf;
+
 }
 #lb>.bb{
   width: 35px;

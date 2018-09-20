@@ -1,9 +1,11 @@
 <template>
     <div>
-      <head01></head01>
+      <!--<head01></head01>-->
       <seek></seek>
       <navigation></navigation>
       <router-view/>
+
+
       <foot></foot>
 
     </div>
@@ -22,6 +24,9 @@
         navigation:navigation,
         foot:foot,
       },
+      mounted(){
+        document.cookie = "state=0";
+      }
     }
 </script>
 

@@ -81,6 +81,7 @@
 
         drawPic();
         this.obj = obj;
+        console.log(this.obj)
         /**绘制验证码图片**/
         function drawPic(){
           var canvas=document.getElementById("canvas");
@@ -228,10 +229,8 @@
           console.log(guolv);
 
           var sj = document.querySelectorAll('.sj input')[0].value;
-          var yanzhengma = document.querySelectorAll('.yanzhengma input')[0].value/1;
           var password = document.querySelectorAll('.password input')[0].value;
           console.log(password);
-          console.log(yanzhengma);
           if (!(/^1[34578]\d{9}$/.test(sj))){
             alert('手机号格式不正确')
           }else if (guolv != aa){

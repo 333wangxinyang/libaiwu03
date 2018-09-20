@@ -2,7 +2,7 @@
   <div>
     <div class="h02div1">
       <div class="h02div3">
-        <img src="../../../static/hzh/h02-2-w370h67.png" alt="">
+        <a href="/#/shouye01/"><img src="../../../static/hzh/h02-2-w370h67.png" alt=""></a>
         <img src="../../../static/hzh/h02-3-w1h38.png" alt="">
         <p>找回密码</p>
       </div>
@@ -408,16 +408,15 @@
     top: 0;
     overflow: hidden;
   }
-  .h02div3>img:nth-of-type(1){
+  .h02div3>a>img{
     width: 370px;
     height: 67px;
     margin-top:25px;
   }
-  .h02div3>img:nth-of-type(2){
+  .h02div3>img{
     width: 1px;
     height: 38px;
     margin-left:60px;
-
   }
   .h02div3>p{
     position: absolute;

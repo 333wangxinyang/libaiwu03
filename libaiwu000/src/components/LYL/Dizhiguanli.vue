@@ -37,12 +37,13 @@
         mounted(){
 
           var dizhi = this.$route.query.obj;
+          console.log(dizhi)
 
           if (typeof(dizhi) == "object"){
-
-            var zuoji = dizhi[4] + dizhi[5];
+            var jiedao = dizhi[1] + dizhi[2] + dizhi[3]
+            var zuoji = dizhi[6] + '-' + dizhi[7];
             var dizhi3 = [];
-            dizhi3.push(dizhi[0],dizhi[1],dizhi[2],dizhi[3],zuoji)
+            dizhi3.push(dizhi[0],jiedao,dizhi[4],dizhi[5],zuoji)
             console.log(dizhi3)
 
             var content1 = document.getElementsByClassName('content1')
@@ -59,11 +60,17 @@
                 var th = document.createElement('th');
                 var span = document.createElement('span');
                 var span1 = document.createElement('span');
+                span.style.display = 'inline-block';
                 span.style.color = '#3d8e43';
                 span.innerHTML = '修改';
+                span.className = 'span'
+                span.style.lineHeight = '15px'
+                span.style.paddingRight = '3px'
                 span.style.borderRight = 'solid 2px #999999';
                 span1.style.color = '#3d8e43';
                 span1.innerHTML = '删除';
+                span1.className = 'span1'
+                span1.style.paddingLeft = '3px';
                 th.appendChild(span);
                 th.appendChild(span1);
                 tr.appendChild(th)
@@ -76,6 +83,25 @@
             var table = document.getElementsByClassName('table')
             table[0].appendChild(tr)
             console.log(table[0])
+
+            var span = document.getElementsByClassName('span')[0]
+            console.log(span)
+            span.onclick = function () {
+              this.$router.push({path:'/tianjiadizhi',query:{obj:dizhi}});
+            }.bind(this)
+            console.log($('.table tr'))
+            $('.span1').click(function () {
+              var tr = $(this).parent().parent()[0];
+              tr.remove()
+              console.log(table,tr)
+              console.log($('.table tr'))
+              if ($('.table tr').length < 2){
+                $('.table').css({
+                  'display':'none'
+                })
+              }
+
+            })
           }
         }
     }

@@ -39,9 +39,22 @@ import X09 from '@/components/wxy/X09'
 import fff from '@/components/wxy/fff'
 import Yjfh from '@/components/wxy/Yjfh'
 import Huanbangshouji from '@/components/LYL/Huanbangshouji'
-import Yuanshouji from '@/components/LYL/Yuanshouji'
-import Xinshouji from '@/components/LYL/Xinshouji'
-import Huanbangchenggong from '@/components/LYL/Huanbangchenggong'
+
+import Wodejifen from '@/components/LYL/Wodejifen'
+import Zhanghuyue from '@/components/LYL/Zhanghuyue'
+import Wodeshoucang from '@/components/LYL/Wodeshoucang'
+import Zhanghuxiangqing from '@/components/LYL/Zhanghuxiangqing'
+import Wodexiaoxi from '@/components/LYL/Wodexiaoxi'
+import Wodexiaoxi1 from '@/components/LYL/Wodexiaoxi1'
+import Pingjiachenggong from '@/components/LYL/Pingjiachenggong'
+//三级联动组件
+import Sanjiliandong from '@/components/LYL/Sanjiliandong'
+
+
+// import Yuanshouji from '@/components/LYL/Yuanshouji'
+// import Xinshouji from '@/components/LYL/Xinshouji'
+// import Huanbangchenggong from '@/components/LYL/Huanbangchenggong'
+
 import H03dr from '@/components/HZH/H03dr'
 import H02drzc from '@/components/HZH/H02drzc'
 import H04wjmm from '@/components/HZH/H04wjmm'
@@ -54,6 +67,12 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
+    //三级联动路由
+    {
+      path: '/sanjiliandong',
+      name: 'Sanjiliandong',
+      component: Sanjiliandong
+    },
     {
       path: '/H04wjmm',
       name: 'H04wjmm',
@@ -214,6 +233,11 @@ export default new Router({
               component: Wodezhanghu,
             },
             {
+              path: '/zhanghuyue',
+              name: 'Zhanghuyue',
+              component: Zhanghuyue,
+            },
+            {
               path:'/Zd',
               name:'Zd',
               component: Zd
@@ -227,6 +251,11 @@ export default new Router({
               path: '/dingdanpingjia',
               name: 'Dingdanpingjia',
               component: Dingdanpingjia,
+            },
+            {
+              path: '/pingjiachenggong',
+              name: 'Pingjiachenggong',
+              component: Pingjiachenggong,
             },
             {
               path: '/tianjiadizhi',
@@ -247,23 +276,31 @@ export default new Router({
               path: '/huanbangshouji',
               name: 'Huanbangshouji',
               component: Huanbangshouji,
-              children:[
-                {
-                  path: '/yuanshouji',
-                  name: 'Yuanshouji',
-                  component: Yuanshouji,
-                },
-                {
-                  path: '/xinshouji',
-                  name: 'Xinshouji',
-                  component: Xinshouji,
-                },
-                {
-                  path: '/huanbangchenggong',
-                  name: 'Huanbangchenggong',
-                  component: Huanbangchenggong,
-                }
-              ]
+            },
+            {
+              path: '/wodejifen',
+              name: 'Wodejifen',
+              component: Wodejifen,
+            },
+            {
+              path: '/wodeshoucang',
+              name: 'Wodeshoucang',
+              component: Wodeshoucang
+            },
+            {
+              path: '/zhanghuxiangqing',
+              name: 'Zhanghuxiangqing',
+              component: Zhanghuxiangqing
+            },
+            {
+              path: '/wodexiaoxi',
+              name: 'Wodexiaoxi',
+              component: Wodexiaoxi
+            },
+            {
+              path: '/wodexiaoxi1',
+              name: 'Wodexiaoxi1',
+              component: Wodexiaoxi1
             },
             {
               path: '/wodedingdan',

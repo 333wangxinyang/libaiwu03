@@ -6,7 +6,7 @@
       </div>
       <div class="body">
         <input type="text" onkeyup="value=value.replace(/[^\d]/g,'')" placeholder="请输入充值卡兑换码进行充值" maxlength="11"><br>
-        <router-link to="/zhanghuziliao"><button>充值</button></router-link>
+        <button @click="submit()">充值</button>
       </div>
     </div>
 </template>
@@ -15,7 +15,14 @@
     export default {
         name: "Wodezhanghu",
         methods:{
-
+          submit(){
+            var input = document.querySelectorAll('.body input')[0].value-0
+            if (!(/^1[34578]\d{9}$/.test(input))){
+              alert('手机格式错误')
+            }else{
+              this.$router.push({path:'/zhanghuyue'});
+            }
+          }
         }
     }
 </script>
@@ -62,7 +69,7 @@
     text-indent: 20px;
     margin: 50px 30px;
   }
-  .body>a>button{
+  .body>button{
     height: 50px;
     width: 150px;
     font-size: 20px;

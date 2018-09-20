@@ -145,7 +145,7 @@
           </div>
         </div>
         <div class="body_6">
-            <router-link to="/dingdanbianhao"><button>提交评价</button></router-link>
+            <router-link to="/pingjiachenggong"><button @click="submit()">提交评价</button></router-link>
         </div>
       </div>
     </div>
@@ -157,6 +157,11 @@
         components:{
 
         },
+      methods:{
+        submit(){
+
+        }
+      },
       mounted(){
         $('#aa img').click(function () {
           $('#aa img').attr('src','static/LYLimg/wuxing.png')

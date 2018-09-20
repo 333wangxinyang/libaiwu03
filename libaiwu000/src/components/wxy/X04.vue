@@ -160,11 +160,7 @@
           str:1
         }
       },
-
-
-
       mounted(){
-
           console.log(this.$route.params.id);
           if(this.$route.params.id){
             window.localStorage.id = this.$route.params.id;
@@ -194,7 +190,7 @@
 
           }
           this.src = '../../../static/wxy1/ti0'+this.mm + '.jpg'
-        }.bind(this))
+        }.bind(this));
         $('#lb>img').eq(5).click(function () {
           if(this.mm===4){
             this.mm = 1;

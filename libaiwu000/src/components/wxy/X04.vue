@@ -7,7 +7,7 @@
   <div class="big">
     <div id="fdj">
       <div id="box">
-        <pic-zoom :url="src" :scale="2"></pic-zoom>
+        <pic-zoom :url="arr0[0].src" :scale="2"></pic-zoom>
       </div>
       <div id="lb">
         <img class="bb" src="../../../static/wangxinyang/left1.png" alt="">
@@ -160,7 +160,11 @@
           str:1
         }
       },
+
+
+
       mounted(){
+
           console.log(this.$route.params.id);
           if(this.$route.params.id){
             window.localStorage.id = this.$route.params.id;
@@ -190,7 +194,7 @@
 
           }
           this.src = '../../../static/wxy1/ti0'+this.mm + '.jpg'
-        }.bind(this));
+        }.bind(this))
         $('#lb>img').eq(5).click(function () {
           if(this.mm===4){
             this.mm = 1;
@@ -281,6 +285,10 @@ var a=true;
   width: 500px;
   height: 277px;
   overflow: hidden;
+}
+#box img{
+  width: 500px;
+  height: 277px;
 }
 .box img{
   width:500px;

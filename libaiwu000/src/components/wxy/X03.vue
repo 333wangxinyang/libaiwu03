@@ -6,7 +6,7 @@
   </div>
   <div class="then">
     <span>收货人信息</span>
-    <router-link to="">
+    <router-link to="/tianjiadizhi">
       <span class="one4">使用新地址</span>
     </router-link>
     <div class="one" v-for="item in arr">
@@ -18,15 +18,13 @@
       <router-link to="">
       <span class="aa">{{item.title2}}</span>
       </router-link>
-      <router-link to="/X03">
       <span class="bb">{{item.title3}}</span>
-      </router-link>
     </div>
     <div class="dz">
       <span class="zk">展开地址</span>
-      <img src="../../../static/wxy1/x-down.png" alt="">
+      <img src="../../../static/wxy1/x-down.png" alt="" class="zk1">
       <span class="sq">收起地址</span>
-      <img src="../../../static/wxy1/x-up.png" alt="">
+      <img src="../../../static/wxy1/x-up.png" alt="" class="sq1">
     </div>
   </div>
   <div class="xx">
@@ -71,6 +69,14 @@
     export default {
         name: "X03",
       mounted(){
+
+        $('.bb').click(function () {
+          $(this).parent().css({display:'none'});
+        });
+
+
+
+
           var a=true;
           $('.one2').click(function () {
             if (a==true){
@@ -87,9 +93,17 @@
           });
           $('.zk').click(function () {
             $('.one').css({display:'block'});
+            $('.zk').css({display:'none'});
+            $('.zk1').css({display:'none'});
+            $('.sq').css({display:'block'});
+            $('.sq1').css({display:'block'});
           });
         $('.sq').click(function () {
           $('.one').css({display:'none'});
+          $('.zk').css({display:'block'});
+          $('.zk1').css({display:'block'});
+          $('.sq').css({display:'none'});
+          $('.sq1').css({display:'none'});
         });
       },
       data(){
@@ -171,7 +185,7 @@
     width: 100%;
     height:125px;
     position: relative;
-    border-bottom: 1px solid #666;
+    border-bottom: 1px solid #dfdfdf;
   }
   .title img{
     width: 415px;
@@ -188,7 +202,7 @@
     position: absolute;
     top: 50px;
     left: 600px;
-    border-left: 1px solid #666;
+    border-left: 1px solid #dfdfdf;
     text-align: center;
     line-height: 30px;
     color: #666;
@@ -254,12 +268,14 @@
     position: absolute;
     right: 200px;
     top: 15px;
+    color: #666;
   }
 .bb{
   display: block;
   position: absolute;
   right: 100px;
   top: 15px;
+  color: #666;
 }
   .dz{
     width: 200px;
@@ -269,17 +285,18 @@
   }
   .dz>span:nth-of-type(1){
     font-size: 14px;
-    display: block;
     width: 80px;
     height: 30px;
     line-height: 30px;
     position: absolute;
     left: 30px;
+    display: none;
   }
   .dz>img:nth-of-type(1){
     position: absolute;
     top: 10px;
     left: 90px;
+    display: none;
   }
 .dz>span:nth-of-type(2){
   font-size: 14px;
@@ -288,12 +305,12 @@
   height: 30px;
   line-height: 30px;
   position: absolute;
-  left: 120px;
+  left: 30px;
 }
 .dz>img:nth-of-type(2){
   position: absolute;
   top: 10px;
-  left: 180px;
+  left: 90px;
 }
   .xx{
     position: relative;
@@ -307,7 +324,7 @@
   .xx1{
     width: 99%;
     margin-top: 10px;
-    border: 1px solid #666;
+    border: 1px solid #dfdfdf;
   }
 .nr{
   width: 100%;
@@ -326,7 +343,7 @@
     height:120px;
     position: relative;
     top: 0;
-    border-bottom: 1px solid #666;
+    border-bottom: 1px solid #dfdfdf;
   }
   .cp>img{
     width: 90px;
@@ -355,7 +372,7 @@
     width: 100px;
     height: 30px;
     line-height: 30px;
-    border: 1px solid #666;
+    border: 1px solid #dfdfdf;
     font-size: 20px;
     text-align: center;
   }
@@ -387,8 +404,8 @@
     height: 100px;
     position: relative;
     top: 10px;
-    border-top: 1px solid #666;
-    border-bottom: 1px solid #666;
+    border-top: 1px solid #dfdfdf;
+    border-bottom: 1px solid #dfdfdf;
   }
   .cp2 span{
     color: #666;

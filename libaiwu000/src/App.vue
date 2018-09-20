@@ -8,26 +8,17 @@
     <!--<h03dr></h03dr>-->
     <!--<h04wjmm></h04wjmm>-->
     <!--<gerenziliao></gerenziliao>-->
-
-
     <!--<h05jfdd></h05jfdd>-->
     <!--<h06jfxq></h06jfxq>-->
-
-
-
-
     <!--<x05></x05>-->
-
+    <!--<x05></x05>-->
     <!--<head01></head01>-->
-
 <!--<x01></x01>-->
     <!--<x02></x02>-->
       <!--<x03></x03>-->
     <!--<x04></x04>-->
     <!--<x06></x06>-->
     <!--<x07></x07>-->
-    <!--<head01></head01>-->
-    <!--<head01></head01>-->
     <!--<seek></seek>-->
     <!--<navigation></navigation>-->
     <router-view/>

@@ -48,6 +48,7 @@ import H04wjmm from '@/components/HZH/H04wjmm'
 import Zd from '@/components/wxy/Zd'
 import Liulan from '@/components/wxy/Liulan'
 import X05 from '@/components/wxy/X05'
+import X03 from '@/components/wxy/X03'
 
 Vue.use(Router)
 
@@ -156,6 +157,11 @@ export default new Router({
           path: '/X04',
           name: 'X04',
           component: X04
+        },
+        {
+          path: '/X03',
+          name: 'X03',
+          component: X03
         },
         {
           path: '/X09',

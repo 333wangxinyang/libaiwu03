@@ -9,7 +9,7 @@
     <router-link to="/tianjiadizhi">
       <span class="one4">使用新地址</span>
     </router-link>
-    <div class="one" v-for="item in arr">
+    <div class="one" v-for="itemin arr">
       <img src="../../../static/wxy1/x-wzf.png" alt="" class="one2">
       <span>{{item.title}}</span>
       <span>{{item.tel}}</span>
@@ -36,11 +36,11 @@
         <span>数量</span>
         <span>金额</span>
       </div>
-      <div class="cp" v-for="item in arr2">
+      <div class="cp" v-for="(item,b) in arr2">
         <img :src="item.pic" alt="">
         <span>{{item.title}}</span>
         <span>{{item.gg}}</span>
-        <button class="btn1">-</button><span class="cc">{{item.num}}</span><button class="btn2">+</button>
+        <button class="btn1" @click="bt(b)">-</button><span class="cc">{{item.num}}</span><button class="btn2" @click="bt1(b)">+</button>
         <span>{{item.num*60}}积分</span>
       </div>
     </div>
@@ -61,7 +61,9 @@
     export default {
         name: "X03",
       methods:{
-
+bt1(i){
+  this.arr2[i].num++;
+}
       },
       mounted(){
         $('.bb').click(function () {

@@ -17,17 +17,17 @@
 
                  <span><img :src="bb.src" alt=""></span>
                  <span>{{bb.name}}</span>
-                 <span>{{bb.guige}}</span>
-                 <span>￥{{bb.dj}}</span>
-                 <span><button>-</button><span>{{bb.num}}</span><button>+</button></span>
-                 <span>￥{{bb.dj*bb.num}}</span>
+                 <span>{{bb.spgg}}</span>
+                 <span>￥{{bb.xj}}</span>
+                 <span><button>-</button><span>{{bb.spsl}}</span><button>+</button></span>
+                 <span>￥{{(bb.xj*bb.spsl).toFixed(1)}}</span>
 
                </li>
              </ul>
              <p>
-               <span>￥113.0</span>
+               <span>￥{{arr[index].zj-0 + 5}}</span>
                <span>商品合计 </span>
-               <span>￥108.0</span>
+               <span>￥{{arr[index].zj}}</span>
                <span>商品金额 </span>
                <span>￥5.0</span>
                <span>运费</span>
@@ -91,12 +91,14 @@
         <span>￥2977</span>
         <span>订单完成后可获得积分：</span>
         <span>300积分</span>
-        <router-link to="/X07">提交订单</router-link>
+        <router-link to="/X07" id="tijiao">提交订单</router-link>
       </div>
     </div>
 </template>
 
 <script>
+
+  import Bus from '../../assets/bus'
     export default {
         name: "qrddzy",
       data(){
@@ -128,6 +130,40 @@
 
       },
       mounted(){
+
+console.log(JSON.parse(this.$route.query.data))
+
+        this.arr = JSON.parse(this.$route.query.data) ;
+        // JSON.parse(json字符串)
+
+        $('#tijiao').click(function () {
+
+            Bus.$emit('mm',3)
+
+
+console.log('aaaaaaaaaaa')
+            var idArr = [];
+          console.log('aaaaaaaaaaa')
+            for(var i in this.arr ){
+              for (var k in this.arr[i].arr0){
+                idArr.push(this.arr[i].arr0[k].id)
+              }
+            }
+            var ids = JSON.stringify(idArr);
+            // console.log(ids)
+            axios.get('/api/php/hzhxqw/wxygwc.php?type=5&ids='+ids).then(function (res) {
+              console.log(res.data);
+            }.bind(this));
+
+        }.bind(this))
+
+
+
+
+
+
+
+
         $('#qzy_div1>div>div>p:nth-of-type(2)>img:nth-of-type(1)').click(function () {
           // console.log($(this).parent().children("img"))
           $(this).parent().children("img").css({

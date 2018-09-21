@@ -68,7 +68,9 @@
           var obj = this.$route.query.obj;
           var type = this.$route.query.type;
           console.log(obj,type)
-          if (type == 1){
+          if(this.obj[0] == '' || this.obj[1] == '' || this.obj[2] == '' || this.obj[3] == '' || this.obj[4] == '' || this.obj[5] == '' || this.obj[6] == '' || this.obj[7] == ''){
+            alert('请补全信息')
+          }else if (type == 1){
             var id = obj.id;
             console.log(id)
             var name = document.querySelectorAll('.body1 input')[0].value;
@@ -83,10 +85,7 @@
               console.log(res.data)
               this.$router.push({path:'/dizhiguanli',query:{obj:this.obj}});
             })
-          }
-              else if(this.obj[0] == '' || this.obj[1] == '' || this.obj[2] == '' || this.obj[3] == '' || this.obj[4] == '' || this.obj[5] == '' || this.obj[6] == '' || this.obj[7] == ''){
-                alert('请补全信息')
-            } else {
+          }else {
               this.axios.get('api/PHP/hzhxqw/add5.php?'+'input1='+this.obj[0]+'&'+'input2='+this.obj[1]+'&'+'input3='+this.obj[2]+'&'+'input4='+this.obj[3]+'&'+'input5='+this.obj[4]+'&'+'input6='+this.obj[5]+'&'+'input7='+this.obj[6]+'&'+'input8='+this.obj[7]).then((res)=>{
                 this.obj = res.data
                 console.log(this.obj)

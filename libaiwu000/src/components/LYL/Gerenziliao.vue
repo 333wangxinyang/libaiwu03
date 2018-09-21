@@ -112,8 +112,8 @@
               obj.push(txt)
               ctx.fillStyle = randomColor(50,160);  //随机生成字体颜色
               ctx.font = randomNum(15,40)+'px SimHei'; //随机生成字体大小
-              var x = 10+i*25;
-              var y = randomNum(25,45);
+              var x = 1+i*25;
+              var y = randomNum(10,45);
               var deg = randomNum(-45, 45);
               //修改坐标原点和旋转角度
               ctx.translate(x,y);

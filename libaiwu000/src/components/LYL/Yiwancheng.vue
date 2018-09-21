@@ -100,6 +100,7 @@
   }
   .content{
     overflow: hidden;
+    border-bottom: 1px solid #ececec;
   }
   .content>div{
     float: left;

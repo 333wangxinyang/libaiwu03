@@ -4,15 +4,15 @@
     <router-link to="/">
     <img src="../../../static/wxy1/logo1.png" alt="">
     </router-link>
-    <router-link to="">
-      <span class="aa">我的购物车   ></span>
-    </router-link>
-    <router-link to="/x09">
-      <span class="aa1">确认订单信息   ></span>
-    </router-link>
-    <router-link to="/">
-      <span class="aa2">订单提交成功</span>
-    </router-link>
+    <a href="###">
+      <span :class="mm==1&&'bb'" >我的购物车  > </span>
+    </a>
+    <a href="###">
+      <span :class="mm==2&&'bb'" >确认订单信息  > </span>
+    </a>
+    <a href="###">
+      <span :class="mm==3&&'bb'" >订单提交成功</span>
+    </a>
 
   </div>
   <router-view/>
@@ -25,11 +25,27 @@
 <script>
   import X07 from '@/components/wxy/X07'
   import X08 from '@/components/wxy/X08'
+  import Bus from '../../assets/bus'
     export default {
         name: "X06",
+      data(){
+        return{
+          mm : 1,
+        }
+      },
       components:{
           x07:'X07',
         x08:'X08',
+
+      },
+      mounted(){
+        // localStorage.mm = 1;
+
+        Bus.$on('mm',function (n) {
+          this.mm = n ;
+        }.bind(this))
+
+
 
       }
 
@@ -64,13 +80,18 @@
     position: absolute;
     top: 70px;
   }
-  .aa{
-    right: 380px;
-  }
-  .aa1{
-    right: 250px;
-  }
-.aa2{
+.title>a:nth-of-type(2)>span{
+  right: 380px!important;
+  /*color: #f08200;*/
+}
+.title>a:nth-of-type(3)>span{
+  right: 250px !important;
+}
+.title>a:nth-of-type(4)>span{
   right: 130px;
 }
+
+.title .bb{
+    color: #f08200 !important;
+  }
 </style>

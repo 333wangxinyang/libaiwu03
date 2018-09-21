@@ -128,10 +128,56 @@ methods:{
     },
     mounted(){
 
-      // Bus.$on("tt",function (val) {
-      var val = localStorage.str;
 
-      axios.get('/api/php/hzhxqw/seek.php?type=1&str='+val).then(function (res) {
+      var val1 = localStorage.str;
+      Bus.$on("tt",function (val) {
+
+        axios.get('/api/php/hzhxqw/seek.php?type=1&str='+val).then(function (res) {
+
+          this.arr = [];
+          var obj = { bol:true,arr1:[]};
+
+          for(var i in res.data){
+
+            if(obj.arr1.length === 8){
+
+              this.arr.push(obj);
+              obj = { bol:false,arr1:[]};
+            }else {
+              obj.arr1.push(res.data[i])
+
+            }
+            if(i == res.data.length-1){
+              this.arr.push(obj);
+            }
+          }
+
+
+          var ys = this.arr.length;
+          //  分页
+          $("#pagination2").pagination({
+            currentPage: 1,
+            totalPage: ys,
+            isShow: false,
+            count: 5,
+            prevPageText: "<",
+            nextPageText: ">",
+            callback: function(current) {
+              // alert(current);
+              // console.log(this.arr)
+              for(var i in this.arr){
+                this.arr[i].bol = false;
+              }
+              //
+              this.arr[current-1].bol = true
+
+            }.bind(this)
+          });
+
+          console.log(this.arr)
+        }.bind(this));
+      }.bind(this))
+      axios.get('/api/php/hzhxqw/seek.php?type=1&str='+val1).then(function (res) {
 
           this.arr = [];
           var obj = { bol:true,arr1:[]};

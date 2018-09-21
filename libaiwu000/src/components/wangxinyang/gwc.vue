@@ -1,7 +1,7 @@
 <template>
     <div id="gwc">
-      <div id="g_div1">
-        <img src="../../../static/wangxinyang/gwckk.png" alt="">
+      <div id="g_div1" :style="arr.length !== 0 ? 'display: none':'display: inline-block'" >
+        <img   src="../../../static/wangxinyang/gwckk.png" alt="">
         <span>您的购物车是空的</span>
         <router-link to="/">去首页看看</router-link>
       </div>
@@ -27,7 +27,8 @@
               <span>{{bb.spgg}}</span>
               <span>￥{{bb.xj}}</span>
               <span><button @click="jian(bb.id)">-</button><span>{{bb.spsl}}</span><button @click="jia(bb.id)">+</button></span>
-              <span>￥{{bb.xj*bb.spsl}}</span>
+              <span>￥{{(bb.xj*bb.spsl).toFixed(1)}}</span>
+              <!--n=num.toFixed(2)-->
               <span @click="sc(bb.id)">删除</span>
             </li>
           </ul>
@@ -43,14 +44,14 @@
         <span @click="plsc">批量删除</span>
         <span>商品总计：</span>
         <span>￥{{zz}}</span>
-        <router-link to="/qrddzy">立即购买</router-link>
+        <router-link id="ll"  :to="{path: '/qrddzy', query:{data:JSON.stringify(arr1)}}"  >立即购买</router-link>
       </div>
-
+      <!--{path: '/qrddzy', quer: {data:555}}-->
     </div>
 </template>
 
 <script>
-
+  import Bus from '../../assets/bus'
   import  axios from  'axios'
     export default {
         name: "gwc",
@@ -61,21 +62,21 @@
             bol02:true,
             arr1:[],
             arr:[
-              {spname:'爱果果水果店',
-                arr0:[
-                  {bol:false,name:'云南蒙自石榴 8个装',spgg:'8个装',xj:569,spsl:1,id:1,src:'../../../static/wangxinyang/gwcwp01.png'},
-                  {bol:false,name:'云南蒙自石榴 8个装',spgg:'8个装',xj:569,spsl:1,id:1,src:'../../../static/wangxinyang/gwcwp01.png'},
-                  {bol:true,name:'云南蒙自石榴 8个装',spgg:'8个装',xj:569,spsl:1,id:1,src:'../../../static/wangxinyang/gwcwp01.png'},
-                ]
-
-              },
-              {spname:'爱果果水果店',
-                arr0:[
-                  {bol:false,name:'云南蒙自石榴 8个装',spgg:'8个装',xj:569,spsl:1,id:1,src:'../../../static/wangxinyang/gwcwp01.png'},
-                  {bol:false,name:'云南蒙自石榴 8个装',spgg:'8个装',xj:569,spsl:1,id:1,src:'../../../static/wangxinyang/gwcwp01.png'},
-                  {bol:false,name:'云南蒙自石榴 8个装',spgg:'8个装',xj:569,spsl:1,id:1,src:'../../../static/wangxinyang/gwcwp01.png'},
-                ]
-              },
+              // {spname:'爱果果水果店',
+              //   arr0:[
+              //     {bol:false,name:'云南蒙自石榴 8个装',spgg:'8个装',xj:569,spsl:1,id:1,src:'../../../static/wangxinyang/gwcwp01.png'},
+              //     {bol:false,name:'云南蒙自石榴 8个装',spgg:'8个装',xj:569,spsl:1,id:1,src:'../../../static/wangxinyang/gwcwp01.png'},
+              //     {bol:true,name:'云南蒙自石榴 8个装',spgg:'8个装',xj:569,spsl:1,id:1,src:'../../../static/wangxinyang/gwcwp01.png'},
+              //   ]
+              //
+              // },
+              // {spname:'爱果果水果店',
+              //   arr0:[
+              //     {bol:false,name:'云南蒙自石榴 8个装',spgg:'8个装',xj:569,spsl:1,id:1,src:'../../../static/wangxinyang/gwcwp01.png'},
+              //     {bol:false,name:'云南蒙自石榴 8个装',spgg:'8个装',xj:569,spsl:1,id:1,src:'../../../static/wangxinyang/gwcwp01.png'},
+              //     {bol:false,name:'云南蒙自石榴 8个装',spgg:'8个装',xj:569,spsl:1,id:1,src:'../../../static/wangxinyang/gwcwp01.png'},
+              //   ]
+              // },
             ]
 
 
@@ -158,7 +159,8 @@
               for(var k in this.arr[i].arr0){
 
                 if(this.arr[i].arr0[k].bol ===true){
-                  obj.zj = obj.zj + this.arr[i].arr0[k].xj*this.arr[i].arr0[k].spsl;
+                 var  aa = obj.zj + this.arr[i].arr0[k].xj*this.arr[i].arr0[k].spsl ;
+                  obj.zj = aa
                   obj.arr0.push(this.arr[i].arr0[k])
                 }
               }
@@ -167,10 +169,14 @@
 
             this.zz = 0;
             for(var i in this.arr1){
-              this.zz = this.arr1[i].zj +this.zz;
+
+              this.arr1[i].zj = this.arr1[i].zj.toFixed(1)
+
+              this.zz = (this.arr1[i].zj-0) +(this.zz-0);
 
 
             }
+            this.zz = this.zz.toFixed(1)
           },
 
         //处理返回数据
@@ -236,6 +242,10 @@
         }
       },
       mounted(){
+       $('#ll').click(function () {
+         Bus.$emit('mm',2)
+       })
+
 
 
         axios.get('/api/php/hzhxqw/wxygwc.php?type=1').then(function (res) {
@@ -482,6 +492,7 @@ position: relative;
   position: absolute;
   top:52px ;
   left: 644px;
+
 }
 #g_div2>div>ul>li>span:nth-of-type(6){
    position: absolute;
@@ -516,10 +527,13 @@ position: relative;
 }
 
  #g_div1{
-   display: none;
+   /*display: none;*/
    width: 1280px;
    height: 490px;
-   position: relative;
+   position: absolute;
+   /*top: 100px;*/
+   background: #FFF;
+   z-index: 10;
  }
 #g_div1>img{
  position: absolute;

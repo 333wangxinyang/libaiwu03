@@ -1,7 +1,9 @@
 <template>
 <div class="box">
   <div class="title">
+    <router-link to="/">
     <img src="../../../static/wxy1/logo1.png" alt="">
+    </router-link>
     <router-link to="">
       <span class="aa">我的购物车   ></span>
     </router-link>

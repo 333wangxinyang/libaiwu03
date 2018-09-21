@@ -24,25 +24,25 @@
               <img @click="gx(index,index1)" :style="bb.bol?'opacity:1':'opacity:0'" src="../../../static/wangxinyang/gwcxuanzhong.png" alt="">
               <span><img :src="bb.src" alt=""></span>
               <span>{{bb.name}}</span>
-              <span>{{bb.guige}}</span>
-              <span>￥{{bb.dj}}</span>
-              <span><button>-</button><span>{{bb.num}}</span><button>+</button></span>
-              <span>￥{{bb.dj*bb.num}}</span>
-              <span @click="get(bb.id)">删除</span>
+              <span>{{bb.spgg}}</span>
+              <span>￥{{bb.xj}}</span>
+              <span><button @click="jian(bb.id)">-</button><span>{{bb.spsl}}</span><button @click="jia(bb.id)">+</button></span>
+              <span>￥{{bb.xj*bb.spsl}}</span>
+              <span @click="sc(bb.id)">删除</span>
             </li>
           </ul>
           <p>
-            <span>￥108.0</span>
+            <span>￥{{arr1[index].zj}}</span>
             <span>商品金额 </span>
           </p>
         </div>
 
      </div>
       <div id="g_div3">
-        <span>全选</span>
-        <span>批量删除</span>
+        <span @click="quanxuan">全选</span>
+        <span @click="plsc">批量删除</span>
         <span>商品总计：</span>
-        <span>￥2977</span>
+        <span>￥{{zz}}</span>
         <router-link to="/qrddzy">立即购买</router-link>
       </div>
 
@@ -50,26 +50,30 @@
 </template>
 
 <script>
+
+  import  axios from  'axios'
     export default {
         name: "gwc",
       data(){
           return{
+            zz:0,
             bol01:true,
+            bol02:true,
             arr1:[],
             arr:[
               {spname:'爱果果水果店',
                 arr0:[
-                  {bol:false,name:'云南蒙自石榴 8个装',guige:'8个装',dj:569,num:1,id:1,src:'../../../static/wangxinyang/gwcwp01.png'},
-                  {bol:true,name:'云南蒙自石榴 8个装',guige:'8个装',dj:569,num:1,id:1,src:'../../../static/wangxinyang/gwcwp01.png'},
-                  {bol:true,name:'云南蒙自石榴 8个装',guige:'8个装',dj:569,num:1,id:1,src:'../../../static/wangxinyang/gwcwp01.png'},
+                  {bol:false,name:'云南蒙自石榴 8个装',spgg:'8个装',xj:569,spsl:1,id:1,src:'../../../static/wangxinyang/gwcwp01.png'},
+                  {bol:false,name:'云南蒙自石榴 8个装',spgg:'8个装',xj:569,spsl:1,id:1,src:'../../../static/wangxinyang/gwcwp01.png'},
+                  {bol:true,name:'云南蒙自石榴 8个装',spgg:'8个装',xj:569,spsl:1,id:1,src:'../../../static/wangxinyang/gwcwp01.png'},
                 ]
 
               },
               {spname:'爱果果水果店',
                 arr0:[
-                  {bol:true,name:'云南蒙自石榴 8个装',guige:'8个装',dj:569,num:1,id:1,src:'../../../static/wangxinyang/gwcwp01.png'},
-                  {bol:true,name:'云南蒙自石榴 8个装',guige:'8个装',dj:569,num:1,id:1,src:'../../../static/wangxinyang/gwcwp01.png'},
-                  {bol:true,name:'云南蒙自石榴 8个装',guige:'8个装',dj:569,num:1,id:1,src:'../../../static/wangxinyang/gwcwp01.png'},
+                  {bol:false,name:'云南蒙自石榴 8个装',spgg:'8个装',xj:569,spsl:1,id:1,src:'../../../static/wangxinyang/gwcwp01.png'},
+                  {bol:false,name:'云南蒙自石榴 8个装',spgg:'8个装',xj:569,spsl:1,id:1,src:'../../../static/wangxinyang/gwcwp01.png'},
+                  {bol:false,name:'云南蒙自石榴 8个装',spgg:'8个装',xj:569,spsl:1,id:1,src:'../../../static/wangxinyang/gwcwp01.png'},
                 ]
               },
             ]
@@ -78,25 +82,139 @@
           }
       },
       methods:{
+        jian(id){
+          axios.get('/api/php/hzhxqw/wxygwc.php?type=3&id='+id).then(function (res) {
+            console.log(res.data) ;
+            this.bb(res)
+          }.bind(this));
 
-          aa(){
-            this.arr1 = this.arr;
 
-            for(var i in this.arr1){
+        },
+        jia(id){
+          axios.get('/api/php/hzhxqw/wxygwc.php?type=2&id='+id).then(function (res) {
+            console.log(res.data) ;
+
+            this.bb(res)
+
+
+          }.bind(this));
+
+
+        },
+        sc(id){
+          axios.get('/api/php/hzhxqw/wxygwc.php?type=4&id='+id).then(function (res) {
+            console.log(res.data) ;
+            this.bb(res)
+          }.bind(this));
+
+        },
+        quanxuan(){
+          if(this.bol02) {
+            for (var i in this.arr) {
+              for (var k in this.arr[i].arr0) {
+                this.arr[i].arr0[k].bol = true;
+
+              }
 
             }
 
+          }else {
+            for (var i in this.arr) {
+              for (var k in this.arr[i].arr0) {
+                this.arr[i].arr0[k].bol = false;
+              }
+            }
+          }
+          this.bol02 = !this.bol02;
 
+          this.aa()
+        },
+        plsc(){
+          var idArr = [];
+
+          for(var i in this.arr1 ){
+            for (var k in this.arr1[i].arr0){
+              idArr.push(this.arr1[i].arr0[k].id)
+            }
+          }
+          var ids = JSON.stringify(idArr);
+          console.log(ids)
+          axios.get('/api/php/hzhxqw/wxygwc.php?type=5&ids='+ids).then(function (res) {
+            console.log(res.data);
+            this.bb(res)
+          }.bind(this));
+
+        },
+
+
+
+
+          aa(){
+            this.arr1 = [];
+            for(var i in this.arr){
+
+              var  obj = {spname:this.arr[i].spname,arr0:[],zj:0, }
+
+              for(var k in this.arr[i].arr0){
+
+                if(this.arr[i].arr0[k].bol ===true){
+                  obj.zj = obj.zj + this.arr[i].arr0[k].xj*this.arr[i].arr0[k].spsl;
+                  obj.arr0.push(this.arr[i].arr0[k])
+                }
+              }
+              this.arr1.push(obj)
+            }
+
+            this.zz = 0;
+            for(var i in this.arr1){
+              this.zz = this.arr1[i].zj +this.zz;
+
+
+            }
           },
 
+        //处理返回数据
+        bb(res){
+          for(var i in res.data){
+            res.data[i].bol = true;
+          }
 
+          this.arr = [];
+          for(var i in res.data){
+
+            if(this.arr.length === 0){
+              var  obj = {spname:res.data[i].shop,arr0:[]};
+              obj.arr0.push(res.data[i]);
+              this.arr.push(obj)
+            }else {
+              var bol = true;
+              for(var k in this.arr){
+                if(res.data[i].shop === this.arr[k].spname){
+                  this.arr[k].arr0.push(res.data[i]);
+                  bol =false;
+                  break;
+                }
+              }
+              if(bol){
+                var  obj = {spname:res.data[i].shop,arr0:[]};
+                obj.arr0.push(res.data[i]);
+                this.arr.push(obj)
+              }
+            }
+          }
+
+          this.aa();
+
+
+
+        },
 
 
 
 
         gx(index,index1){
           this.arr[index].arr0[index1].bol = !this.arr[index].arr0[index1].bol;
-
+          this.aa();
         },
         qx(index,v){
           if(this.bol01){
@@ -114,14 +232,61 @@
 
           this.bol01 = !this.bol01;
 
-
+          this.aa();
         }
       },
       mounted(){
 
 
+        axios.get('/api/php/hzhxqw/wxygwc.php?type=1').then(function (res) {
+          // this.bb(res)
+          for(var i in res.data){
+            res.data[i].bol = true;
+          }
+
+          this.arr = [];
+          for(var i in res.data){
+
+            if(this.arr.length === 0){
+              var  obj = {spname:res.data[i].shop,arr0:[]};
+              obj.arr0.push(res.data[i]);
+              this.arr.push(obj)
+            }else {
+              var bol = true;
+              for(var k in this.arr){
+                if(res.data[i].shop === this.arr[k].spname){
+                  this.arr[k].arr0.push(res.data[i]);
+                  bol =false;
+                  break;
+                }
+              }
+              if(bol){
+                var  obj = {spname:res.data[i].shop,arr0:[]};
+                obj.arr0.push(res.data[i]);
+                this.arr.push(obj)
+              }
+            }
+          }
+
+          this.aa();
+
+        }.bind(this));
+
+
+
+
+
+
+      },
+      beforeCreate(){
+
+        console.log('beforeCreate创建之前')
+
+
+
 
       }
+
 
     }
 </script>

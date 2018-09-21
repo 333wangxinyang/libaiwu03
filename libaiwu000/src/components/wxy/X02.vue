@@ -11,7 +11,10 @@
     <span>{{item.title1}}</span>
     <span>  积分：{{item.title2}}</span>
     <span>价值：{{item.title3}}</span>
-    <router-link to="/X04">
+    <router-link :to="{
+    name:'X04',
+    params:{id:item.id}
+    }">
     <span class="dh">{{item.title4}}</span>
     </router-link>
   </div>
@@ -32,6 +35,7 @@
           return {
             arr:[
               {
+                id:21,
                 pic:'../../../static/wxy1/pt.png',
                 title:'新西兰佳沛黄金奇异果',
                 title1:'花蜜版的甘甜百吃不厌',
@@ -40,6 +44,7 @@
                 title4:'立即兑换'
               },
               {
+                id:22,
                 pic:'../../../static/wxy1/cz.png',
                 title:'新西兰佳沛黄金奇异果',
                 title1:'花蜜版的甘甜百吃不厌',
@@ -48,6 +53,7 @@
                 title4:'立即兑换'
               },
               {
+                id:23,
                 pic:'../../../static/wxy1/hfs.png',
                 title:'新西兰佳沛黄金奇异果',
                 title1:'花蜜版的甘甜百吃不厌',
@@ -56,6 +62,7 @@
                 title4:'立即兑换'
               },
               {
+                id:24,
                 pic:'../../../static/wxy1/mg.png',
                 title:'新西兰佳沛黄金奇异果',
                 title1:'花蜜版的甘甜百吃不厌',
@@ -64,6 +71,7 @@
                 title4:'立即兑换'
               },
               {
+                id:23,
                 pic:'../../../static/wxy1/hfs.png',
                 title:'新西兰佳沛黄金奇异果',
                 title1:'花蜜版的甘甜百吃不厌',
@@ -72,6 +80,7 @@
                 title4:'立即兑换'
               },
               {
+                id:25,
                 pic:'../../../static/wxy1/mht.png',
                 title:'新西兰佳沛黄金奇异果',
                 title1:'花蜜版的甘甜百吃不厌',
@@ -80,6 +89,7 @@
                 title4:'立即兑换'
               },
               {
+                id:24,
                 pic:'../../../static/wxy1/mg.png',
                 title:'新西兰佳沛黄金奇异果',
                 title1:'花蜜版的甘甜百吃不厌',
@@ -88,6 +98,7 @@
                 title4:'立即兑换'
               },
               {
+                id:21,
                 pic:'../../../static/wxy1//pt.png',
                 title:'新西兰佳沛黄金奇异果',
                 title1:'花蜜版的甘甜百吃不厌',
@@ -95,6 +106,7 @@
                 title3:'￥20.0',
                 title4:'立即兑换'
               }, {
+              id:24,
                 pic:'../../../static/wxy1/mg.png',
                 title:'新西兰佳沛黄金奇异果',
                 title1:'花蜜版的甘甜百吃不厌',
@@ -103,6 +115,7 @@
                 title4:'立即兑换'
               },
               {
+                id:26,
                 pic:'../../../static/wxy1/hlg.png',
                 title:'新西兰佳沛黄金奇异果',
                 title1:'花蜜版的甘甜百吃不厌',
@@ -111,6 +124,7 @@
                 title4:'立即兑换'
               },
               {
+                id:25,
                 pic:'../../../static/wxy1/mht.png',
                 title:'新西兰佳沛黄金奇异果',
                 title1:'花蜜版的甘甜百吃不厌',
@@ -119,6 +133,7 @@
                 title4:'立即兑换'
               },
               {
+                id:23,
                 pic:'../../../static/wxy1//hfs.png',
                 title:'新西兰佳沛黄金奇异果',
                 title1:'花蜜版的甘甜百吃不厌',
@@ -147,7 +162,7 @@
     width: 24%;
     height: 400px;
     position: relative;
-    border: 1px solid #666;
+    border: 1px solid #dfdfdf;
     background-color: #ffffff;
   }
   .aa a{

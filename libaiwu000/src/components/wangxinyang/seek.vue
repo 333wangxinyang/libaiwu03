@@ -4,7 +4,7 @@
       <div id="s_div1">
         <div>
           <input id="input01" @input="aa($event)" type="text">
-          <router-link id="tt" :to="tt"></router-link>
+          <router-link id="tt" to="/sousuo"></router-link>
           <router-link id="grzx" :to="state==0?'/H03dr':'/grzx'">个人中心</router-link>
           <router-link to="/gwc">购物车</router-link>
           <!--<router-link to="/grzx">购物车</router-link>-->
@@ -32,12 +32,11 @@
           state:0,
         }
       },
+
       methods :{
           aa(v){
-
              if($(v.target).val() !== '' ){
-               console.log(1111)
-               this.tt = '/sousuo/'+$(v.target).val();
+               this.tt = $(v.target).val();
              }
           },
         getValueByKey(key) {
@@ -74,6 +73,11 @@ console.log(document.cookie)
           if($('#input01').val() === '' ){
                 alert('内容不能为空')
               }
+
+          // Bus.$emit('tt',$('#input01').val())
+
+          localStorage.str = $('#input01').val();
+
         })
         $('#grzx').click(function () {
           Bus.$emit('change',8)

@@ -2,9 +2,9 @@
   <div id="box">
   <div class="swiper-container">
     <div class="swiper-wrapper">
-      <div class="swiper-slide"></div>
-      <div class="swiper-slide"></div>
-      <div class="swiper-slide"></div>
+      <div class="swiper-slide"><router-link to="/zhuanti"></router-link></div>
+      <div class="swiper-slide"><router-link to="/zhuanti"></router-link></div>
+      <div class="swiper-slide"><router-link to="/zhuanti"></router-link></div>
     </div>
     <!-- 如果需要分页器 -->
     <div class="swiper-pagination"></div>
@@ -44,6 +44,11 @@
   width: 100%;
   height: 500px;
 
+}
+.swiper-slide>a{
+  width: 100%;
+  height: 100%;
+  display: inline-block;
 }
 .swiper-slide:nth-of-type(1){
   background: url("../../../static/wangxinyang/lb01.png") 0px 0px/cover no-repeat;

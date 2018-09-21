@@ -12,13 +12,24 @@
         </div>
         <div class="content2">
           <table class="table">
-            <tr>
+            <tr class="tr">
               <th>收货人</th>
               <th>所在区域</th>
               <th>街道地址</th>
               <th>联系电话</th>
-              <th>备注</th>
+              <th>座机</th>
               <th>操作</th>
+            </tr>
+            <tr v-for="(item,index) in data">
+              <th>{{item.name}}</th>
+              <th>{{item.sheng}}{{item.shi}}{{item.xian}}</th>
+              <th>{{item.xxdz}}</th>
+              <th>{{item.phone}}</th>
+              <th>{{item.gddh1}}-{{item.gddh2}}</th>
+              <th>
+                <span @click='xiugai($event,index)' class="xiugai">修改</span>
+                <span @click='shanchu($event,index)' class="shanchu">删除</span>
+              </th>
             </tr>
           </table>
         </div>
@@ -31,79 +42,48 @@
         name: "Dizhiguanli",
         data(){
           return {
-
+            data:[],
+            dizhi:[],
+            height:'',
           }
         },
         mounted(){
 
           var dizhi = this.$route.query.obj;
-          console.log(dizhi)
-
-          if (typeof(dizhi) == "object"){
-            var jiedao = dizhi[1] + dizhi[2] + dizhi[3]
-            var zuoji = dizhi[6] + '-' + dizhi[7];
-            var dizhi3 = [];
-            dizhi3.push(dizhi[0],jiedao,dizhi[4],dizhi[5],zuoji)
-            console.log(dizhi3)
-
-            var content1 = document.getElementsByClassName('content1')
-            var content2 = document.getElementsByClassName('content2')
-            content2[0].style.display = 'block';
-            console.log(content1[0])
-            content1[0].style.display = 'none';
-            var tr = document.createElement('tr');
-            tr.style.height = '45px';
-            tr.style.lineHeight = '45px';
-            console.log(tr)
-            for (var i = 0;i < dizhi3.length+1;i++){
-              if (i == 5){
-                var th = document.createElement('th');
-                var span = document.createElement('span');
-                var span1 = document.createElement('span');
-                span.style.display = 'inline-block';
-                span.style.color = '#3d8e43';
-                span.innerHTML = '修改';
-                span.className = 'span'
-                span.style.lineHeight = '15px'
-                span.style.paddingRight = '3px'
-                span.style.borderRight = 'solid 2px #999999';
-                span1.style.color = '#3d8e43';
-                span1.innerHTML = '删除';
-                span1.className = 'span1'
-                span1.style.paddingLeft = '3px';
-                th.appendChild(span);
-                th.appendChild(span1);
-                tr.appendChild(th)
-              }else {
-                var th = document.createElement('th');
-                th.innerHTML = dizhi3[i]
-                tr.appendChild(th)
-              }
+          this.dizhi = dizhi;
+          console.log(this.dizhi)
+          this.axios.get('api/PHP/hzhxqw/chaxun.php').then((response)=>{
+            console.log(response.data);
+            this.data=response.data;
+            console.log(this.data.length)
+            if (this.data.length == 0){
+              $('.content1').css('display','block')
+              $('.content2').css('display','none')
+            } else {
+              $('.content1').css('display','none')
             }
-            var table = document.getElementsByClassName('table')
-            table[0].appendChild(tr)
-            console.log(table[0])
-
-            var span = document.getElementsByClassName('span')[0]
-            console.log(span)
-            span.onclick = function () {
-              this.$router.push({path:'/tianjiadizhi',query:{obj:dizhi}});
-            }.bind(this)
-            console.log($('.table tr'))
-            $('.span1').click(function () {
-              var tr = $(this).parent().parent()[0];
-              tr.remove()
-              console.log(table,tr)
-              console.log($('.table tr'))
-              if ($('.table tr').length < 2){
-                $('.table').css({
-                  'display':'none'
-                })
-              }
-
-            })
+          })
+          console.log($('.aa'))
+          },
+          methods:{
+            xiugai(event,index){
+              var dizhi = this.data[index]
+              console.log(dizhi)
+              this.$router.push({path:'/tianjiadizhi',query:{obj:dizhi,type:1}});
+            },
+            shanchu(event,index){
+              var id = this.data[index].id
+              this.axios.get('api/PHP/hzhxqw/delete.php?id='+id).then((response)=>{
+                this.data = response.data;
+                if (this.data.length == 0){
+                  $('.content1').css('display','block')
+                  $('.content2').css('display','none')
+                } else {
+                  $('.content1').css('display','none')
+                }
+              })
+            }
           }
-        }
     }
 </script>
 
@@ -138,7 +118,8 @@
     margin: auto;
   }
   .content{
-    height: 568px;
+    width: 100%;
+    min-height: 548px;
     position: relative;
   }
   .content1{
@@ -172,19 +153,39 @@
     line-height: 50px;
     margin: 0 10px;
   }
-  .content2>table{
+  .content2{
+    width: 100%;
+  }
+  .table{
+    /*display: block;*/
+    /*height: 45px !important;*/
     margin-top: 20px;
     width: 95%;
     margin-left: 2.5%;
   }
-  .content2>table>tr{
+  .table>tr{
+    height: 45px;
+  }
+  .table>tr:nth-of-type(1){
     height: 45px;
     background-color: #f2f2f2;
   }
-  .content2>table>tr>th{
+  .table>tr>th{
+    height: 45px;
     border: 0;
   }
-  .content2{
-    display: none;
+
+
+
+  .xiugai{
+    display:inline-block;
+    color: #3d8e43;
+    line-height: 15px;
+    padding-right: 3px;
+    border-right: solid 2px #999999 ;
+  }
+  .shanchu{
+    color: #3d8e43;
+    padding-left: 3px;
   }
 </style>

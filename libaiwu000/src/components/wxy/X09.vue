@@ -129,6 +129,7 @@
 <script>
   import fff from '@/components/wxy/fff'
   import PicZoom from 'vue-piczoom'
+  import Bus from '../../assets/bus'
   export default {
     name: "X09",
     components:{
@@ -180,6 +181,9 @@
 
 
         }.bind(this))
+        localStorage.xinxi = localStorage.xinxi-0 + 1;
+        Bus.$emit('xx',localStorage.xinxi)
+
 
       }
     },

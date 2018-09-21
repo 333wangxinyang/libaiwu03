@@ -6,10 +6,10 @@
           <input id="input01" @input="aa($event)" type="text">
           <router-link id="tt" to="/sousuo"></router-link>
           <router-link id="grzx" :to="state==0?'/H03dr':'/grzx'">个人中心</router-link>
-          <router-link to="/gwc">购物车</router-link>
+          <router-link id="gg" to="/gwc">购物车</router-link>
           <!--<router-link to="/grzx">购物车</router-link>-->
           <!--<a href="###"></a>-->
-          <a href="###">5</a>
+          <a href="###">{{xiaoxi}}</a>
         </div>
         <div>
           <a href="###">热门：</a>
@@ -30,10 +30,15 @@
         return{
           tt:'###',
           state:0,
+          xiaoxi:0,
         }
       },
 
       methods :{
+
+          gg(){
+            localStorage.xinxi = 0;
+          },
           aa(v){
              if($(v.target).val() !== '' ){
                this.tt = $(v.target).val();
@@ -55,6 +60,15 @@
 
 console.log(document.cookie)
 
+        localStorage.xinxi = 0;
+
+        Bus.$on('xx',function (n) {
+          this.xiaoxi = n ;
+        }.bind(this))
+
+
+
+
         this.state = this.getValueByKey("state")
 
         Bus.$on('aa',function (n) {
@@ -74,7 +88,7 @@ console.log(document.cookie)
                 alert('内容不能为空')
               }
 
-          // Bus.$emit('tt',$('#input01').val())
+          Bus.$emit('tt',$('#input01').val())
 
           localStorage.str = $('#input01').val();
 

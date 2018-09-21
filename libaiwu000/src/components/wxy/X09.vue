@@ -7,7 +7,7 @@
     <div class="big">
       <div id="fdj">
         <div id="box">
-          <pic-zoom :url="src" :scale="2"></pic-zoom>
+          <pic-zoom :url="arr3.src" :scale="2"></pic-zoom>
         </div>
         <div id="lb">
           <img class="bb" src="../../../static/wangxinyang/left1.png" alt="">
@@ -20,7 +20,7 @@
 
 
         <div class="right">
-          <span>新疆哈密瓜1500kg</span>
+          <span>{{arr3.name}}</span>
           <div class="jia">
           <span>全国</span>
           <span>礼拜五</span>
@@ -30,14 +30,11 @@
           <div class="tt">
             <img src="../../../static/wxy1/cheng2.png" alt="">
             <span>资深买家</span>
-            <p>雀斑石榴持续热卖！云南蒙自石榴，原产波斯（今伊朗）一带，公元前二世纪时传
-              入我国。是中国三大石榴之一，粒大皮薄，汁多味甜爽口。雀斑石榴持续热卖！云
-              南蒙自石榴，原产波斯（今伊朗）一带，公元前二世纪时传入我国。是中国三大石
-              榴之一，粒大皮薄，汁多味甜爽口。
+            <p>{{arr3.jj}}
             </p>
           </div>
           <span>500积分</span>
-          <span>价值：￥20.0</span>
+          <span>价值：￥{{arr3.xj}}</span>
           <span>请选择规则：</span>
           <span class="aaa">500g</span>
           <span class="aaa aa1">1000g</span>
@@ -46,9 +43,9 @@
           <span class="bbb">500g</span>
           <span class="bbb bb1">1000g</span>
           <span>数量：</span>
-          <span class="cc"><button>-</button>{{str}}<button>+</button></span>
+          <span class="cc"><button @click="aa1()">-</button>{{str}}<button  @click="bb1()">+</button></span>
           <router-link to="">
-            <span class="xx">加入购物车</span>
+            <span class="xx"  @click="cc1(arr3.id)" >加入购物车</span>
           </router-link>
           <router-link to="">
             <span class="xx1 xx">立即购买</span>
@@ -142,6 +139,7 @@
       return {
         mm:1,
         src:'../../../static/wxy1/ti01.jpg',
+        arr3:[],
         arr1:[
           {
             name:'男士端衬衫',
@@ -161,7 +159,44 @@
         str:1
       }
     },
+    methods:{
+      aa1(){
+        if(this.str == 1){
+          this.str = 1;
+        }else{
+
+          this.str = this.str -1;
+        }
+      },
+      bb1(){
+
+
+          this.str = this.str+1;
+
+      },
+      cc1(id){
+        axios.get('/api/php/hzhxqw/jrgwc.php?type=1&id='+id + "&num=" + this.str).then(function (res) {
+          console.log(res.data)
+
+
+        }.bind(this))
+
+      }
+    },
     mounted(){
+
+      // var id = this.$route.query.id;
+      var id = localStorage.id1;
+      console.log(localStorage.id1);
+
+      axios.get('/api/php/hzhxqw/seek.php?type=2&id='+id).then(function (res) {
+        console.log(res.data)
+        this.arr3 = res.data[0];
+
+
+      }.bind(this))
+
+
 
       $("#box").on("mouseenter",function(){
         $('canvas').css({

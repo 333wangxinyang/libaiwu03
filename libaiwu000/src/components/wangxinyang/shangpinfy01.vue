@@ -20,14 +20,14 @@
     <div id="t_div3">
       <ul v-for="(aa,index) in arr" v-if="aa.bol">
         <li v-for="(bb,index01) in aa.arr1">
-          <a href="###">
+          <a href="###" @click="spxq(bb.id)" >
             <img :src="bb.src" alt="">
             <p>{{bb.name}}</p>
-            <p>{{bb.guige}}</p>
-            <span>￥{{bb.jg}}</span>
-            <span>￥{{bb.jg}}</span>
+            <p>{{bb.spgg}}</p>
+            <span>￥{{bb.xj}}</span>
+            <span>￥{{bb.yj}}</span>
             <a  href="###"></a>
-            <a class="gwc" href="###"></a>
+            <a class="gwc" @click="gwc(bb.id)" href="###"></a>
           </a>
         </li>
       </ul>
@@ -45,6 +45,9 @@
   import swiper from '@/components/wangxinyang/swiper'
   import remai from '@/components/wangxinyang/remai'
   import weizhi from '@/components/wangxinyang/weizhi'
+  import Bus from '../../assets/bus'
+
+
   export default {
     name: "shangpinfy01",
     components:{
@@ -60,52 +63,123 @@
         src1:true,
         src2:false,
         arr:[
-          {bol:true,arr1:[
-              {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg01.png',jg:'28.80',guige:'6个装'},
-              {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg02.png',jg:'28.80',guige:'6个装'},
-              {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg03.png',jg:'28.80',guige:'6个装'},
-              {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg04.png',jg:'28.80',guige:'6个装'},
-              {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg01.png',jg:'28.80',guige:'6个装'},
-              {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg02.png',jg:'28.80',guige:'6个装'},
-              {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg03.png',jg:'28.80',guige:'6个装'},
-              {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg04.png',jg:'28.80',guige:'6个装'},
-              {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg01.png',jg:'28.80',guige:'6个装'},
-              {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg02.png',jg:'28.80',guige:'6个装'},
-              {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg03.png',jg:'28.80',guige:'6个装'},
-              {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg04.png',jg:'28.80',guige:'6个装'},
-
-            ]},
-          {bol:false,arr1:[
-              {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg01.png',jg:'28.80',guige:'6个装'},
-              {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg02.png',jg:'28.80',guige:'6个装'},
-              {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg03.png',jg:'28.80',guige:'6个装'},
-              {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg04.png',jg:'28.80',guige:'6个装'},
-              {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg01.png',jg:'28.80',guige:'6个装'},
-              {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg02.png',jg:'28.80',guige:'6个装'},
-              {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg03.png',jg:'28.80',guige:'6个装'},
-              {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg04.png',jg:'28.80',guige:'6个装'},
-              {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg01.png',jg:'28.80',guige:'6个装'},
-              {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg02.png',jg:'28.80',guige:'6个装'},
-              {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg03.png',jg:'28.80',guige:'6个装'},
-              {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg04.png',jg:'28.80',guige:'6个装'},
-            ]},
-          {bol:false,arr1:[
-              {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg01.png',jg:'28.80',guige:'6个装'},
-              {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg02.png',jg:'28.80',guige:'6个装'},
-              {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg03.png',jg:'28.80',guige:'6个装'},
-              {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg04.png',jg:'28.80',guige:'6个装'},
-              {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg01.png',jg:'28.80',guige:'6个装'},
-              {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg02.png',jg:'28.80',guige:'6个装'},
-
-            ]},
+          // {bol:true,arr1:[
+          //     {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg01.png',jg:'28.80',guige:'6个装'},
+          //     {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg02.png',jg:'28.80',guige:'6个装'},
+          //     {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg03.png',jg:'28.80',guige:'6个装'},
+          //     {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg04.png',jg:'28.80',guige:'6个装'},
+          //     {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg01.png',jg:'28.80',guige:'6个装'},
+          //     {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg02.png',jg:'28.80',guige:'6个装'},
+          //     {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg03.png',jg:'28.80',guige:'6个装'},
+          //     {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg04.png',jg:'28.80',guige:'6个装'},
+          //     {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg01.png',jg:'28.80',guige:'6个装'},
+          //     {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg02.png',jg:'28.80',guige:'6个装'},
+          //     {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg03.png',jg:'28.80',guige:'6个装'},
+          //     {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg04.png',jg:'28.80',guige:'6个装'},
+          //
+          //   ]},
+          // {bol:false,arr1:[
+          //     {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg01.png',jg:'28.80',guige:'6个装'},
+          //     {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg02.png',jg:'28.80',guige:'6个装'},
+          //     {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg03.png',jg:'28.80',guige:'6个装'},
+          //     {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg04.png',jg:'28.80',guige:'6个装'},
+          //     {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg01.png',jg:'28.80',guige:'6个装'},
+          //     {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg02.png',jg:'28.80',guige:'6个装'},
+          //     {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg03.png',jg:'28.80',guige:'6个装'},
+          //     {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg04.png',jg:'28.80',guige:'6个装'},
+          //     {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg01.png',jg:'28.80',guige:'6个装'},
+          //     {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg02.png',jg:'28.80',guige:'6个装'},
+          //     {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg03.png',jg:'28.80',guige:'6个装'},
+          //     {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg04.png',jg:'28.80',guige:'6个装'},
+          //   ]},
+          // {bol:false,arr1:[
+          //     {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg01.png',jg:'28.80',guige:'6个装'},
+          //     {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg02.png',jg:'28.80',guige:'6个装'},
+          //     {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg03.png',jg:'28.80',guige:'6个装'},
+          //     {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg04.png',jg:'28.80',guige:'6个装'},
+          //     {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg01.png',jg:'28.80',guige:'6个装'},
+          //     {name:'新西兰佳沛黄金奇异果',src:'../../../static/wangxinyang/sg02.png',jg:'28.80',guige:'6个装'},
+          //
+          //   ]},
         ],
       }
     },
+methods:{
+     spxq(id){
+       this.$router.push({path:'X09',query:{id:id}});
+       localStorage.id1 = id;
+
+
+     }
+
+
+
+
+
+},
+
+
+    created(){
+      //在vue实例创建完成之后执行
+      console.log('created创建之前')
+
+
+
+    },
     mounted(){
-      console.log()
+
+      // Bus.$on("tt",function (val) {
+      var val = localStorage.str;
+
+      axios.get('/api/php/hzhxqw/seek.php?type=1&str='+val).then(function (res) {
+
+          this.arr = [];
+          var obj = { bol:true,arr1:[]};
+
+          for(var i in res.data){
+
+            if(obj.arr1.length === 8){
+
+              this.arr.push(obj);
+              obj = { bol:false,arr1:[]};
+            }else {
+              obj.arr1.push(res.data[i])
+
+            }
+            if(i == res.data.length-1){
+              this.arr.push(obj);
+            }
+          }
 
 
-alert(this.$route.params.str);
+          var ys = this.arr.length;
+          //  分页
+          $("#pagination2").pagination({
+            currentPage: 1,
+            totalPage: ys,
+            isShow: false,
+            count: 5,
+            prevPageText: "<",
+            nextPageText: ">",
+            callback: function(current) {
+              // alert(current);
+              // console.log(this.arr)
+              for(var i in this.arr){
+                this.arr[i].bol = false;
+              }
+              //
+              this.arr[current-1].bol = true
+
+            }.bind(this)
+          });
+
+          console.log(this.arr)
+        }.bind(this));
+
+
+      // }.bind(this))
+
+
 
 
 
@@ -154,26 +228,7 @@ alert(this.$route.params.str);
         this.src1 = false;
       }.bind(this))
 
-      var ys = this.arr.length;
-      //  分页
-      $("#pagination2").pagination({
-        currentPage: 1,
-        totalPage: ys,
-        isShow: false,
-        count: 5,
-        prevPageText: "<",
-        nextPageText: ">",
-        callback: function(current) {
-          // alert(current);
-          console.log(this.arr)
-          for(var i in this.arr){
-            this.arr[i].bol = false;
-          }
-          //
-          this.arr[current-1].bol = true
 
-        }.bind(this)
-      });
 
     }
   }
@@ -310,6 +365,8 @@ alert(this.$route.params.str);
   }
   #t_div3>ul>li>a>img{
     position: absolute;
+    /*left: 40px;*/
+    /*top: 30px;*/
   }
   #t_div3>ul>li>a>p:nth-of-type(1){
     font-size: 18px;

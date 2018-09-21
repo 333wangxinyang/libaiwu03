@@ -211,6 +211,7 @@ export default new Router({
           path: '/grzx',
           name: 'Gerenzhongxin',
           component: Gerenzhongxin,
+          redirect:'/wodezhanghu',
           children:[
             {
               path:'/Yjfh',

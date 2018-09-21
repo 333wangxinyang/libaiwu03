@@ -193,7 +193,7 @@ export default new Router({
           component: shangpinfy01
         },
         {
-          path: '/sousuo/:str',
+          path: '/sousuo',
           name: 'shangpinfy01',
           component: shangpinfy01
         },
@@ -211,6 +211,7 @@ export default new Router({
           path: '/grzx',
           name: 'Gerenzhongxin',
           component: Gerenzhongxin,
+          redirect:'/wodezhanghu',
           children:[
             {
               path:'/Yjfh',

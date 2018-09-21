@@ -36,11 +36,11 @@
         <span>数量</span>
         <span>金额</span>
       </div>
-      <div class="cp" v-for="(item,b) in arr2">
+      <div class="cp" v-for="item in arr2">
         <img :src="item.pic" alt="">
         <span>{{item.title}}</span>
         <span>{{item.gg}}</span>
-<span class="cc"><button @click="bb(b)">-</button>{{item.num}}<button @click="aa(b)">+</button></span>
+        <button class="btn1">-</button><span class="cc">{{item.num}}</span><button class="btn2">+</button>
         <span>{{item.num*60}}积分</span>
       </div>
     </div>
@@ -48,18 +48,10 @@
       <span>添加订单备注</span>
       <input type="text" placeholder="限45个字，请填写有关商品、支付、发票等信息">
     </div>
-
 <div class="cp3">
   <span>应付积分:</span>
   <span>确认兑换</span>
 </div>
-
-
-
-
-
-
-
   </div>
 
 </div>
@@ -68,15 +60,13 @@
 <script>
     export default {
         name: "X03",
-      mounted(){
+      methods:{
 
+      },
+      mounted(){
         $('.bb').click(function () {
           $(this).parent().css({display:'none'});
         });
-
-
-
-
           var a=true;
           $('.one2').click(function () {
             if (a==true){
@@ -167,11 +157,6 @@
             ]
           }
 
-      },
-      methods: {
-        aa(i) {
-          this.arr2[i].num++;
-        }
       }
     }
 </script>
@@ -385,13 +370,27 @@
 
 }
 
-  .cc>button:nth-of-type(1){
+  .btn1{
     position: absolute;
-    left: 0;
+    right: 300px;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    text-align: center;
+    top: 51px;
+    line-height: 30px;
+    background-color: #d4d4d4;
   }
-.cc>button:nth-of-type(2){
+.btn2{
   position: absolute;
-  right: 0;
+  right: 371px;
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+  text-align: center;
+  top: 51px;
+  line-height: 30px;
+  background-color: #d4d4d4;
 }
   .cp>span:nth-of-type(4){
     display: block;

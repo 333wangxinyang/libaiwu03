@@ -39,7 +39,7 @@
         <span class="bbb">500g</span>
         <span class="bbb bb1">1000g</span>
         <span>数量：</span>
-        <span class="cc"><button>-</button>{{str}}<button>+</button></span>
+        <em class="btn1">-</em>  <input type="text" value="1" class="num cc" /><em class="btn2">+</em>
         <router-link to="/X03">
           <span class="xx">立即兑换</span>
         </router-link>
@@ -160,10 +160,37 @@
           str:1
         }
       },
-
-
-
       mounted(){
+
+          $(document).ready(function () {
+            $('.btn2').click(function () {
+              var n =$(this).prev().val();
+              var num=parseInt(n)+1;
+              if (num==0){
+                return;
+              }
+              $(this).prev().val(num);
+            });
+
+            $('.btn1').click(function () {
+              console.log(122);
+              var n =$(this).next().val();
+              var num=parseInt(n)-1;
+              if (num==0){
+                return;
+              }
+              $(this).next().val(num);
+            });
+          });
+
+
+
+
+
+
+
+
+
 
           console.log(this.$route.params.id);
           if(this.$route.params.id){
@@ -426,7 +453,7 @@ pic-zoom{
   bottom: 55px;
   left: 20px;
 }
-.right>span:nth-of-type(12){
+.cc{
   position: absolute;
   bottom: 55px;
   left: 60px;
@@ -435,20 +462,31 @@ pic-zoom{
   height: 25px;
   border:1px solid #d4d4d4;
   text-align: center;
+  font-size: 18px;
 }
-.cc>button{
+.btn1{
   width: 40px;
   height: 25px;
-}
-.cc>button:nth-of-type(1){
   position: absolute;
-  left: 0;
+  top: 299px;
+  left: 60px;
   font-size: 20px;
+  text-align: center;
+  line-height: 25px;
+  z-index: 10;
+  background-color: #d4d4d4;
 }
-.cc>button:nth-of-type(2){
+.btn2{
+  width: 40px;
+  height: 25px;
   position: absolute;
+  background-color: #d4d4d4;
+  text-align: center;
+  line-height: 25px;
   right: 0;
   font-size: 20px;
+  top: 299px;
+  left: 171px;
 }
 .right a{
   color: #666;

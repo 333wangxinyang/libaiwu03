@@ -97,6 +97,8 @@
 </template>
 
 <script>
+
+  import Bus from '../../assets/bus'
     export default {
         name: "qrddzy",
       data(){
@@ -135,6 +137,10 @@ console.log(JSON.parse(this.$route.query.data))
         // JSON.parse(json字符串)
 
         $('#tijiao').click(function () {
+
+            Bus.$emit('mm',3)
+
+
 console.log('aaaaaaaaaaa')
             var idArr = [];
           console.log('aaaaaaaaaaa')

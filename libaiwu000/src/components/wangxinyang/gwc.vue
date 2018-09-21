@@ -44,14 +44,14 @@
         <span @click="plsc">批量删除</span>
         <span>商品总计：</span>
         <span>￥{{zz}}</span>
-        <router-link  :to="{path: '/qrddzy', query:{data:JSON.stringify(arr1)}}"  >立即购买</router-link>
+        <router-link id="ll"  :to="{path: '/qrddzy', query:{data:JSON.stringify(arr1)}}"  >立即购买</router-link>
       </div>
       <!--{path: '/qrddzy', quer: {data:555}}-->
     </div>
 </template>
 
 <script>
-
+  import Bus from '../../assets/bus'
   import  axios from  'axios'
     export default {
         name: "gwc",
@@ -242,6 +242,10 @@
         }
       },
       mounted(){
+       $('#ll').click(function () {
+         Bus.$emit('mm',2)
+       })
+
 
 
         axios.get('/api/php/hzhxqw/wxygwc.php?type=1').then(function (res) {

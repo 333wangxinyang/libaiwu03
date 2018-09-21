@@ -25,7 +25,7 @@
         </div>
         <div class="yanzhengma">
           <input type="text" placeholder="验证码" maxlength="4">
-          <canvas id="canvas" width="80" height="38"></canvas>
+          <canvas id="canvas" width="120" height="38"></canvas>
           <a href="#" id="changeImg">看不清，换一张</a>
         </div>
         <div class="password">
@@ -101,10 +101,10 @@
             var txt = str[randomNum(0,str.length)];
             obj.push(txt);
             ctx.fillStyle = randomColor(50,160);  //随机生成字体颜色
-            ctx.font = randomNum(15,40)+'px SimHei'; //随机生成字体大小
-            var x = 10+i*25;
-            var y = randomNum(25,45);
-            var deg = randomNum(-45, 45);
+            ctx.font = randomNum(25,30)+'px SimHei'; //随机生成字体大小
+            var x = 5+i*30;
+            var y = randomNum(40,40);
+            var deg = randomNum(-15, 15);
             //修改坐标原点和旋转角度
             ctx.translate(x,y);
             ctx.rotate(deg*Math.PI/180);

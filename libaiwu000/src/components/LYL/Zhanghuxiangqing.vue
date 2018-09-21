@@ -9,7 +9,7 @@
           <p>
             <span>当前积分</span>
             <span>我的钱包</span>
-            <span>充值有礼>></span>
+            <span><router-link to="/wodezhanghu">充值有礼>></router-link></span>
           </p>
           <p>
             <span>124</span>
@@ -50,7 +50,7 @@
   .box2>p>span{
     width: 100px;
   }
-  .box2>p:nth-of-type(1)>span:nth-of-type(3){
+  .box2>p:nth-of-type(1) a{
     color: #4b9b4f;
   }
   .box2>p:nth-of-type(1){

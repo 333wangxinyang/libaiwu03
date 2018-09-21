@@ -9,7 +9,7 @@
     <router-link to="/tianjiadizhi">
       <span class="one4">使用新地址</span>
     </router-link>
-    <div class="one" v-for="itemin arr">
+    <div class="one" v-for="item in arr">
       <img src="../../../static/wxy1/x-wzf.png" alt="" class="one2">
       <span>{{item.title}}</span>
       <span>{{item.tel}}</span>
@@ -40,8 +40,10 @@
         <img :src="item.pic" alt="">
         <span>{{item.title}}</span>
         <span>{{item.gg}}</span>
-        <button class="btn1" @click="bt(b)">-</button><span class="cc">{{item.num}}</span><button class="btn2" @click="bt1(b)">+</button>
-        <span>{{item.num*60}}积分</span>
+        <button class="btn1"  @click="qq1(item,-1)">-</button>
+        <span class="cc">{{item.num}}</span>
+        <button class="btn2" @click="qq1(item,1)">+</button>
+        <span>{{item.num*item.money}}积分</span>
       </div>
     </div>
     <div class="cp2">
@@ -49,117 +51,129 @@
       <input type="text" placeholder="限45个字，请填写有关商品、支付、发票等信息">
     </div>
 <div class="cp3">
-  <span>应付积分:</span>
+  <span>应付积分:{{total()}}</span>
   <span>确认兑换</span>
 </div>
   </div>
-
 </div>
 </template>
-
 <script>
     export default {
-        name: "X03",
-      methods:{
-bt1(i){
-  this.arr2[i].num++;
-}
-      },
-      mounted(){
+      name: "X03",
+      mounted() {
         $('.bb').click(function () {
-          $(this).parent().css({display:'none'});
+          $(this).parent().css({display: 'none'});
         });
-          var a=true;
-          $('.one2').click(function () {
-            if (a==true){
-           $(this).attr({src:'../../../static/wxy1/x-zf.png'});
-            $(this).nextAll().eq(2).css({display:'block'});
-              $(this).nextAll().eq(3).css({display:'none'});
-            a=false;
-            }else {
-              $(this).attr({src:'../../../static/wxy1/x-wzf.png'});
-              $(this).nextAll().eq(2).css({display:'none'});
-              $(this).nextAll().eq(3).css({display:'block'});
-              a=true;
-            }
-          });
-          $('.zk').click(function () {
-            $('.one').css({display:'block'});
-            $('.zk').css({display:'none'});
-            $('.zk1').css({display:'none'});
-            $('.sq').css({display:'block'});
-            $('.sq1').css({display:'block'});
-          });
+        var a = true;
+        $('.one2').click(function () {
+          if (a == true) {
+            $(this).attr({src: '../../../static/wxy1/x-zf.png'});
+            $(this).nextAll().eq(2).css({display: 'block'});
+            $(this).nextAll().eq(3).css({display: 'none'});
+            a = false;
+          } else {
+            $(this).attr({src: '../../../static/wxy1/x-wzf.png'});
+            $(this).nextAll().eq(2).css({display: 'none'});
+            $(this).nextAll().eq(3).css({display: 'block'});
+            a = true;
+          }
+        });
+        $('.zk').click(function () {
+          $('.one').css({display: 'block'});
+          $('.zk').css({display: 'none'});
+          $('.zk1').css({display: 'none'});
+          $('.sq').css({display: 'block'});
+          $('.sq1').css({display: 'block'});
+        });
         $('.sq').click(function () {
-          $('.one').css({display:'none'});
-          $('.zk').css({display:'block'});
-          $('.zk1').css({display:'block'});
-          $('.sq').css({display:'none'});
-          $('.sq1').css({display:'none'});
+          $('.one').css({display: 'none'});
+          $('.zk').css({display: 'block'});
+          $('.zk1').css({display: 'block'});
+          $('.sq').css({display: 'none'});
+          $('.sq1').css({display: 'none'});
         });
       },
-      data(){
-          return {
-            arr:[
-              {
-                pic:'../../../static/wxy1/x-zf.png',
-                pic1:'../../../static/wxy1/x-wzf.png',
-                title:'但小兵 北京 北京市  昌平区  天通苑明第一城4号楼101',
-                tel:'固定电话：010-21541589',
-                title1:'默认地址',
-                title4:'设置为默认地址',
-                title2:'修改',
-                title3:'删除'
+      data() {
+        return {
+          index: 1,
+          arr: [
+            {
+              pic: '../../../static/wxy1/x-zf.png',
+              pic1: '../../../static/wxy1/x-wzf.png',
+              title: '但小兵 北京 北京市  昌平区  天通苑明第一城4号楼101',
+              tel: '固定电话：010-21541589',
+              title1: '默认地址',
+              title4: '设置为默认地址',
+              title2: '修改',
+              title3: '删除'
+            }, {
+              title: '但小兵 北京 北京市  昌平区  天通苑明第一城4号楼101',
+              tel: '固定电话：010-21541589',
+              title1: '默认地址',
+              title4: '设置为默认地址',
+              title2: '修改',
+              title3: '删除'
+            }, {
+              title: '但小兵 北京 北京市  昌平区  天通苑明第一城4号楼101',
+              tel: '固定电话：010-21541589',
+              title1: '默认地址',
+              title4: '设置为默认地址',
+              title2: '修改',
+              title3: '删除'
+            }
+          ],
+          arr2: [
+            {
+              pic: '../../../static/wxy1/x-bzl.png',
+              title: '云南蒙自石榴 8个装',
+              gg: '8个装',
+              num: 1,
+              money: 60
+            },
+            {
+              pic: '../../../static/wxy1/x-bzl.png',
+              title: '云南蒙自石榴 8个装',
+              gg: '8个装',
+              num:1,
+              money: 60
+            }, {
+              pic: '../../../static/wxy1/x-bzl.png',
+              title: '云南蒙自石榴 8个装',
+              gg: '8个装',
+              num:1,
+              money: 60
+            }, {
+              pic: '../../../static/wxy1/x-bzl.png',
+              title: '福建琯溪白心蜜柚（大果）2个装',
+              gg: '8个装',
+              num: 1,
+              money: 60
+            },
+          ]
+        }
+      },
+      methods: {
+           qq1(item,a){
+             if(a==1){
+               item.num++;
+             }else{
+               if(item.num==0){
+                 item.num==1
+               }else{
+                 item.num--;
+               }
+             }
+           },
+        total(){
+             var numAll = 0;
+          this.arr2.forEach((num,index,arr)=>{
+               var jf =  num.num*num.money
+               numAll+=jf
+          })
+          return numAll
+        }
+      },
 
-              },{
-                title:'但小兵 北京 北京市  昌平区  天通苑明第一城4号楼101',
-                tel:'固定电话：010-21541589',
-                title1:'默认地址',
-                title4:'设置为默认地址',
-                title2:'修改',
-                title3:'删除'
-
-              },{
-                title:'但小兵 北京 北京市  昌平区  天通苑明第一城4号楼101',
-                tel:'固定电话：010-21541589',
-                title1:'默认地址',
-                title4:'设置为默认地址',
-                title2:'修改',
-                title3:'删除'
-
-              }
-            ],
-            arr2:[
-              {
-                pic:'../../../static/wxy1/x-bzl.png',
-                title:'云南蒙自石榴 8个装',
-                gg:'8个装',
-                num:0,
-                money:'60积分'
-              },
-              {
-                pic:'../../../static/wxy1/x-bzl.png',
-                title:'云南蒙自石榴 8个装',
-                gg:'8个装',
-                num:0,
-                money:'60积分'
-              },{
-                pic:'../../../static/wxy1/x-bzl.png',
-                title:'云南蒙自石榴 8个装',
-                gg:'8个装',
-                num:0,
-                money:'60积分'
-              },{
-                pic:'../../../static/wxy1/x-bzl.png',
-                title:'福建琯溪白心蜜柚（大果）2个装',
-                gg:'8个装',
-                num:0,
-                money:'60积分'
-              }
-            ]
-          }
-
-      }
     }
 </script>
 
@@ -378,6 +392,7 @@ bt1(i){
     width: 30px;
     height: 30px;
     font-size: 18px;
+    z-index: 10;
     text-align: center;
     top: 51px;
     line-height: 30px;

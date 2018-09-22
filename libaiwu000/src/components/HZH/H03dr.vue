@@ -292,7 +292,7 @@
             // console.log(response.data[0].id);
             if(response.data==0){
               alert('该账户不存在');
-            }if(response.data[0].password == password1){
+            }else if(response.data[0].password == password1){
 
               document.cookie = "state=" +response.data[0].id;
 

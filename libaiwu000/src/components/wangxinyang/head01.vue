@@ -287,25 +287,22 @@ data(){
           var phone1 = document.querySelector('.hzh07').value
           var password1 = document.querySelector('.drzcB').value
           if (ha == true && hb == true) {
-            axios.get('/api/php/hzhxqw/drzc2.php?type=2&phone=' + phone1 + '').then((response) => {
+            axios.get('/api/php/hzhxqw/drzc2.php?type=5&phone=' + phone1 + '').then((response) => {
               console.log(response.data);
-              console.log(response.data[0].id);
+              // console.log(response.data[0].id);
               if (response.data == 0) {
+                console.log(123);
                 alert('该账户不存在');
               }
-              if (response.data[0].password == password1) {
+              else if(response.data[0].password == password1) {
 
                 // alert('登录成功')
                 $('#headkong').css({display: "none"})
                 $('.headkong2').fadeOut(1000);
-                // window.location.href = "/#/shouye01/"
-                // document.cookie = "state=" + response.data[0].id;
-
-
 
                 document.cookie = "state=" +response.data[0].id;
 
-                Bus.$emit('cc',response.data[0].id)
+                Bus.$emit('aa',response.data[0].id)
 
                 alert('登录成功')
                 window.location.href = "/#/shouye01/"

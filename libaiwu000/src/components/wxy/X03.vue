@@ -52,7 +52,9 @@
     </div>
 <div class="cp3">
   <span>应付积分:{{total()}}</span>
-  <span>确认兑换</span>
+  <router-link to="/X08">
+  <span class="yy">确认兑换</span>
+  </router-link>
 </div>
   </div>
 </div>
@@ -448,7 +450,7 @@
     right: 100px;
     top: 10px;
   }
-.cp3>span:nth-of-type(2){
+.yy{
   display: block;
   position: absolute;
   right: 80px;
@@ -458,5 +460,6 @@
   line-height: 30px;
   background-color: #f08200;
   text-align: center;
+  color: #ffffff;
 }
 </style>

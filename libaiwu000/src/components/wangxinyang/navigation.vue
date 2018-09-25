@@ -124,7 +124,7 @@ $('#n_ul01>li>a').click(function () {
     height: 20px;
     line-height: 20px;
     text-align:center ;
-    color: #323333;
+    color: #5b5c5c;
     font-size:18px ;
     padding: 15px 0;
 

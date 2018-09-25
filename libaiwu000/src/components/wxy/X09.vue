@@ -47,7 +47,7 @@
           <router-link to="">
             <span class="xx"  @click="cc1(arr3.id)" >加入购物车</span>
           </router-link>
-          <router-link to="">
+          <router-link to="/X07">
             <span class="xx1 xx">立即购买</span>
           </router-link>
           <div class="last">

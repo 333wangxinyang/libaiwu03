@@ -2,7 +2,7 @@
 <div class="box">
   <img src="../../../static/wxy1/x-hdg.png" alt="">
   <span >支付成功</span>
-  <router-link to="">
+  <router-link to="/quanbu">
   <span class="cc">查看订单</span>
   </router-link>
   <router-link to="/shouye01">
@@ -24,18 +24,16 @@
   height: 360px;
   position: relative;
   top: 150px;
-  /*border: 1px solid;*/
-  left: 400px;
 }
   .box>img{
     position: absolute;
     top: 50px;
-    /*left: 550px;*/
+    left: 280px;
   }
   .box>span:nth-of-type(1){
     position: absolute;
     top: 150px;
-    /*left: 550px;*/
+    left: 280px;
     font-size: 20px;
     color:#f08404 ;
   }

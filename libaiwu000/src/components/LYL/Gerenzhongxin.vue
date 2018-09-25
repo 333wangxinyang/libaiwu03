@@ -119,4 +119,8 @@
   .nav2>ul>.max>a>span{
     font-size: 16px;
   }
+  .nav2>ul>li:nth-of-type(2)>a{
+    border-bottom: solid 1px #63a365;
+    color: #63a365;
+  }
 </style>

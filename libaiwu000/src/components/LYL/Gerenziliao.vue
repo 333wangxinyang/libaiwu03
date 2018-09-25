@@ -63,6 +63,7 @@
           }
         },
         mounted(){
+
           var obj = [];
           /**生成一个随机数**/
           function randomNum(min,max){
@@ -106,15 +107,15 @@
             /**绘制文字**/
             var str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789';
 
-           obj = [];
+            obj = [];
             for(var i=0; i<4; i++){
               var txt = str[randomNum(0,str.length)];
-              obj.push(txt)
+              obj.push(txt);
               ctx.fillStyle = randomColor(50,160);  //随机生成字体颜色
-              ctx.font = randomNum(15,40)+'px SimHei'; //随机生成字体大小
-              var x = 1+i*25;
-              var y = randomNum(10,45);
-              var deg = randomNum(-45, 45);
+              ctx.font = randomNum(23,25)+'px SimHei'; //随机生成字体大小
+              var x = 5+i*19;
+              var y = randomNum(30,40);
+              var deg = randomNum(-15, 15);
               //修改坐标原点和旋转角度
               ctx.translate(x,y);
               ctx.rotate(deg*Math.PI/180);
@@ -140,6 +141,7 @@
               ctx.fill();
             }
           }
+
 
           //  注册input js效果
           var ha = false;

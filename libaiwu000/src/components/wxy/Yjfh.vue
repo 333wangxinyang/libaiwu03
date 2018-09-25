@@ -1,9 +1,7 @@
 <template>
 <div class="box">
     <span>意见反馈</span>
-  <div class="two">
-    <p>请输入您的意见将期待与您共同成长</p>
-  </div>
+  <textarea class="two" placeholder="请输入您的意见将期待与您共同成长"></textarea>
   <router-link to="">
   <span class="aa">取消</span>
   </router-link>
@@ -40,6 +38,11 @@
     top: 80px;
     left: 100px;
     border: 1px solid #d9d9d9;
+    outline: none;
+    text-indent: 10px;
+    font-size: 18px;
+    padding: 10px 0;
+    resize: none;
   }
   .two>p{
     position: absolute;

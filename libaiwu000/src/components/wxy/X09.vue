@@ -184,7 +184,6 @@
         localStorage.xinxi = localStorage.xinxi-0 + 1;
         Bus.$emit('xx',localStorage.xinxi)
 
-
       }
     },
     mounted(){
